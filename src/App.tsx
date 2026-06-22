@@ -2671,11 +2671,23 @@ export default function App() {
           }
         }
       } else {
-        const data = await safeJson(res, { error: 'فشل تسجيل الدخول' });
-        setAuthError(data.error);
+        if (res.status === 404) {
+          if (window.location.hostname.includes('vercel.app')) {
+            setAuthError('خطأ 404: سيرفر الـ API والـ Backend غير مشغل على Vercel. يرجى استخدام الرابط الحقيقي للنظام من خلال Cloud Run لتفعيل قاعدة البيانات PostgreSQL.');
+          } else {
+            setAuthError('سيرفر قاعدة البيانات غير مستجيب (خطأ 404). الرجاء استخدام الرابط الأصلي للنظام.');
+          }
+        } else {
+          const data = await safeJson(res, { error: 'اسم المستخدم أو كلمة المرور غير صحيحة' });
+          setAuthError(data.error);
+        }
       }
     } catch (err) {
-      setAuthError('حدث خطأ في الاتصال');
+      if (window.location.hostname.includes('vercel.app')) {
+        setAuthError('منصة Vercel لا تدعم تشغيل قاعدة بيانات وسيرفر Express متكاملين بشكل مباشر. يرجى الدخول من خلال رابط الاستضافة الأساسي على Cloud Run.');
+      } else {
+        setAuthError('حدث خطأ في الاتصال بالملف البرمجي للخادم.');
+      }
     }
   };
 
