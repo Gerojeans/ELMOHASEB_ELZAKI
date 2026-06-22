@@ -1,5384 +1,3274 @@
-{
-  "name": "react-example",
-  "version": "0.0.0",
-  "lockfileVersion": 3,
-  "requires": true,
-  "packages": {
-    "": {
-      "name": "react-example",
-      "version": "0.0.0",
-      "dependencies": {
-        "@google/genai": "^1.46.0",
-        "@tailwindcss/vite": "^4.1.14",
-        "@types/bcrypt": "^6.0.0",
-        "@types/cors": "^2.8.19",
-        "@types/pg": "^8.20.0",
-        "@vitejs/plugin-react": "^5.0.4",
-        "bcrypt": "^6.0.0",
-        "better-sqlite3": "^12.8.0",
-        "clsx": "^2.1.1",
-        "cors": "^2.8.6",
-        "date-fns": "^4.1.0",
-        "dotenv": "^17.2.3",
-        "express": "^4.21.2",
-        "lucide-react": "^0.546.0",
-        "motion": "^12.23.24",
-        "pg": "^8.20.0",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "recharts": "^3.8.0",
-        "tailwind-merge": "^3.5.0",
-        "vite": "^6.2.0"
-      },
-      "devDependencies": {
-        "@types/better-sqlite3": "^7.6.13",
-        "@types/express": "^4.17.21",
-        "@types/node": "^22.14.0",
-        "autoprefixer": "^10.4.21",
-        "tailwindcss": "^4.1.14",
-        "tsx": "^4.21.0",
-        "typescript": "~5.8.2",
-        "vite": "^6.2.0"
-      }
-    },
-    "node_modules/@babel/code-frame": {
-      "version": "7.29.0",
-      "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.29.0.tgz",
-      "integrity": "sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/helper-validator-identifier": "^7.28.5",
-        "js-tokens": "^4.0.0",
-        "picocolors": "^1.1.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/compat-data": {
-      "version": "7.29.0",
-      "resolved": "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.29.0.tgz",
-      "integrity": "sha512-T1NCJqT/j9+cn8fvkt7jtwbLBfLC/1y1c7NtCeXFRgzGTsafi68MRv8yzkYSapBnFA6L3U2VSc02ciDzoAJhJg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/core": {
-      "version": "7.29.0",
-      "resolved": "https://registry.npmjs.org/@babel/core/-/core-7.29.0.tgz",
-      "integrity": "sha512-CGOfOJqWjg2qW/Mb6zNsDm+u5vFQ8DxXfbM09z69p5Z6+mE1ikP2jUXw+j42Pf1XTYED2Rni5f95npYeuwMDQA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/code-frame": "^7.29.0",
-        "@babel/generator": "^7.29.0",
-        "@babel/helper-compilation-targets": "^7.28.6",
-        "@babel/helper-module-transforms": "^7.28.6",
-        "@babel/helpers": "^7.28.6",
-        "@babel/parser": "^7.29.0",
-        "@babel/template": "^7.28.6",
-        "@babel/traverse": "^7.29.0",
-        "@babel/types": "^7.29.0",
-        "@jridgewell/remapping": "^2.3.5",
-        "convert-source-map": "^2.0.0",
-        "debug": "^4.1.0",
-        "gensync": "^1.0.0-beta.2",
-        "json5": "^2.2.3",
-        "semver": "^6.3.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/babel"
-      }
-    },
-    "node_modules/@babel/generator": {
-      "version": "7.29.1",
-      "resolved": "https://registry.npmjs.org/@babel/generator/-/generator-7.29.1.tgz",
-      "integrity": "sha512-qsaF+9Qcm2Qv8SRIMMscAvG4O3lJ0F1GuMo5HR/Bp02LopNgnZBC/EkbevHFeGs4ls/oPz9v+Bsmzbkbe+0dUw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/parser": "^7.29.0",
-        "@babel/types": "^7.29.0",
-        "@jridgewell/gen-mapping": "^0.3.12",
-        "@jridgewell/trace-mapping": "^0.3.28",
-        "jsesc": "^3.0.2"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-compilation-targets": {
-      "version": "7.28.6",
-      "resolved": "https://registry.npmjs.org/@babel/helper-compilation-targets/-/helper-compilation-targets-7.28.6.tgz",
-      "integrity": "sha512-JYtls3hqi15fcx5GaSNL7SCTJ2MNmjrkHXg4FSpOA/grxK8KwyZ5bubHsCq8FXCkua6xhuaaBit+3b7+VZRfcA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/compat-data": "^7.28.6",
-        "@babel/helper-validator-option": "^7.27.1",
-        "browserslist": "^4.24.0",
-        "lru-cache": "^5.1.1",
-        "semver": "^6.3.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-globals": {
-      "version": "7.28.0",
-      "resolved": "https://registry.npmjs.org/@babel/helper-globals/-/helper-globals-7.28.0.tgz",
-      "integrity": "sha512-+W6cISkXFa1jXsDEdYA8HeevQT/FULhxzR99pxphltZcVaugps53THCeiWA8SguxxpSp3gKPiuYfSWopkLQ4hw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-module-imports": {
-      "version": "7.28.6",
-      "resolved": "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.28.6.tgz",
-      "integrity": "sha512-l5XkZK7r7wa9LucGw9LwZyyCUscb4x37JWTPz7swwFE/0FMQAGpiWUZn8u9DzkSBWEcK25jmvubfpw2dnAMdbw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/traverse": "^7.28.6",
-        "@babel/types": "^7.28.6"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-module-transforms": {
-      "version": "7.28.6",
-      "resolved": "https://registry.npmjs.org/@babel/helper-module-transforms/-/helper-module-transforms-7.28.6.tgz",
-      "integrity": "sha512-67oXFAYr2cDLDVGLXTEABjdBJZ6drElUSI7WKp70NrpyISso3plG9SAGEF6y7zbha/wOzUByWWTJvEDVNIUGcA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/helper-module-imports": "^7.28.6",
-        "@babel/helper-validator-identifier": "^7.28.5",
-        "@babel/traverse": "^7.28.6"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      },
-      "peerDependencies": {
-        "@babel/core": "^7.0.0"
-      }
-    },
-    "node_modules/@babel/helper-plugin-utils": {
-      "version": "7.28.6",
-      "resolved": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.28.6.tgz",
-      "integrity": "sha512-S9gzZ/bz83GRysI7gAD4wPT/AI3uCnY+9xn+Mx/KPs2JwHJIz1W8PZkg2cqyt3RNOBM8ejcXhV6y8Og7ly/Dug==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-string-parser": {
-      "version": "7.27.1",
-      "resolved": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.27.1.tgz",
-      "integrity": "sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-validator-identifier": {
-      "version": "7.28.5",
-      "resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.28.5.tgz",
-      "integrity": "sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helper-validator-option": {
-      "version": "7.27.1",
-      "resolved": "https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.27.1.tgz",
-      "integrity": "sha512-YvjJow9FxbhFFKDSuFnVCe2WxXk1zWc22fFePVNEaWJEu8IrZVlda6N0uHwzZrUM1il7NC9Mlp4MaJYbYd9JSg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/helpers": {
-      "version": "7.29.2",
-      "resolved": "https://registry.npmjs.org/@babel/helpers/-/helpers-7.29.2.tgz",
-      "integrity": "sha512-HoGuUs4sCZNezVEKdVcwqmZN8GoHirLUcLaYVNBK2J0DadGtdcqgr3BCbvH8+XUo4NGjNl3VOtSjEKNzqfFgKw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/template": "^7.28.6",
-        "@babel/types": "^7.29.0"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/parser": {
-      "version": "7.29.2",
-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.29.2.tgz",
-      "integrity": "sha512-4GgRzy/+fsBa72/RZVJmGKPmZu9Byn8o4MoLpmNe1m8ZfYnz5emHLQz3U4gLud6Zwl0RZIcgiLD7Uq7ySFuDLA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/types": "^7.29.0"
-      },
-      "bin": {
-        "parser": "bin/babel-parser.js"
-      },
-      "engines": {
-        "node": ">=6.0.0"
-      }
-    },
-    "node_modules/@babel/plugin-transform-react-jsx-self": {
-      "version": "7.27.1",
-      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.27.1.tgz",
-      "integrity": "sha512-6UzkCs+ejGdZ5mFFC/OCUrv028ab2fp1znZmCZjAOBKiBK2jXD1O+BPSfX8X2qjJ75fZBMSnQn3Rq2mrBJK2mw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/helper-plugin-utils": "^7.27.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      },
-      "peerDependencies": {
-        "@babel/core": "^7.0.0-0"
-      }
-    },
-    "node_modules/@babel/plugin-transform-react-jsx-source": {
-      "version": "7.27.1",
-      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.27.1.tgz",
-      "integrity": "sha512-zbwoTsBruTeKB9hSq73ha66iFeJHuaFkUbwvqElnygoNbj/jHRsSeokowZFN3CZ64IvEqcmmkVe89OPXc7ldAw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/helper-plugin-utils": "^7.27.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      },
-      "peerDependencies": {
-        "@babel/core": "^7.0.0-0"
-      }
-    },
-    "node_modules/@babel/template": {
-      "version": "7.28.6",
-      "resolved": "https://registry.npmjs.org/@babel/template/-/template-7.28.6.tgz",
-      "integrity": "sha512-YA6Ma2KsCdGb+WC6UpBVFJGXL58MDA6oyONbjyF/+5sBgxY/dwkhLogbMT2GXXyU84/IhRw/2D1Os1B/giz+BQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/code-frame": "^7.28.6",
-        "@babel/parser": "^7.28.6",
-        "@babel/types": "^7.28.6"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/traverse": {
-      "version": "7.29.0",
-      "resolved": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.29.0.tgz",
-      "integrity": "sha512-4HPiQr0X7+waHfyXPZpWPfWL/J7dcN1mx9gL6WdQVMbPnF3+ZhSMs8tCxN7oHddJE9fhNE7+lxdnlyemKfJRuA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/code-frame": "^7.29.0",
-        "@babel/generator": "^7.29.0",
-        "@babel/helper-globals": "^7.28.0",
-        "@babel/parser": "^7.29.0",
-        "@babel/template": "^7.28.6",
-        "@babel/types": "^7.29.0",
-        "debug": "^4.3.1"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@babel/types": {
-      "version": "7.29.0",
-      "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.29.0.tgz",
-      "integrity": "sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/helper-string-parser": "^7.27.1",
-        "@babel/helper-validator-identifier": "^7.28.5"
-      },
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@esbuild/aix-ppc64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.27.4.tgz",
-      "integrity": "sha512-cQPwL2mp2nSmHHJlCyoXgHGhbEPMrEEU5xhkcy3Hs/O7nGZqEpZ2sUtLaL9MORLtDfRvVl2/3PAuEkYZH0Ty8Q==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "aix"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/android-arm": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.27.4.tgz",
-      "integrity": "sha512-X9bUgvxiC8CHAGKYufLIHGXPJWnr0OCdR0anD2e21vdvgCI8lIfqFbnoeOz7lBjdrAGUhqLZLcQo6MLhTO2DKQ==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/android-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.27.4.tgz",
-      "integrity": "sha512-gdLscB7v75wRfu7QSm/zg6Rx29VLdy9eTr2t44sfTW7CxwAtQghZ4ZnqHk3/ogz7xao0QAgrkradbBzcqFPasw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/android-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.27.4.tgz",
-      "integrity": "sha512-PzPFnBNVF292sfpfhiyiXCGSn9HZg5BcAz+ivBuSsl6Rk4ga1oEXAamhOXRFyMcjwr2DVtm40G65N3GLeH1Lvw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/darwin-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.27.4.tgz",
-      "integrity": "sha512-b7xaGIwdJlht8ZFCvMkpDN6uiSmnxxK56N2GDTMYPr2/gzvfdQN8rTfBsvVKmIVY/X7EM+/hJKEIbbHs9oA4tQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/darwin-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.27.4.tgz",
-      "integrity": "sha512-sR+OiKLwd15nmCdqpXMnuJ9W2kpy0KigzqScqHI3Hqwr7IXxBp3Yva+yJwoqh7rE8V77tdoheRYataNKL4QrPw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/freebsd-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.27.4.tgz",
-      "integrity": "sha512-jnfpKe+p79tCnm4GVav68A7tUFeKQwQyLgESwEAUzyxk/TJr4QdGog9sqWNcUbr/bZt/O/HXouspuQDd9JxFSw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/freebsd-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.27.4.tgz",
-      "integrity": "sha512-2kb4ceA/CpfUrIcTUl1wrP/9ad9Atrp5J94Lq69w7UwOMolPIGrfLSvAKJp0RTvkPPyn6CIWrNy13kyLikZRZQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-arm": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.27.4.tgz",
-      "integrity": "sha512-aBYgcIxX/wd5n2ys0yESGeYMGF+pv6g0DhZr3G1ZG4jMfruU9Tl1i2Z+Wnj9/KjGz1lTLCcorqE2viePZqj4Eg==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.27.4.tgz",
-      "integrity": "sha512-7nQOttdzVGth1iz57kxg9uCz57dxQLHWxopL6mYuYthohPKEK0vU0C3O21CcBK6KDlkYVcnDXY099HcCDXd9dA==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-ia32": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.27.4.tgz",
-      "integrity": "sha512-oPtixtAIzgvzYcKBQM/qZ3R+9TEUd1aNJQu0HhGyqtx6oS7qTpvjheIWBbes4+qu1bNlo2V4cbkISr8q6gRBFA==",
-      "cpu": [
-        "ia32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-loong64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.27.4.tgz",
-      "integrity": "sha512-8mL/vh8qeCoRcFH2nM8wm5uJP+ZcVYGGayMavi8GmRJjuI3g1v6Z7Ni0JJKAJW+m0EtUuARb6Lmp4hMjzCBWzA==",
-      "cpu": [
-        "loong64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-mips64el": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.27.4.tgz",
-      "integrity": "sha512-1RdrWFFiiLIW7LQq9Q2NES+HiD4NyT8Itj9AUeCl0IVCA459WnPhREKgwrpaIfTOe+/2rdntisegiPWn/r/aAw==",
-      "cpu": [
-        "mips64el"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-ppc64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.27.4.tgz",
-      "integrity": "sha512-tLCwNG47l3sd9lpfyx9LAGEGItCUeRCWeAx6x2Jmbav65nAwoPXfewtAdtbtit/pJFLUWOhpv0FpS6GQAmPrHA==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-riscv64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.27.4.tgz",
-      "integrity": "sha512-BnASypppbUWyqjd1KIpU4AUBiIhVr6YlHx/cnPgqEkNoVOhHg+YiSVxM1RLfiy4t9cAulbRGTNCKOcqHrEQLIw==",
-      "cpu": [
-        "riscv64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-s390x": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.27.4.tgz",
-      "integrity": "sha512-+eUqgb/Z7vxVLezG8bVB9SfBie89gMueS+I0xYh2tJdw3vqA/0ImZJ2ROeWwVJN59ihBeZ7Tu92dF/5dy5FttA==",
-      "cpu": [
-        "s390x"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/linux-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.27.4.tgz",
-      "integrity": "sha512-S5qOXrKV8BQEzJPVxAwnryi2+Iq5pB40gTEIT69BQONqR7JH1EPIcQ/Uiv9mCnn05jff9umq/5nqzxlqTOg9NA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/netbsd-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.27.4.tgz",
-      "integrity": "sha512-xHT8X4sb0GS8qTqiwzHqpY00C95DPAq7nAwX35Ie/s+LO9830hrMd3oX0ZMKLvy7vsonee73x0lmcdOVXFzd6Q==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "netbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/netbsd-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.27.4.tgz",
-      "integrity": "sha512-RugOvOdXfdyi5Tyv40kgQnI0byv66BFgAqjdgtAKqHoZTbTF2QqfQrFwa7cHEORJf6X2ht+l9ABLMP0dnKYsgg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "netbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/openbsd-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.27.4.tgz",
-      "integrity": "sha512-2MyL3IAaTX+1/qP0O1SwskwcwCoOI4kV2IBX1xYnDDqthmq5ArrW94qSIKCAuRraMgPOmG0RDTA74mzYNQA9ow==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/openbsd-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.27.4.tgz",
-      "integrity": "sha512-u8fg/jQ5aQDfsnIV6+KwLOf1CmJnfu1ShpwqdwC0uA7ZPwFws55Ngc12vBdeUdnuWoQYx/SOQLGDcdlfXhYmXQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/openharmony-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/openharmony-arm64/-/openharmony-arm64-0.27.4.tgz",
-      "integrity": "sha512-JkTZrl6VbyO8lDQO3yv26nNr2RM2yZzNrNHEsj9bm6dOwwu9OYN28CjzZkH57bh4w0I2F7IodpQvUAEd1mbWXg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openharmony"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/sunos-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.27.4.tgz",
-      "integrity": "sha512-/gOzgaewZJfeJTlsWhvUEmUG4tWEY2Spp5M20INYRg2ZKl9QPO3QEEgPeRtLjEWSW8FilRNacPOg8R1uaYkA6g==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "sunos"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/win32-arm64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.27.4.tgz",
-      "integrity": "sha512-Z9SExBg2y32smoDQdf1HRwHRt6vAHLXcxD2uGgO/v2jK7Y718Ix4ndsbNMU/+1Qiem9OiOdaqitioZwxivhXYg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/win32-ia32": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.27.4.tgz",
-      "integrity": "sha512-DAyGLS0Jz5G5iixEbMHi5KdiApqHBWMGzTtMiJ72ZOLhbu/bzxgAe8Ue8CTS3n3HbIUHQz/L51yMdGMeoxXNJw==",
-      "cpu": [
-        "ia32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@esbuild/win32-x64": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.27.4.tgz",
-      "integrity": "sha512-+knoa0BDoeXgkNvvV1vvbZX4+hizelrkwmGJBdT17t8FNPwG2lKemmuMZlmaNQ3ws3DKKCxpb4zRZEIp3UxFCg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/@google/genai": {
-      "version": "1.46.0",
-      "resolved": "https://registry.npmjs.org/@google/genai/-/genai-1.46.0.tgz",
-      "integrity": "sha512-ewPMN5JkKfgU5/kdco9ZhXBHDPhVqZpMQqIFQhwsHLf8kyZfx1cNpw1pHo1eV6PGEW7EhIBFi3aYZraFndAXqg==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "google-auth-library": "^10.3.0",
-        "p-retry": "^4.6.2",
-        "protobufjs": "^7.5.4",
-        "ws": "^8.18.0"
-      },
-      "engines": {
-        "node": ">=20.0.0"
-      },
-      "peerDependencies": {
-        "@modelcontextprotocol/sdk": "^1.25.2"
-      },
-      "peerDependenciesMeta": {
-        "@modelcontextprotocol/sdk": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/@jridgewell/gen-mapping": {
-      "version": "0.3.13",
-      "resolved": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz",
-      "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
-      "license": "MIT",
-      "dependencies": {
-        "@jridgewell/sourcemap-codec": "^1.5.0",
-        "@jridgewell/trace-mapping": "^0.3.24"
-      }
-    },
-    "node_modules/@jridgewell/remapping": {
-      "version": "2.3.5",
-      "resolved": "https://registry.npmjs.org/@jridgewell/remapping/-/remapping-2.3.5.tgz",
-      "integrity": "sha512-LI9u/+laYG4Ds1TDKSJW2YPrIlcVYOwi2fUC6xB43lueCjgxV4lffOCZCtYFiH6TNOX+tQKXx97T4IKHbhyHEQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@jridgewell/gen-mapping": "^0.3.5",
-        "@jridgewell/trace-mapping": "^0.3.24"
-      }
-    },
-    "node_modules/@jridgewell/resolve-uri": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",
-      "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.0.0"
-      }
-    },
-    "node_modules/@jridgewell/sourcemap-codec": {
-      "version": "1.5.5",
-      "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz",
-      "integrity": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
-      "license": "MIT"
-    },
-    "node_modules/@jridgewell/trace-mapping": {
-      "version": "0.3.31",
-      "resolved": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz",
-      "integrity": "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==",
-      "license": "MIT",
-      "dependencies": {
-        "@jridgewell/resolve-uri": "^3.1.0",
-        "@jridgewell/sourcemap-codec": "^1.4.14"
-      }
-    },
-    "node_modules/@protobufjs/aspromise": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz",
-      "integrity": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/base64": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz",
-      "integrity": "sha512-AZkcAA5vnN/v4PDqKyMR5lx7hZttPDgClv83E//FMNhR2TMcLUhfRUBHCmSl0oi9zMgDDqRUJkSxO3wm85+XLg==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/codegen": {
-      "version": "2.0.4",
-      "resolved": "https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz",
-      "integrity": "sha512-YyFaikqM5sH0ziFZCN3xDC7zeGaB/d0IUb9CATugHWbd1FRFwWwt4ld4OYMPWu5a3Xe01mGAULCdqhMlPl29Jg==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/eventemitter": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz",
-      "integrity": "sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/fetch": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz",
-      "integrity": "sha512-lljVXpqXebpsijW71PZaCYeIcE5on1w5DlQy5WH6GLbFryLUrBD4932W/E2BSpfRJWseIL4v/KPgBFxDOIdKpQ==",
-      "license": "BSD-3-Clause",
-      "dependencies": {
-        "@protobufjs/aspromise": "^1.1.1",
-        "@protobufjs/inquire": "^1.1.0"
-      }
-    },
-    "node_modules/@protobufjs/float": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz",
-      "integrity": "sha512-Ddb+kVXlXst9d+R9PfTIxh1EdNkgoRe5tOX6t01f1lYWOvJnSPDBlG241QLzcyPdoNTsblLUdujGSE4RzrTZGQ==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/inquire": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz",
-      "integrity": "sha512-kdSefcPdruJiFMVSbn801t4vFK7KB/5gd2fYvrxhuJYg8ILrmn9SKSX2tZdV6V+ksulWqS7aXjBcRXl3wHoD9Q==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/path": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz",
-      "integrity": "sha512-6JOcJ5Tm08dOHAbdR3GrvP+yUUfkjG5ePsHYczMFLq3ZmMkAD98cDgcT2iA1lJ9NVwFd4tH/iSSoe44YWkltEA==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/pool": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz",
-      "integrity": "sha512-0kELaGSIDBKvcgS4zkjz1PeddatrjYcmMWOlAuAPwAeccUrPHdUqo/J6LiymHHEiJT5NrF1UVwxY14f+fy4WQw==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@protobufjs/utf8": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz",
-      "integrity": "sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/@reduxjs/toolkit": {
-      "version": "2.11.2",
-      "resolved": "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.11.2.tgz",
-      "integrity": "sha512-Kd6kAHTA6/nUpp8mySPqj3en3dm0tdMIgbttnQ1xFMVpufoj+ADi8pXLBsd4xzTRHQa7t/Jv8W5UnCuW4kuWMQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@standard-schema/spec": "^1.0.0",
-        "@standard-schema/utils": "^0.3.0",
-        "immer": "^11.0.0",
-        "redux": "^5.0.1",
-        "redux-thunk": "^3.1.0",
-        "reselect": "^5.1.0"
-      },
-      "peerDependencies": {
-        "react": "^16.9.0 || ^17.0.0 || ^18 || ^19",
-        "react-redux": "^7.2.1 || ^8.1.3 || ^9.0.0"
-      },
-      "peerDependenciesMeta": {
-        "react": {
-          "optional": true
-        },
-        "react-redux": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/@reduxjs/toolkit/node_modules/immer": {
-      "version": "11.1.4",
-      "resolved": "https://registry.npmjs.org/immer/-/immer-11.1.4.tgz",
-      "integrity": "sha512-XREFCPo6ksxVzP4E0ekD5aMdf8WMwmdNaz6vuvxgI40UaEiu6q3p8X52aU6GdyvLY3XXX/8R7JOTXStz/nBbRw==",
-      "license": "MIT",
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/immer"
-      }
-    },
-    "node_modules/@rolldown/pluginutils": {
-      "version": "1.0.0-rc.3",
-      "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.3.tgz",
-      "integrity": "sha512-eybk3TjzzzV97Dlj5c+XrBFW57eTNhzod66y9HrBlzJ6NsCrWCp/2kaPS3K9wJmurBC0Tdw4yPjXKZqlznim3Q==",
-      "license": "MIT"
-    },
-    "node_modules/@rollup/rollup-android-arm-eabi": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.60.0.tgz",
-      "integrity": "sha512-WOhNW9K8bR3kf4zLxbfg6Pxu2ybOUbB2AjMDHSQx86LIF4rH4Ft7vmMwNt0loO0eonglSNy4cpD3MKXXKQu0/A==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ]
-    },
-    "node_modules/@rollup/rollup-android-arm64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-android-arm64/-/rollup-android-arm64-4.60.0.tgz",
-      "integrity": "sha512-u6JHLll5QKRvjciE78bQXDmqRqNs5M/3GVqZeMwvmjaNODJih/WIrJlFVEihvV0MiYFmd+ZyPr9wxOVbPAG2Iw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ]
-    },
-    "node_modules/@rollup/rollup-darwin-arm64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.60.0.tgz",
-      "integrity": "sha512-qEF7CsKKzSRc20Ciu2Zw1wRrBz4g56F7r/vRwY430UPp/nt1x21Q/fpJ9N5l47WWvJlkNCPJz3QRVw008fi7yA==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ]
-    },
-    "node_modules/@rollup/rollup-darwin-x64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.60.0.tgz",
-      "integrity": "sha512-WADYozJ4QCnXCH4wPB+3FuGmDPoFseVCUrANmA5LWwGmC6FL14BWC7pcq+FstOZv3baGX65tZ378uT6WG8ynTw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ]
-    },
-    "node_modules/@rollup/rollup-freebsd-arm64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-freebsd-arm64/-/rollup-freebsd-arm64-4.60.0.tgz",
-      "integrity": "sha512-6b8wGHJlDrGeSE3aH5mGNHBjA0TTkxdoNHik5EkvPHCt351XnigA4pS7Wsj/Eo9Y8RBU6f35cjN9SYmCFBtzxw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ]
-    },
-    "node_modules/@rollup/rollup-freebsd-x64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-freebsd-x64/-/rollup-freebsd-x64-4.60.0.tgz",
-      "integrity": "sha512-h25Ga0t4jaylMB8M/JKAyrvvfxGRjnPQIR8lnCayyzEjEOx2EJIlIiMbhpWxDRKGKF8jbNH01NnN663dH638mA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-arm-gnueabihf": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm-gnueabihf/-/rollup-linux-arm-gnueabihf-4.60.0.tgz",
-      "integrity": "sha512-RzeBwv0B3qtVBWtcuABtSuCzToo2IEAIQrcyB/b2zMvBWVbjo8bZDjACUpnaafaxhTw2W+imQbP2BD1usasK4g==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-arm-musleabihf": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm-musleabihf/-/rollup-linux-arm-musleabihf-4.60.0.tgz",
-      "integrity": "sha512-Sf7zusNI2CIU1HLzuu9Tc5YGAHEZs5Lu7N1ssJG4Tkw6e0MEsN7NdjUDDfGNHy2IU+ENyWT+L2obgWiguWibWQ==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-arm64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm64-gnu/-/rollup-linux-arm64-gnu-4.60.0.tgz",
-      "integrity": "sha512-DX2x7CMcrJzsE91q7/O02IJQ5/aLkVtYFryqCjduJhUfGKG6yJV8hxaw8pZa93lLEpPTP/ohdN4wFz7yp/ry9A==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-arm64-musl": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm64-musl/-/rollup-linux-arm64-musl-4.60.0.tgz",
-      "integrity": "sha512-09EL+yFVbJZlhcQfShpswwRZ0Rg+z/CsSELFCnPt3iK+iqwGsI4zht3secj5vLEs957QvFFXnzAT0FFPIxSrkQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-loong64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-loong64-gnu/-/rollup-linux-loong64-gnu-4.60.0.tgz",
-      "integrity": "sha512-i9IcCMPr3EXm8EQg5jnja0Zyc1iFxJjZWlb4wr7U2Wx/GrddOuEafxRdMPRYVaXjgbhvqalp6np07hN1w9kAKw==",
-      "cpu": [
-        "loong64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-loong64-musl": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-loong64-musl/-/rollup-linux-loong64-musl-4.60.0.tgz",
-      "integrity": "sha512-DGzdJK9kyJ+B78MCkWeGnpXJ91tK/iKA6HwHxF4TAlPIY7GXEvMe8hBFRgdrR9Ly4qebR/7gfUs9y2IoaVEyog==",
-      "cpu": [
-        "loong64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-ppc64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-ppc64-gnu/-/rollup-linux-ppc64-gnu-4.60.0.tgz",
-      "integrity": "sha512-RwpnLsqC8qbS8z1H1AxBA1H6qknR4YpPR9w2XX0vo2Sz10miu57PkNcnHVaZkbqyw/kUWfKMI73jhmfi9BRMUQ==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-ppc64-musl": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-ppc64-musl/-/rollup-linux-ppc64-musl-4.60.0.tgz",
-      "integrity": "sha512-Z8pPf54Ly3aqtdWC3G4rFigZgNvd+qJlOE52fmko3KST9SoGfAdSRCwyoyG05q1HrrAblLbk1/PSIV+80/pxLg==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-riscv64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-riscv64-gnu/-/rollup-linux-riscv64-gnu-4.60.0.tgz",
-      "integrity": "sha512-3a3qQustp3COCGvnP4SvrMHnPQ9d1vzCakQVRTliaz8cIp/wULGjiGpbcqrkv0WrHTEp8bQD/B3HBjzujVWLOA==",
-      "cpu": [
-        "riscv64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-riscv64-musl": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-riscv64-musl/-/rollup-linux-riscv64-musl-4.60.0.tgz",
-      "integrity": "sha512-pjZDsVH/1VsghMJ2/kAaxt6dL0psT6ZexQVrijczOf+PeP2BUqTHYejk3l6TlPRydggINOeNRhvpLa0AYpCWSQ==",
-      "cpu": [
-        "riscv64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-s390x-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-s390x-gnu/-/rollup-linux-s390x-gnu-4.60.0.tgz",
-      "integrity": "sha512-3ObQs0BhvPgiUVZrN7gqCSvmFuMWvWvsjG5ayJ3Lraqv+2KhOsp+pUbigqbeWqueGIsnn+09HBw27rJ+gYK4VQ==",
-      "cpu": [
-        "s390x"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-x64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.0.tgz",
-      "integrity": "sha512-EtylprDtQPdS5rXvAayrNDYoJhIz1/vzN2fEubo3yLE7tfAw+948dO0g4M0vkTVFhKojnF+n6C8bDNe+gDRdTg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-linux-x64-musl": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.0.tgz",
-      "integrity": "sha512-k09oiRCi/bHU9UVFqD17r3eJR9bn03TyKraCrlz5ULFJGdJGi7VOmm9jl44vOJvRJ6P7WuBi/s2A97LxxHGIdw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ]
-    },
-    "node_modules/@rollup/rollup-openbsd-x64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-openbsd-x64/-/rollup-openbsd-x64-4.60.0.tgz",
-      "integrity": "sha512-1o/0/pIhozoSaDJoDcec+IVLbnRtQmHwPV730+AOD29lHEEo4F5BEUB24H0OBdhbBBDwIOSuf7vgg0Ywxdfiiw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openbsd"
-      ]
-    },
-    "node_modules/@rollup/rollup-openharmony-arm64": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-openharmony-arm64/-/rollup-openharmony-arm64-4.60.0.tgz",
-      "integrity": "sha512-pESDkos/PDzYwtyzB5p/UoNU/8fJo68vcXM9ZW2V0kjYayj1KaaUfi1NmTUTUpMn4UhU4gTuK8gIaFO4UGuMbA==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openharmony"
-      ]
-    },
-    "node_modules/@rollup/rollup-win32-arm64-msvc": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-arm64-msvc/-/rollup-win32-arm64-msvc-4.60.0.tgz",
-      "integrity": "sha512-hj1wFStD7B1YBeYmvY+lWXZ7ey73YGPcViMShYikqKT1GtstIKQAtfUI6yrzPjAy/O7pO0VLXGmUVWXQMaYgTQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ]
-    },
-    "node_modules/@rollup/rollup-win32-ia32-msvc": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-ia32-msvc/-/rollup-win32-ia32-msvc-4.60.0.tgz",
-      "integrity": "sha512-SyaIPFoxmUPlNDq5EHkTbiKzmSEmq/gOYFI/3HHJ8iS/v1mbugVa7dXUzcJGQfoytp9DJFLhHH4U3/eTy2Bq4w==",
-      "cpu": [
-        "ia32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ]
-    },
-    "node_modules/@rollup/rollup-win32-x64-gnu": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.60.0.tgz",
-      "integrity": "sha512-RdcryEfzZr+lAr5kRm2ucN9aVlCCa2QNq4hXelZxb8GG0NJSazq44Z3PCCc8wISRuCVnGs0lQJVX5Vp6fKA+IA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ]
-    },
-    "node_modules/@rollup/rollup-win32-x64-msvc": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.60.0.tgz",
-      "integrity": "sha512-PrsWNQ8BuE00O3Xsx3ALh2Df8fAj9+cvvX9AIA6o4KpATR98c9mud4XtDWVvsEuyia5U4tVSTKygawyJkjm60w==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ]
-    },
-    "node_modules/@standard-schema/spec": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@standard-schema/spec/-/spec-1.1.0.tgz",
-      "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==",
-      "license": "MIT"
-    },
-    "node_modules/@standard-schema/utils": {
-      "version": "0.3.0",
-      "resolved": "https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz",
-      "integrity": "sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==",
-      "license": "MIT"
-    },
-    "node_modules/@tailwindcss/node": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.2.tgz",
-      "integrity": "sha512-pXS+wJ2gZpVXqFaUEjojq7jzMpTGf8rU6ipJz5ovJV6PUGmlJ+jvIwGrzdHdQ80Sg+wmQxUFuoW1UAAwHNEdFA==",
-      "license": "MIT",
-      "dependencies": {
-        "@jridgewell/remapping": "^2.3.5",
-        "enhanced-resolve": "^5.19.0",
-        "jiti": "^2.6.1",
-        "lightningcss": "1.32.0",
-        "magic-string": "^0.30.21",
-        "source-map-js": "^1.2.1",
-        "tailwindcss": "4.2.2"
-      }
-    },
-    "node_modules/@tailwindcss/oxide": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.2.tgz",
-      "integrity": "sha512-qEUA07+E5kehxYp9BVMpq9E8vnJuBHfJEC0vPC5e7iL/hw7HR61aDKoVoKzrG+QKp56vhNZe4qwkRmMC0zDLvg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 20"
-      },
-      "optionalDependencies": {
-        "@tailwindcss/oxide-android-arm64": "4.2.2",
-        "@tailwindcss/oxide-darwin-arm64": "4.2.2",
-        "@tailwindcss/oxide-darwin-x64": "4.2.2",
-        "@tailwindcss/oxide-freebsd-x64": "4.2.2",
-        "@tailwindcss/oxide-linux-arm-gnueabihf": "4.2.2",
-        "@tailwindcss/oxide-linux-arm64-gnu": "4.2.2",
-        "@tailwindcss/oxide-linux-arm64-musl": "4.2.2",
-        "@tailwindcss/oxide-linux-x64-gnu": "4.2.2",
-        "@tailwindcss/oxide-linux-x64-musl": "4.2.2",
-        "@tailwindcss/oxide-wasm32-wasi": "4.2.2",
-        "@tailwindcss/oxide-win32-arm64-msvc": "4.2.2",
-        "@tailwindcss/oxide-win32-x64-msvc": "4.2.2"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-android-arm64": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-android-arm64/-/oxide-android-arm64-4.2.2.tgz",
-      "integrity": "sha512-dXGR1n+P3B6748jZO/SvHZq7qBOqqzQ+yFrXpoOWWALWndF9MoSKAT3Q0fYgAzYzGhxNYOoysRvYlpixRBBoDg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-darwin-arm64": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-darwin-arm64/-/oxide-darwin-arm64-4.2.2.tgz",
-      "integrity": "sha512-iq9Qjr6knfMpZHj55/37ouZeykwbDqF21gPFtfnhCCKGDcPI/21FKC9XdMO/XyBM7qKORx6UIhGgg6jLl7BZlg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-darwin-x64": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-darwin-x64/-/oxide-darwin-x64-4.2.2.tgz",
-      "integrity": "sha512-BlR+2c3nzc8f2G639LpL89YY4bdcIdUmiOOkv2GQv4/4M0vJlpXEa0JXNHhCHU7VWOKWT/CjqHdTP8aUuDJkuw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-freebsd-x64": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-freebsd-x64/-/oxide-freebsd-x64-4.2.2.tgz",
-      "integrity": "sha512-YUqUgrGMSu2CDO82hzlQ5qSb5xmx3RUrke/QgnoEx7KvmRJHQuZHZmZTLSuuHwFf0DJPybFMXMYf+WJdxHy/nQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-linux-arm-gnueabihf": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm-gnueabihf/-/oxide-linux-arm-gnueabihf-4.2.2.tgz",
-      "integrity": "sha512-FPdhvsW6g06T9BWT0qTwiVZYE2WIFo2dY5aCSpjG/S/u1tby+wXoslXS0kl3/KXnULlLr1E3NPRRw0g7t2kgaQ==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-linux-arm64-gnu": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-gnu/-/oxide-linux-arm64-gnu-4.2.2.tgz",
-      "integrity": "sha512-4og1V+ftEPXGttOO7eCmW7VICmzzJWgMx+QXAJRAhjrSjumCwWqMfkDrNu1LXEQzNAwz28NCUpucgQPrR4S2yw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-linux-arm64-musl": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-musl/-/oxide-linux-arm64-musl-4.2.2.tgz",
-      "integrity": "sha512-oCfG/mS+/+XRlwNjnsNLVwnMWYH7tn/kYPsNPh+JSOMlnt93mYNCKHYzylRhI51X+TbR+ufNhhKKzm6QkqX8ag==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-linux-x64-gnu": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.2.2.tgz",
-      "integrity": "sha512-rTAGAkDgqbXHNp/xW0iugLVmX62wOp2PoE39BTCGKjv3Iocf6AFbRP/wZT/kuCxC9QBh9Pu8XPkv/zCZB2mcMg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-linux-x64-musl": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.2.2.tgz",
-      "integrity": "sha512-XW3t3qwbIwiSyRCggeO2zxe3KWaEbM0/kW9e8+0XpBgyKU4ATYzcVSMKteZJ1iukJ3HgHBjbg9P5YPRCVUxlnQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-wasm32-wasi": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.2.2.tgz",
-      "integrity": "sha512-eKSztKsmEsn1O5lJ4ZAfyn41NfG7vzCg496YiGtMDV86jz1q/irhms5O0VrY6ZwTUkFy/EKG3RfWgxSI3VbZ8Q==",
-      "bundleDependencies": [
-        "@napi-rs/wasm-runtime",
-        "@emnapi/core",
-        "@emnapi/runtime",
-        "@tybys/wasm-util",
-        "@emnapi/wasi-threads",
-        "tslib"
-      ],
-      "cpu": [
-        "wasm32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "dependencies": {
-        "@emnapi/core": "^1.8.1",
-        "@emnapi/runtime": "^1.8.1",
-        "@emnapi/wasi-threads": "^1.1.0",
-        "@napi-rs/wasm-runtime": "^1.1.1",
-        "@tybys/wasm-util": "^0.10.1",
-        "tslib": "^2.8.1"
-      },
-      "engines": {
-        "node": ">=14.0.0"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-win32-arm64-msvc": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-win32-arm64-msvc/-/oxide-win32-arm64-msvc-4.2.2.tgz",
-      "integrity": "sha512-qPmaQM4iKu5mxpsrWZMOZRgZv1tOZpUm+zdhhQP0VhJfyGGO3aUKdbh3gDZc/dPLQwW4eSqWGrrcWNBZWUWaXQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/oxide-win32-x64-msvc": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/oxide-win32-x64-msvc/-/oxide-win32-x64-msvc-4.2.2.tgz",
-      "integrity": "sha512-1T/37VvI7WyH66b+vqHj/cLwnCxt7Qt3WFu5Q8hk65aOvlwAhs7rAp1VkulBJw/N4tMirXjVnylTR72uI0HGcA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">= 20"
-      }
-    },
-    "node_modules/@tailwindcss/vite": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.2.2.tgz",
-      "integrity": "sha512-mEiF5HO1QqCLXoNEfXVA1Tzo+cYsrqV7w9Juj2wdUFyW07JRenqMG225MvPwr3ZD9N1bFQj46X7r33iHxLUW0w==",
-      "license": "MIT",
-      "dependencies": {
-        "@tailwindcss/node": "4.2.2",
-        "@tailwindcss/oxide": "4.2.2",
-        "tailwindcss": "4.2.2"
-      },
-      "peerDependencies": {
-        "vite": "^5.2.0 || ^6 || ^7 || ^8"
-      }
-    },
-    "node_modules/@types/babel__core": {
-      "version": "7.20.5",
-      "resolved": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.5.tgz",
-      "integrity": "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/parser": "^7.20.7",
-        "@babel/types": "^7.20.7",
-        "@types/babel__generator": "*",
-        "@types/babel__template": "*",
-        "@types/babel__traverse": "*"
-      }
-    },
-    "node_modules/@types/babel__generator": {
-      "version": "7.27.0",
-      "resolved": "https://registry.npmjs.org/@types/babel__generator/-/babel__generator-7.27.0.tgz",
-      "integrity": "sha512-ufFd2Xi92OAVPYsy+P4n7/U7e68fex0+Ee8gSG9KX7eo084CWiQ4sdxktvdl0bOPupXtVJPY19zk6EwWqUQ8lg==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/types": "^7.0.0"
-      }
-    },
-    "node_modules/@types/babel__template": {
-      "version": "7.4.4",
-      "resolved": "https://registry.npmjs.org/@types/babel__template/-/babel__template-7.4.4.tgz",
-      "integrity": "sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/parser": "^7.1.0",
-        "@babel/types": "^7.0.0"
-      }
-    },
-    "node_modules/@types/babel__traverse": {
-      "version": "7.28.0",
-      "resolved": "https://registry.npmjs.org/@types/babel__traverse/-/babel__traverse-7.28.0.tgz",
-      "integrity": "sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/types": "^7.28.2"
-      }
-    },
-    "node_modules/@types/bcrypt": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/@types/bcrypt/-/bcrypt-6.0.0.tgz",
-      "integrity": "sha512-/oJGukuH3D2+D+3H4JWLaAsJ/ji86dhRidzZ/Od7H/i8g+aCmvkeCc6Ni/f9uxGLSQVCRZkX2/lqEFG2BvWtlQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/better-sqlite3": {
-      "version": "7.6.13",
-      "resolved": "https://registry.npmjs.org/@types/better-sqlite3/-/better-sqlite3-7.6.13.tgz",
-      "integrity": "sha512-NMv9ASNARoKksWtsq/SHakpYAYnhBrQgGD8zkLYk/jaK8jUGn08CfEdTRgYhMypUQAfzSP8W6gNLe0q19/t4VA==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/body-parser": {
-      "version": "1.19.6",
-      "resolved": "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.19.6.tgz",
-      "integrity": "sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/connect": "*",
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/connect": {
-      "version": "3.4.38",
-      "resolved": "https://registry.npmjs.org/@types/connect/-/connect-3.4.38.tgz",
-      "integrity": "sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/cors": {
-      "version": "2.8.19",
-      "resolved": "https://registry.npmjs.org/@types/cors/-/cors-2.8.19.tgz",
-      "integrity": "sha512-mFNylyeyqN93lfe/9CSxOGREz8cpzAhH+E93xJ4xWQf62V8sQ/24reV2nyzUWM6H6Xji+GGHpkbLe7pVoUEskg==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/d3-array": {
-      "version": "3.2.2",
-      "resolved": "https://registry.npmjs.org/@types/d3-array/-/d3-array-3.2.2.tgz",
-      "integrity": "sha512-hOLWVbm7uRza0BYXpIIW5pxfrKe0W+D5lrFiAEYR+pb6w3N2SwSMaJbXdUfSEv+dT4MfHBLtn5js0LAWaO6otw==",
-      "license": "MIT"
-    },
-    "node_modules/@types/d3-color": {
-      "version": "3.1.3",
-      "resolved": "https://registry.npmjs.org/@types/d3-color/-/d3-color-3.1.3.tgz",
-      "integrity": "sha512-iO90scth9WAbmgv7ogoq57O9YpKmFBbmoEoCHDB2xMBY0+/KVrqAaCDyCE16dUspeOvIxFFRI+0sEtqDqy2b4A==",
-      "license": "MIT"
-    },
-    "node_modules/@types/d3-ease": {
-      "version": "3.0.2",
-      "resolved": "https://registry.npmjs.org/@types/d3-ease/-/d3-ease-3.0.2.tgz",
-      "integrity": "sha512-NcV1JjO5oDzoK26oMzbILE6HW7uVXOHLQvHshBUW4UMdZGfiY6v5BeQwh9a9tCzv+CeefZQHJt5SRgK154RtiA==",
-      "license": "MIT"
-    },
-    "node_modules/@types/d3-interpolate": {
-      "version": "3.0.4",
-      "resolved": "https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz",
-      "integrity": "sha512-mgLPETlrpVV1YRJIglr4Ez47g7Yxjl1lj7YKsiMCb27VJH9W8NVM6Bb9d8kkpG/uAQS5AmbA48q2IAolKKo1MA==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/d3-color": "*"
-      }
-    },
-    "node_modules/@types/d3-path": {
-      "version": "3.1.1",
-      "resolved": "https://registry.npmjs.org/@types/d3-path/-/d3-path-3.1.1.tgz",
-      "integrity": "sha512-VMZBYyQvbGmWyWVea0EHs/BwLgxc+MKi1zLDCONksozI4YJMcTt8ZEuIR4Sb1MMTE8MMW49v0IwI5+b7RmfWlg==",
-      "license": "MIT"
-    },
-    "node_modules/@types/d3-scale": {
-      "version": "4.0.9",
-      "resolved": "https://registry.npmjs.org/@types/d3-scale/-/d3-scale-4.0.9.tgz",
-      "integrity": "sha512-dLmtwB8zkAeO/juAMfnV+sItKjlsw2lKdZVVy6LRr0cBmegxSABiLEpGVmSJJ8O08i4+sGR6qQtb6WtuwJdvVw==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/d3-time": "*"
-      }
-    },
-    "node_modules/@types/d3-shape": {
-      "version": "3.1.8",
-      "resolved": "https://registry.npmjs.org/@types/d3-shape/-/d3-shape-3.1.8.tgz",
-      "integrity": "sha512-lae0iWfcDeR7qt7rA88BNiqdvPS5pFVPpo5OfjElwNaT2yyekbM0C9vK+yqBqEmHr6lDkRnYNoTBYlAgJa7a4w==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/d3-path": "*"
-      }
-    },
-    "node_modules/@types/d3-time": {
-      "version": "3.0.4",
-      "resolved": "https://registry.npmjs.org/@types/d3-time/-/d3-time-3.0.4.tgz",
-      "integrity": "sha512-yuzZug1nkAAaBlBBikKZTgzCeA+k1uy4ZFwWANOfKw5z5LRhV0gNA7gNkKm7HoK+HRN0wX3EkxGk0fpbWhmB7g==",
-      "license": "MIT"
-    },
-    "node_modules/@types/d3-timer": {
-      "version": "3.0.2",
-      "resolved": "https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.2.tgz",
-      "integrity": "sha512-Ps3T8E8dZDam6fUyNiMkekK3XUsaUEik+idO9/YjPtfj2qruF8tFBXS7XhtE4iIXBLxhmLjP3SXpLhVf21I9Lw==",
-      "license": "MIT"
-    },
-    "node_modules/@types/estree": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/@types/estree/-/estree-1.0.8.tgz",
-      "integrity": "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==",
-      "license": "MIT"
-    },
-    "node_modules/@types/express": {
-      "version": "4.17.25",
-      "resolved": "https://registry.npmjs.org/@types/express/-/express-4.17.25.tgz",
-      "integrity": "sha512-dVd04UKsfpINUnK0yBoYHDF3xu7xVH4BuDotC/xGuycx4CgbP48X/KF/586bcObxT0HENHXEU8Nqtu6NR+eKhw==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/body-parser": "*",
-        "@types/express-serve-static-core": "^4.17.33",
-        "@types/qs": "*",
-        "@types/serve-static": "^1"
-      }
-    },
-    "node_modules/@types/express-serve-static-core": {
-      "version": "4.19.8",
-      "resolved": "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.19.8.tgz",
-      "integrity": "sha512-02S5fmqeoKzVZCHPZid4b8JH2eM5HzQLZWN2FohQEy/0eXTq8VXZfSN6Pcr3F6N9R/vNrj7cpgbhjie6m/1tCA==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*",
-        "@types/qs": "*",
-        "@types/range-parser": "*",
-        "@types/send": "*"
-      }
-    },
-    "node_modules/@types/http-errors": {
-      "version": "2.0.5",
-      "resolved": "https://registry.npmjs.org/@types/http-errors/-/http-errors-2.0.5.tgz",
-      "integrity": "sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==",
-      "dev": true,
-      "license": "MIT"
-    },
-    "node_modules/@types/mime": {
-      "version": "1.3.5",
-      "resolved": "https://registry.npmjs.org/@types/mime/-/mime-1.3.5.tgz",
-      "integrity": "sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==",
-      "dev": true,
-      "license": "MIT"
-    },
-    "node_modules/@types/node": {
-      "version": "22.19.15",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-22.19.15.tgz",
-      "integrity": "sha512-F0R/h2+dsy5wJAUe3tAU6oqa2qbWY5TpNfL/RGmo1y38hiyO1w3x2jPtt76wmuaJI4DQnOBu21cNXQ2STIUUWg==",
-      "license": "MIT",
-      "dependencies": {
-        "undici-types": "~6.21.0"
-      }
-    },
-    "node_modules/@types/pg": {
-      "version": "8.20.0",
-      "resolved": "https://registry.npmjs.org/@types/pg/-/pg-8.20.0.tgz",
-      "integrity": "sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*",
-        "pg-protocol": "*",
-        "pg-types": "^2.2.0"
-      }
-    },
-    "node_modules/@types/qs": {
-      "version": "6.15.0",
-      "resolved": "https://registry.npmjs.org/@types/qs/-/qs-6.15.0.tgz",
-      "integrity": "sha512-JawvT8iBVWpzTrz3EGw9BTQFg3BQNmwERdKE22vlTxawwtbyUSlMppvZYKLZzB5zgACXdXxbD3m1bXaMqP/9ow==",
-      "dev": true,
-      "license": "MIT"
-    },
-    "node_modules/@types/range-parser": {
-      "version": "1.2.7",
-      "resolved": "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.7.tgz",
-      "integrity": "sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==",
-      "dev": true,
-      "license": "MIT"
-    },
-    "node_modules/@types/retry": {
-      "version": "0.12.0",
-      "resolved": "https://registry.npmjs.org/@types/retry/-/retry-0.12.0.tgz",
-      "integrity": "sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==",
-      "license": "MIT"
-    },
-    "node_modules/@types/send": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/@types/send/-/send-1.2.1.tgz",
-      "integrity": "sha512-arsCikDvlU99zl1g69TcAB3mzZPpxgw0UQnaHeC1Nwb015xp8bknZv5rIfri9xTOcMuaVgvabfIRA7PSZVuZIQ==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/serve-static": {
-      "version": "1.15.10",
-      "resolved": "https://registry.npmjs.org/@types/serve-static/-/serve-static-1.15.10.tgz",
-      "integrity": "sha512-tRs1dB+g8Itk72rlSI2ZrW6vZg0YrLI81iQSTkMmOqnqCaNr/8Ek4VwWcN5vZgCYWbg/JJSGBlUaYGAOP73qBw==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/http-errors": "*",
-        "@types/node": "*",
-        "@types/send": "<1"
-      }
-    },
-    "node_modules/@types/serve-static/node_modules/@types/send": {
-      "version": "0.17.6",
-      "resolved": "https://registry.npmjs.org/@types/send/-/send-0.17.6.tgz",
-      "integrity": "sha512-Uqt8rPBE8SY0RK8JB1EzVOIZ32uqy8HwdxCnoCOsYrvnswqmFZ/k+9Ikidlk/ImhsdvBsloHbAlewb2IEBV/Og==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "@types/mime": "^1",
-        "@types/node": "*"
-      }
-    },
-    "node_modules/@types/use-sync-external-store": {
-      "version": "0.0.6",
-      "resolved": "https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz",
-      "integrity": "sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==",
-      "license": "MIT"
-    },
-    "node_modules/@vitejs/plugin-react": {
-      "version": "5.2.0",
-      "resolved": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-5.2.0.tgz",
-      "integrity": "sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==",
-      "license": "MIT",
-      "dependencies": {
-        "@babel/core": "^7.29.0",
-        "@babel/plugin-transform-react-jsx-self": "^7.27.1",
-        "@babel/plugin-transform-react-jsx-source": "^7.27.1",
-        "@rolldown/pluginutils": "1.0.0-rc.3",
-        "@types/babel__core": "^7.20.5",
-        "react-refresh": "^0.18.0"
-      },
-      "engines": {
-        "node": "^20.19.0 || >=22.12.0"
-      },
-      "peerDependencies": {
-        "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
-      }
-    },
-    "node_modules/accepts": {
-      "version": "1.3.8",
-      "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz",
-      "integrity": "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==",
-      "license": "MIT",
-      "dependencies": {
-        "mime-types": "~2.1.34",
-        "negotiator": "0.6.3"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/agent-base": {
-      "version": "7.1.4",
-      "resolved": "https://registry.npmjs.org/agent-base/-/agent-base-7.1.4.tgz",
-      "integrity": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 14"
-      }
-    },
-    "node_modules/array-flatten": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
-      "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==",
-      "license": "MIT"
-    },
-    "node_modules/autoprefixer": {
-      "version": "10.4.27",
-      "resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.27.tgz",
-      "integrity": "sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA==",
-      "dev": true,
-      "funding": [
-        {
-          "type": "opencollective",
-          "url": "https://opencollective.com/postcss/"
-        },
-        {
-          "type": "tidelift",
-          "url": "https://tidelift.com/funding/github/npm/autoprefixer"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "browserslist": "^4.28.1",
-        "caniuse-lite": "^1.0.30001774",
-        "fraction.js": "^5.3.4",
-        "picocolors": "^1.1.1",
-        "postcss-value-parser": "^4.2.0"
-      },
-      "bin": {
-        "autoprefixer": "bin/autoprefixer"
-      },
-      "engines": {
-        "node": "^10 || ^12 || >=14"
-      },
-      "peerDependencies": {
-        "postcss": "^8.1.0"
-      }
-    },
-    "node_modules/base64-js": {
-      "version": "1.5.1",
-      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
-      "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT"
-    },
-    "node_modules/baseline-browser-mapping": {
-      "version": "2.10.10",
-      "resolved": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.10.10.tgz",
-      "integrity": "sha512-sUoJ3IMxx4AyRqO4MLeHlnGDkyXRoUG0/AI9fjK+vS72ekpV0yWVY7O0BVjmBcRtkNcsAO2QDZ4tdKKGoI6YaQ==",
-      "license": "Apache-2.0",
-      "bin": {
-        "baseline-browser-mapping": "dist/cli.cjs"
-      },
-      "engines": {
-        "node": ">=6.0.0"
-      }
-    },
-    "node_modules/bcrypt": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz",
-      "integrity": "sha512-cU8v/EGSrnH+HnxV2z0J7/blxH8gq7Xh2JFT6Aroax7UohdmiJJlxApMxtKfuI7z68NvvVcmR78k2LbT6efhRg==",
-      "hasInstallScript": true,
-      "license": "MIT",
-      "dependencies": {
-        "node-addon-api": "^8.3.0",
-        "node-gyp-build": "^4.8.4"
-      },
-      "engines": {
-        "node": ">= 18"
-      }
-    },
-    "node_modules/better-sqlite3": {
-      "version": "12.8.0",
-      "resolved": "https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-12.8.0.tgz",
-      "integrity": "sha512-RxD2Vd96sQDjQr20kdP+F+dK/1OUNiVOl200vKBZY8u0vTwysfolF6Hq+3ZK2+h8My9YvZhHsF+RSGZW2VYrPQ==",
-      "hasInstallScript": true,
-      "license": "MIT",
-      "dependencies": {
-        "bindings": "^1.5.0",
-        "prebuild-install": "^7.1.1"
-      },
-      "engines": {
-        "node": "20.x || 22.x || 23.x || 24.x || 25.x"
-      }
-    },
-    "node_modules/bignumber.js": {
-      "version": "9.3.1",
-      "resolved": "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.3.1.tgz",
-      "integrity": "sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ==",
-      "license": "MIT",
-      "engines": {
-        "node": "*"
-      }
-    },
-    "node_modules/bindings": {
-      "version": "1.5.0",
-      "resolved": "https://registry.npmjs.org/bindings/-/bindings-1.5.0.tgz",
-      "integrity": "sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==",
-      "license": "MIT",
-      "dependencies": {
-        "file-uri-to-path": "1.0.0"
-      }
-    },
-    "node_modules/bl": {
-      "version": "4.1.0",
-      "resolved": "https://registry.npmjs.org/bl/-/bl-4.1.0.tgz",
-      "integrity": "sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==",
-      "license": "MIT",
-      "dependencies": {
-        "buffer": "^5.5.0",
-        "inherits": "^2.0.4",
-        "readable-stream": "^3.4.0"
-      }
-    },
-    "node_modules/body-parser": {
-      "version": "1.20.4",
-      "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.4.tgz",
-      "integrity": "sha512-ZTgYYLMOXY9qKU/57FAo8F+HA2dGX7bqGc71txDRC1rS4frdFI5R7NhluHxH6M0YItAP0sHB4uqAOcYKxO6uGA==",
-      "license": "MIT",
-      "dependencies": {
-        "bytes": "~3.1.2",
-        "content-type": "~1.0.5",
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "destroy": "~1.2.0",
-        "http-errors": "~2.0.1",
-        "iconv-lite": "~0.4.24",
-        "on-finished": "~2.4.1",
-        "qs": "~6.14.0",
-        "raw-body": "~2.5.3",
-        "type-is": "~1.6.18",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8",
-        "npm": "1.2.8000 || >= 1.4.16"
-      }
-    },
-    "node_modules/body-parser/node_modules/debug": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
-      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "2.0.0"
-      }
-    },
-    "node_modules/body-parser/node_modules/ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
-      "license": "MIT"
-    },
-    "node_modules/browserslist": {
-      "version": "4.28.1",
-      "resolved": "https://registry.npmjs.org/browserslist/-/browserslist-4.28.1.tgz",
-      "integrity": "sha512-ZC5Bd0LgJXgwGqUknZY/vkUQ04r8NXnJZ3yYi4vDmSiZmC/pdSN0NbNRPxZpbtO4uAfDUAFffO8IZoM3Gj8IkA==",
-      "funding": [
-        {
-          "type": "opencollective",
-          "url": "https://opencollective.com/browserslist"
-        },
-        {
-          "type": "tidelift",
-          "url": "https://tidelift.com/funding/github/npm/browserslist"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "baseline-browser-mapping": "^2.9.0",
-        "caniuse-lite": "^1.0.30001759",
-        "electron-to-chromium": "^1.5.263",
-        "node-releases": "^2.0.27",
-        "update-browserslist-db": "^1.2.0"
-      },
-      "bin": {
-        "browserslist": "cli.js"
-      },
-      "engines": {
-        "node": "^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7"
-      }
-    },
-    "node_modules/buffer": {
-      "version": "5.7.1",
-      "resolved": "https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz",
-      "integrity": "sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "base64-js": "^1.3.1",
-        "ieee754": "^1.1.13"
-      }
-    },
-    "node_modules/buffer-equal-constant-time": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz",
-      "integrity": "sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==",
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/bytes": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
-      "integrity": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/call-bind-apply-helpers": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
-      "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "function-bind": "^1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/call-bound": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz",
-      "integrity": "sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.2",
-        "get-intrinsic": "^1.3.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/caniuse-lite": {
-      "version": "1.0.30001781",
-      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001781.tgz",
-      "integrity": "sha512-RdwNCyMsNBftLjW6w01z8bKEvT6e/5tpPVEgtn22TiLGlstHOVecsX2KHFkD5e/vRnIE4EGzpuIODb3mtswtkw==",
-      "funding": [
-        {
-          "type": "opencollective",
-          "url": "https://opencollective.com/browserslist"
-        },
-        {
-          "type": "tidelift",
-          "url": "https://tidelift.com/funding/github/npm/caniuse-lite"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "CC-BY-4.0"
-    },
-    "node_modules/chownr": {
-      "version": "1.1.4",
-      "resolved": "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz",
-      "integrity": "sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==",
-      "license": "ISC"
-    },
-    "node_modules/clsx": {
-      "version": "2.1.1",
-      "resolved": "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz",
-      "integrity": "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/content-disposition": {
-      "version": "0.5.4",
-      "resolved": "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.4.tgz",
-      "integrity": "sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==",
-      "license": "MIT",
-      "dependencies": {
-        "safe-buffer": "5.2.1"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/content-type": {
-      "version": "1.0.5",
-      "resolved": "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz",
-      "integrity": "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/convert-source-map": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz",
-      "integrity": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==",
-      "license": "MIT"
-    },
-    "node_modules/cookie": {
-      "version": "0.7.2",
-      "resolved": "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz",
-      "integrity": "sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/cookie-signature": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.7.tgz",
-      "integrity": "sha512-NXdYc3dLr47pBkpUCHtKSwIOQXLVn8dZEuywboCOJY/osA0wFSLlSawr3KN8qXJEyX66FcONTH8EIlVuK0yyFA==",
-      "license": "MIT"
-    },
-    "node_modules/cors": {
-      "version": "2.8.6",
-      "resolved": "https://registry.npmjs.org/cors/-/cors-2.8.6.tgz",
-      "integrity": "sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==",
-      "license": "MIT",
-      "dependencies": {
-        "object-assign": "^4",
-        "vary": "^1"
-      },
-      "engines": {
-        "node": ">= 0.10"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/express"
-      }
-    },
-    "node_modules/d3-array": {
-      "version": "3.2.4",
-      "resolved": "https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz",
-      "integrity": "sha512-tdQAmyA18i4J7wprpYq8ClcxZy3SC31QMeByyCFyRt7BVHdREQZ5lpzoe5mFEYZUWe+oq8HBvk9JjpibyEV4Jg==",
-      "license": "ISC",
-      "dependencies": {
-        "internmap": "1 - 2"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-color": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz",
-      "integrity": "sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-ease": {
-      "version": "3.0.1",
-      "resolved": "https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz",
-      "integrity": "sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==",
-      "license": "BSD-3-Clause",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-format": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/d3-format/-/d3-format-3.1.2.tgz",
-      "integrity": "sha512-AJDdYOdnyRDV5b6ArilzCPPwc1ejkHcoyFarqlPqT7zRYjhavcT3uSrqcMvsgh2CgoPbK3RCwyHaVyxYcP2Arg==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-interpolate": {
-      "version": "3.0.1",
-      "resolved": "https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz",
-      "integrity": "sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==",
-      "license": "ISC",
-      "dependencies": {
-        "d3-color": "1 - 3"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-path": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz",
-      "integrity": "sha512-p3KP5HCf/bvjBSSKuXid6Zqijx7wIfNW+J/maPs+iwR35at5JCbLUT0LzF1cnjbCHWhqzQTIN2Jpe8pRebIEFQ==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-scale": {
-      "version": "4.0.2",
-      "resolved": "https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz",
-      "integrity": "sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==",
-      "license": "ISC",
-      "dependencies": {
-        "d3-array": "2.10.0 - 3",
-        "d3-format": "1 - 3",
-        "d3-interpolate": "1.2.0 - 3",
-        "d3-time": "2.1.1 - 3",
-        "d3-time-format": "2 - 4"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-shape": {
-      "version": "3.2.0",
-      "resolved": "https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz",
-      "integrity": "sha512-SaLBuwGm3MOViRq2ABk3eLoxwZELpH6zhl3FbAoJ7Vm1gofKx6El1Ib5z23NUEhF9AsGl7y+dzLe5Cw2AArGTA==",
-      "license": "ISC",
-      "dependencies": {
-        "d3-path": "^3.1.0"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-time": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz",
-      "integrity": "sha512-VqKjzBLejbSMT4IgbmVgDjpkYrNWUYJnbCGo874u7MMKIWsILRX+OpX/gTk8MqjpT1A/c6HY2dCA77ZN0lkQ2Q==",
-      "license": "ISC",
-      "dependencies": {
-        "d3-array": "2 - 3"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-time-format": {
-      "version": "4.1.0",
-      "resolved": "https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz",
-      "integrity": "sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==",
-      "license": "ISC",
-      "dependencies": {
-        "d3-time": "1 - 3"
-      },
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/d3-timer": {
-      "version": "3.0.1",
-      "resolved": "https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz",
-      "integrity": "sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/data-uri-to-buffer": {
-      "version": "4.0.1",
-      "resolved": "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz",
-      "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 12"
-      }
-    },
-    "node_modules/date-fns": {
-      "version": "4.1.0",
-      "resolved": "https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz",
-      "integrity": "sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==",
-      "license": "MIT",
-      "funding": {
-        "type": "github",
-        "url": "https://github.com/sponsors/kossnocorp"
-      }
-    },
-    "node_modules/debug": {
-      "version": "4.4.3",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
-      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "^2.1.3"
-      },
-      "engines": {
-        "node": ">=6.0"
-      },
-      "peerDependenciesMeta": {
-        "supports-color": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/decimal.js-light": {
-      "version": "2.5.1",
-      "resolved": "https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz",
-      "integrity": "sha512-qIMFpTMZmny+MMIitAB6D7iVPEorVw6YQRWkvarTkT4tBeSLLiHzcwj6q0MmYSFCiVpiqPJTJEYIrpcPzVEIvg==",
-      "license": "MIT"
-    },
-    "node_modules/decompress-response": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/decompress-response/-/decompress-response-6.0.0.tgz",
-      "integrity": "sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==",
-      "license": "MIT",
-      "dependencies": {
-        "mimic-response": "^3.1.0"
-      },
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
-    },
-    "node_modules/deep-extend": {
-      "version": "0.6.0",
-      "resolved": "https://registry.npmjs.org/deep-extend/-/deep-extend-0.6.0.tgz",
-      "integrity": "sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=4.0.0"
-      }
-    },
-    "node_modules/depd": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
-      "integrity": "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/destroy": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz",
-      "integrity": "sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8",
-        "npm": "1.2.8000 || >= 1.4.16"
-      }
-    },
-    "node_modules/detect-libc": {
-      "version": "2.1.2",
-      "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
-      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
-      "license": "Apache-2.0",
-      "engines": {
-        "node": ">=8"
-      }
-    },
-    "node_modules/dotenv": {
-      "version": "17.3.1",
-      "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-17.3.1.tgz",
-      "integrity": "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA==",
-      "license": "BSD-2-Clause",
-      "engines": {
-        "node": ">=12"
-      },
-      "funding": {
-        "url": "https://dotenvx.com"
-      }
-    },
-    "node_modules/dunder-proto": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
-      "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.1",
-        "es-errors": "^1.3.0",
-        "gopd": "^1.2.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/ecdsa-sig-formatter": {
-      "version": "1.0.11",
-      "resolved": "https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz",
-      "integrity": "sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "safe-buffer": "^5.0.1"
-      }
-    },
-    "node_modules/ee-first": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz",
-      "integrity": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==",
-      "license": "MIT"
-    },
-    "node_modules/electron-to-chromium": {
-      "version": "1.5.322",
-      "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.322.tgz",
-      "integrity": "sha512-vFU34OcrvMcH66T+dYC3G4nURmgfDVewMIu6Q2urXpumAPSMmzvcn04KVVV8Opikq8Vs5nUbO/8laNhNRqSzYw==",
-      "license": "ISC"
-    },
-    "node_modules/encodeurl": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz",
-      "integrity": "sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/end-of-stream": {
-      "version": "1.4.5",
-      "resolved": "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.5.tgz",
-      "integrity": "sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==",
-      "license": "MIT",
-      "dependencies": {
-        "once": "^1.4.0"
-      }
-    },
-    "node_modules/enhanced-resolve": {
-      "version": "5.20.1",
-      "resolved": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.20.1.tgz",
-      "integrity": "sha512-Qohcme7V1inbAfvjItgw0EaxVX5q2rdVEZHRBrEQdRZTssLDGsL8Lwrznl8oQ/6kuTJONLaDcGjkNP247XEhcA==",
-      "license": "MIT",
-      "dependencies": {
-        "graceful-fs": "^4.2.4",
-        "tapable": "^2.3.0"
-      },
-      "engines": {
-        "node": ">=10.13.0"
-      }
-    },
-    "node_modules/es-define-property": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
-      "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/es-errors": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz",
-      "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/es-object-atoms": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
-      "integrity": "sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/es-toolkit": {
-      "version": "1.45.1",
-      "resolved": "https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.45.1.tgz",
-      "integrity": "sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==",
-      "license": "MIT",
-      "workspaces": [
-        "docs",
-        "benchmarks"
-      ]
-    },
-    "node_modules/esbuild": {
-      "version": "0.27.4",
-      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.27.4.tgz",
-      "integrity": "sha512-Rq4vbHnYkK5fws5NF7MYTU68FPRE1ajX7heQ/8QXXWqNgqqJ/GkmmyxIzUnf2Sr/bakf8l54716CcMGHYhMrrQ==",
-      "devOptional": true,
-      "hasInstallScript": true,
-      "license": "MIT",
-      "bin": {
-        "esbuild": "bin/esbuild"
-      },
-      "engines": {
-        "node": ">=18"
-      },
-      "optionalDependencies": {
-        "@esbuild/aix-ppc64": "0.27.4",
-        "@esbuild/android-arm": "0.27.4",
-        "@esbuild/android-arm64": "0.27.4",
-        "@esbuild/android-x64": "0.27.4",
-        "@esbuild/darwin-arm64": "0.27.4",
-        "@esbuild/darwin-x64": "0.27.4",
-        "@esbuild/freebsd-arm64": "0.27.4",
-        "@esbuild/freebsd-x64": "0.27.4",
-        "@esbuild/linux-arm": "0.27.4",
-        "@esbuild/linux-arm64": "0.27.4",
-        "@esbuild/linux-ia32": "0.27.4",
-        "@esbuild/linux-loong64": "0.27.4",
-        "@esbuild/linux-mips64el": "0.27.4",
-        "@esbuild/linux-ppc64": "0.27.4",
-        "@esbuild/linux-riscv64": "0.27.4",
-        "@esbuild/linux-s390x": "0.27.4",
-        "@esbuild/linux-x64": "0.27.4",
-        "@esbuild/netbsd-arm64": "0.27.4",
-        "@esbuild/netbsd-x64": "0.27.4",
-        "@esbuild/openbsd-arm64": "0.27.4",
-        "@esbuild/openbsd-x64": "0.27.4",
-        "@esbuild/openharmony-arm64": "0.27.4",
-        "@esbuild/sunos-x64": "0.27.4",
-        "@esbuild/win32-arm64": "0.27.4",
-        "@esbuild/win32-ia32": "0.27.4",
-        "@esbuild/win32-x64": "0.27.4"
-      }
-    },
-    "node_modules/escalade": {
-      "version": "3.2.0",
-      "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
-      "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/escape-html": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz",
-      "integrity": "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==",
-      "license": "MIT"
-    },
-    "node_modules/etag": {
-      "version": "1.8.1",
-      "resolved": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz",
-      "integrity": "sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/eventemitter3": {
-      "version": "5.0.4",
-      "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.4.tgz",
-      "integrity": "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==",
-      "license": "MIT"
-    },
-    "node_modules/expand-template": {
-      "version": "2.0.3",
-      "resolved": "https://registry.npmjs.org/expand-template/-/expand-template-2.0.3.tgz",
-      "integrity": "sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==",
-      "license": "(MIT OR WTFPL)",
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/express": {
-      "version": "4.22.1",
-      "resolved": "https://registry.npmjs.org/express/-/express-4.22.1.tgz",
-      "integrity": "sha512-F2X8g9P1X7uCPZMA3MVf9wcTqlyNp7IhH5qPCI0izhaOIYXaW9L535tGA3qmjRzpH+bZczqq7hVKxTR4NWnu+g==",
-      "license": "MIT",
-      "dependencies": {
-        "accepts": "~1.3.8",
-        "array-flatten": "1.1.1",
-        "body-parser": "~1.20.3",
-        "content-disposition": "~0.5.4",
-        "content-type": "~1.0.4",
-        "cookie": "~0.7.1",
-        "cookie-signature": "~1.0.6",
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "etag": "~1.8.1",
-        "finalhandler": "~1.3.1",
-        "fresh": "~0.5.2",
-        "http-errors": "~2.0.0",
-        "merge-descriptors": "1.0.3",
-        "methods": "~1.1.2",
-        "on-finished": "~2.4.1",
-        "parseurl": "~1.3.3",
-        "path-to-regexp": "~0.1.12",
-        "proxy-addr": "~2.0.7",
-        "qs": "~6.14.0",
-        "range-parser": "~1.2.1",
-        "safe-buffer": "5.2.1",
-        "send": "~0.19.0",
-        "serve-static": "~1.16.2",
-        "setprototypeof": "1.2.0",
-        "statuses": "~2.0.1",
-        "type-is": "~1.6.18",
-        "utils-merge": "1.0.1",
-        "vary": "~1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.10.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/express"
-      }
-    },
-    "node_modules/express/node_modules/debug": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
-      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "2.0.0"
-      }
-    },
-    "node_modules/express/node_modules/ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
-      "license": "MIT"
-    },
-    "node_modules/extend": {
-      "version": "3.0.2",
-      "resolved": "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz",
-      "integrity": "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==",
-      "license": "MIT"
-    },
-    "node_modules/fdir": {
-      "version": "6.5.0",
-      "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
-      "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=12.0.0"
-      },
-      "peerDependencies": {
-        "picomatch": "^3 || ^4"
-      },
-      "peerDependenciesMeta": {
-        "picomatch": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/fetch-blob": {
-      "version": "3.2.0",
-      "resolved": "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz",
-      "integrity": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/jimmywarting"
-        },
-        {
-          "type": "paypal",
-          "url": "https://paypal.me/jimmywarting"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "node-domexception": "^1.0.0",
-        "web-streams-polyfill": "^3.0.3"
-      },
-      "engines": {
-        "node": "^12.20 || >= 14.13"
-      }
-    },
-    "node_modules/file-uri-to-path": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz",
-      "integrity": "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==",
-      "license": "MIT"
-    },
-    "node_modules/finalhandler": {
-      "version": "1.3.2",
-      "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.3.2.tgz",
-      "integrity": "sha512-aA4RyPcd3badbdABGDuTXCMTtOneUCAYH/gxoYRTZlIJdF0YPWuGqiAsIrhNnnqdXGswYk6dGujem4w80UJFhg==",
-      "license": "MIT",
-      "dependencies": {
-        "debug": "2.6.9",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "on-finished": "~2.4.1",
-        "parseurl": "~1.3.3",
-        "statuses": "~2.0.2",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/finalhandler/node_modules/debug": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
-      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "2.0.0"
-      }
-    },
-    "node_modules/finalhandler/node_modules/ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
-      "license": "MIT"
-    },
-    "node_modules/formdata-polyfill": {
-      "version": "4.0.10",
-      "resolved": "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz",
-      "integrity": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==",
-      "license": "MIT",
-      "dependencies": {
-        "fetch-blob": "^3.1.2"
-      },
-      "engines": {
-        "node": ">=12.20.0"
-      }
-    },
-    "node_modules/forwarded": {
-      "version": "0.2.0",
-      "resolved": "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz",
-      "integrity": "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/fraction.js": {
-      "version": "5.3.4",
-      "resolved": "https://registry.npmjs.org/fraction.js/-/fraction.js-5.3.4.tgz",
-      "integrity": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==",
-      "dev": true,
-      "license": "MIT",
-      "engines": {
-        "node": "*"
-      },
-      "funding": {
-        "type": "github",
-        "url": "https://github.com/sponsors/rawify"
-      }
-    },
-    "node_modules/framer-motion": {
-      "version": "12.38.0",
-      "resolved": "https://registry.npmjs.org/framer-motion/-/framer-motion-12.38.0.tgz",
-      "integrity": "sha512-rFYkY/pigbcswl1XQSb7q424kSTQ8q6eAC+YUsSKooHQYuLdzdHjrt6uxUC+PRAO++q5IS7+TamgIw1AphxR+g==",
-      "license": "MIT",
-      "dependencies": {
-        "motion-dom": "^12.38.0",
-        "motion-utils": "^12.36.0",
-        "tslib": "^2.4.0"
-      },
-      "peerDependencies": {
-        "@emotion/is-prop-valid": "*",
-        "react": "^18.0.0 || ^19.0.0",
-        "react-dom": "^18.0.0 || ^19.0.0"
-      },
-      "peerDependenciesMeta": {
-        "@emotion/is-prop-valid": {
-          "optional": true
-        },
-        "react": {
-          "optional": true
-        },
-        "react-dom": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/fresh": {
-      "version": "0.5.2",
-      "resolved": "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz",
-      "integrity": "sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/fs-constants": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/fs-constants/-/fs-constants-1.0.0.tgz",
-      "integrity": "sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==",
-      "license": "MIT"
-    },
-    "node_modules/fsevents": {
-      "version": "2.3.3",
-      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
-      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
-      "hasInstallScript": true,
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
-      }
-    },
-    "node_modules/function-bind": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
-      "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/gaxios": {
-      "version": "7.1.4",
-      "resolved": "https://registry.npmjs.org/gaxios/-/gaxios-7.1.4.tgz",
-      "integrity": "sha512-bTIgTsM2bWn3XklZISBTQX7ZSddGW+IO3bMdGaemHZ3tbqExMENHLx6kKZ/KlejgrMtj8q7wBItt51yegqalrA==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "extend": "^3.0.2",
-        "https-proxy-agent": "^7.0.1",
-        "node-fetch": "^3.3.2"
-      },
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/gcp-metadata": {
-      "version": "8.1.2",
-      "resolved": "https://registry.npmjs.org/gcp-metadata/-/gcp-metadata-8.1.2.tgz",
-      "integrity": "sha512-zV/5HKTfCeKWnxG0Dmrw51hEWFGfcF2xiXqcA3+J90WDuP0SvoiSO5ORvcBsifmx/FoIjgQN3oNOGaQ5PhLFkg==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "gaxios": "^7.0.0",
-        "google-logging-utils": "^1.0.0",
-        "json-bigint": "^1.0.0"
-      },
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/gensync": {
-      "version": "1.0.0-beta.2",
-      "resolved": "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz",
-      "integrity": "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6.9.0"
-      }
-    },
-    "node_modules/get-intrinsic": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz",
-      "integrity": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.2",
-        "es-define-property": "^1.0.1",
-        "es-errors": "^1.3.0",
-        "es-object-atoms": "^1.1.1",
-        "function-bind": "^1.1.2",
-        "get-proto": "^1.0.1",
-        "gopd": "^1.2.0",
-        "has-symbols": "^1.1.0",
-        "hasown": "^2.0.2",
-        "math-intrinsics": "^1.1.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/get-proto": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
-      "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
-      "license": "MIT",
-      "dependencies": {
-        "dunder-proto": "^1.0.1",
-        "es-object-atoms": "^1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/get-tsconfig": {
-      "version": "4.13.7",
-      "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.13.7.tgz",
-      "integrity": "sha512-7tN6rFgBlMgpBML5j8typ92BKFi2sFQvIdpAqLA2beia5avZDrMs0FLZiM5etShWq5irVyGcGMEA1jcDaK7A/Q==",
-      "devOptional": true,
-      "license": "MIT",
-      "dependencies": {
-        "resolve-pkg-maps": "^1.0.0"
-      },
-      "funding": {
-        "url": "https://github.com/privatenumber/get-tsconfig?sponsor=1"
-      }
-    },
-    "node_modules/github-from-package": {
-      "version": "0.0.0",
-      "resolved": "https://registry.npmjs.org/github-from-package/-/github-from-package-0.0.0.tgz",
-      "integrity": "sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==",
-      "license": "MIT"
-    },
-    "node_modules/google-auth-library": {
-      "version": "10.6.2",
-      "resolved": "https://registry.npmjs.org/google-auth-library/-/google-auth-library-10.6.2.tgz",
-      "integrity": "sha512-e27Z6EThmVNNvtYASwQxose/G57rkRuaRbQyxM2bvYLLX/GqWZ5chWq2EBoUchJbCc57eC9ArzO5wMsEmWftCw==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "base64-js": "^1.3.0",
-        "ecdsa-sig-formatter": "^1.0.11",
-        "gaxios": "^7.1.4",
-        "gcp-metadata": "8.1.2",
-        "google-logging-utils": "1.1.3",
-        "jws": "^4.0.0"
-      },
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/google-logging-utils": {
-      "version": "1.1.3",
-      "resolved": "https://registry.npmjs.org/google-logging-utils/-/google-logging-utils-1.1.3.tgz",
-      "integrity": "sha512-eAmLkjDjAFCVXg7A1unxHsLf961m6y17QFqXqAXGj/gVkKFrEICfStRfwUlGNfeCEjNRa32JEWOUTlYXPyyKvA==",
-      "license": "Apache-2.0",
-      "engines": {
-        "node": ">=14"
-      }
-    },
-    "node_modules/gopd": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
-      "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/graceful-fs": {
-      "version": "4.2.11",
-      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
-      "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
-      "license": "ISC"
-    },
-    "node_modules/has-symbols": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
-      "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/hasown": {
-      "version": "2.0.2",
-      "resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
-      "integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
-      "license": "MIT",
-      "dependencies": {
-        "function-bind": "^1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/http-errors": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz",
-      "integrity": "sha512-4FbRdAX+bSdmo4AUFuS0WNiPz8NgFt+r8ThgNWmlrjQjt1Q7ZR9+zTlce2859x4KSXrwIsaeTqDoKQmtP8pLmQ==",
-      "license": "MIT",
-      "dependencies": {
-        "depd": "~2.0.0",
-        "inherits": "~2.0.4",
-        "setprototypeof": "~1.2.0",
-        "statuses": "~2.0.2",
-        "toidentifier": "~1.0.1"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/express"
-      }
-    },
-    "node_modules/https-proxy-agent": {
-      "version": "7.0.6",
-      "resolved": "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz",
-      "integrity": "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==",
-      "license": "MIT",
-      "dependencies": {
-        "agent-base": "^7.1.2",
-        "debug": "4"
-      },
-      "engines": {
-        "node": ">= 14"
-      }
-    },
-    "node_modules/iconv-lite": {
-      "version": "0.4.24",
-      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",
-      "integrity": "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==",
-      "license": "MIT",
-      "dependencies": {
-        "safer-buffer": ">= 2.1.2 < 3"
-      },
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/ieee754": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz",
-      "integrity": "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "BSD-3-Clause"
-    },
-    "node_modules/immer": {
-      "version": "10.2.0",
-      "resolved": "https://registry.npmjs.org/immer/-/immer-10.2.0.tgz",
-      "integrity": "sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw==",
-      "license": "MIT",
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/immer"
-      }
-    },
-    "node_modules/inherits": {
-      "version": "2.0.4",
-      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
-      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
-      "license": "ISC"
-    },
-    "node_modules/ini": {
-      "version": "1.3.8",
-      "resolved": "https://registry.npmjs.org/ini/-/ini-1.3.8.tgz",
-      "integrity": "sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==",
-      "license": "ISC"
-    },
-    "node_modules/internmap": {
-      "version": "2.0.3",
-      "resolved": "https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz",
-      "integrity": "sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=12"
-      }
-    },
-    "node_modules/ipaddr.js": {
-      "version": "1.9.1",
-      "resolved": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz",
-      "integrity": "sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.10"
-      }
-    },
-    "node_modules/jiti": {
-      "version": "2.6.1",
-      "resolved": "https://registry.npmjs.org/jiti/-/jiti-2.6.1.tgz",
-      "integrity": "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==",
-      "license": "MIT",
-      "bin": {
-        "jiti": "lib/jiti-cli.mjs"
-      }
-    },
-    "node_modules/js-tokens": {
-      "version": "4.0.0",
-      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
-      "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
-      "license": "MIT"
-    },
-    "node_modules/jsesc": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/jsesc/-/jsesc-3.1.0.tgz",
-      "integrity": "sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==",
-      "license": "MIT",
-      "bin": {
-        "jsesc": "bin/jsesc"
-      },
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/json-bigint": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/json-bigint/-/json-bigint-1.0.0.tgz",
-      "integrity": "sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ==",
-      "license": "MIT",
-      "dependencies": {
-        "bignumber.js": "^9.0.0"
-      }
-    },
-    "node_modules/json5": {
-      "version": "2.2.3",
-      "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz",
-      "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==",
-      "license": "MIT",
-      "bin": {
-        "json5": "lib/cli.js"
-      },
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/jwa": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/jwa/-/jwa-2.0.1.tgz",
-      "integrity": "sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==",
-      "license": "MIT",
-      "dependencies": {
-        "buffer-equal-constant-time": "^1.0.1",
-        "ecdsa-sig-formatter": "1.0.11",
-        "safe-buffer": "^5.0.1"
-      }
-    },
-    "node_modules/jws": {
-      "version": "4.0.1",
-      "resolved": "https://registry.npmjs.org/jws/-/jws-4.0.1.tgz",
-      "integrity": "sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==",
-      "license": "MIT",
-      "dependencies": {
-        "jwa": "^2.0.1",
-        "safe-buffer": "^5.0.1"
-      }
-    },
-    "node_modules/lightningcss": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz",
-      "integrity": "sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==",
-      "license": "MPL-2.0",
-      "dependencies": {
-        "detect-libc": "^2.0.3"
-      },
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      },
-      "optionalDependencies": {
-        "lightningcss-android-arm64": "1.32.0",
-        "lightningcss-darwin-arm64": "1.32.0",
-        "lightningcss-darwin-x64": "1.32.0",
-        "lightningcss-freebsd-x64": "1.32.0",
-        "lightningcss-linux-arm-gnueabihf": "1.32.0",
-        "lightningcss-linux-arm64-gnu": "1.32.0",
-        "lightningcss-linux-arm64-musl": "1.32.0",
-        "lightningcss-linux-x64-gnu": "1.32.0",
-        "lightningcss-linux-x64-musl": "1.32.0",
-        "lightningcss-win32-arm64-msvc": "1.32.0",
-        "lightningcss-win32-x64-msvc": "1.32.0"
-      }
-    },
-    "node_modules/lightningcss-android-arm64": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-android-arm64/-/lightningcss-android-arm64-1.32.0.tgz",
-      "integrity": "sha512-YK7/ClTt4kAK0vo6w3X+Pnm0D2cf2vPHbhOXdoNti1Ga0al1P4TBZhwjATvjNwLEBCnKvjJc2jQgHXH0NEwlAg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-darwin-arm64": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.32.0.tgz",
-      "integrity": "sha512-RzeG9Ju5bag2Bv1/lwlVJvBE3q6TtXskdZLLCyfg5pt+HLz9BqlICO7LZM7VHNTTn/5PRhHFBSjk5lc4cmscPQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-darwin-x64": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.32.0.tgz",
-      "integrity": "sha512-U+QsBp2m/s2wqpUYT/6wnlagdZbtZdndSmut/NJqlCcMLTWp5muCrID+K5UJ6jqD2BFshejCYXniPDbNh73V8w==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-freebsd-x64": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.32.0.tgz",
-      "integrity": "sha512-JCTigedEksZk3tHTTthnMdVfGf61Fky8Ji2E4YjUTEQX14xiy/lTzXnu1vwiZe3bYe0q+SpsSH/CTeDXK6WHig==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-linux-arm-gnueabihf": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.32.0.tgz",
-      "integrity": "sha512-x6rnnpRa2GL0zQOkt6rts3YDPzduLpWvwAF6EMhXFVZXD4tPrBkEFqzGowzCsIWsPjqSK+tyNEODUBXeeVHSkw==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-linux-arm64-gnu": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.32.0.tgz",
-      "integrity": "sha512-0nnMyoyOLRJXfbMOilaSRcLH3Jw5z9HDNGfT/gwCPgaDjnx0i8w7vBzFLFR1f6CMLKF8gVbebmkUN3fa/kQJpQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-linux-arm64-musl": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.32.0.tgz",
-      "integrity": "sha512-UpQkoenr4UJEzgVIYpI80lDFvRmPVg6oqboNHfoH4CQIfNA+HOrZ7Mo7KZP02dC6LjghPQJeBsvXhJod/wnIBg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-linux-x64-gnu": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz",
-      "integrity": "sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-linux-x64-musl": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz",
-      "integrity": "sha512-bYcLp+Vb0awsiXg/80uCRezCYHNg1/l3mt0gzHnWV9XP1W5sKa5/TCdGWaR/zBM2PeF/HbsQv/j2URNOiVuxWg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-win32-arm64-msvc": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.32.0.tgz",
-      "integrity": "sha512-8SbC8BR40pS6baCM8sbtYDSwEVQd4JlFTOlaD3gWGHfThTcABnNDBda6eTZeqbofalIJhFx0qKzgHJmcPTnGdw==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/lightningcss-win32-x64-msvc": {
-      "version": "1.32.0",
-      "resolved": "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.32.0.tgz",
-      "integrity": "sha512-Amq9B/SoZYdDi1kFrojnoqPLxYhQ4Wo5XiL8EVJrVsB8ARoC1PWW6VGtT0WKCemjy8aC+louJnjS7U18x3b06Q==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MPL-2.0",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">= 12.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/parcel"
-      }
-    },
-    "node_modules/long": {
-      "version": "5.3.2",
-      "resolved": "https://registry.npmjs.org/long/-/long-5.3.2.tgz",
-      "integrity": "sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==",
-      "license": "Apache-2.0"
-    },
-    "node_modules/lru-cache": {
-      "version": "5.1.1",
-      "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz",
-      "integrity": "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==",
-      "license": "ISC",
-      "dependencies": {
-        "yallist": "^3.0.2"
-      }
-    },
-    "node_modules/lucide-react": {
-      "version": "0.546.0",
-      "resolved": "https://registry.npmjs.org/lucide-react/-/lucide-react-0.546.0.tgz",
-      "integrity": "sha512-Z94u6fKT43lKeYHiVyvyR8fT7pwCzDu7RyMPpTvh054+xahSgj4HFQ+NmflvzdXsoAjYGdCguGaFKYuvq0ThCQ==",
-      "license": "ISC",
-      "peerDependencies": {
-        "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
-      }
-    },
-    "node_modules/magic-string": {
-      "version": "0.30.21",
-      "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz",
-      "integrity": "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@jridgewell/sourcemap-codec": "^1.5.5"
-      }
-    },
-    "node_modules/math-intrinsics": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
-      "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/media-typer": {
-      "version": "0.3.0",
-      "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
-      "integrity": "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/merge-descriptors": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.3.tgz",
-      "integrity": "sha512-gaNvAS7TZ897/rVaZ0nMtAyxNyi/pdbjbAwUpFQpN70GqnVfOiXpeUUMKRBmzXaSQ8DdTX4/0ms62r2K+hE6mQ==",
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
-    },
-    "node_modules/methods": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/methods/-/methods-1.1.2.tgz",
-      "integrity": "sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/mime": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/mime/-/mime-1.6.0.tgz",
-      "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==",
-      "license": "MIT",
-      "bin": {
-        "mime": "cli.js"
-      },
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/mime-db": {
-      "version": "1.52.0",
-      "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
-      "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/mime-types": {
-      "version": "2.1.35",
-      "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
-      "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
-      "license": "MIT",
-      "dependencies": {
-        "mime-db": "1.52.0"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/mimic-response": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/mimic-response/-/mimic-response-3.1.0.tgz",
-      "integrity": "sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
-    },
-    "node_modules/minimist": {
-      "version": "1.2.8",
-      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz",
-      "integrity": "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==",
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/mkdirp-classic": {
-      "version": "0.5.3",
-      "resolved": "https://registry.npmjs.org/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz",
-      "integrity": "sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==",
-      "license": "MIT"
-    },
-    "node_modules/motion": {
-      "version": "12.38.0",
-      "resolved": "https://registry.npmjs.org/motion/-/motion-12.38.0.tgz",
-      "integrity": "sha512-uYfXzeHlgThchzwz5Te47dlv5JOUC7OB4rjJ/7XTUgtBZD8CchMN8qEJ4ZVsUmTyYA44zjV0fBwsiktRuFnn+w==",
-      "license": "MIT",
-      "dependencies": {
-        "framer-motion": "^12.38.0",
-        "tslib": "^2.4.0"
-      },
-      "peerDependencies": {
-        "@emotion/is-prop-valid": "*",
-        "react": "^18.0.0 || ^19.0.0",
-        "react-dom": "^18.0.0 || ^19.0.0"
-      },
-      "peerDependenciesMeta": {
-        "@emotion/is-prop-valid": {
-          "optional": true
-        },
-        "react": {
-          "optional": true
-        },
-        "react-dom": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/motion-dom": {
-      "version": "12.38.0",
-      "resolved": "https://registry.npmjs.org/motion-dom/-/motion-dom-12.38.0.tgz",
-      "integrity": "sha512-pdkHLD8QYRp8VfiNLb8xIBJis1byQ9gPT3Jnh2jqfFtAsWUA3dEepDlsWe/xMpO8McV+VdpKVcp+E+TGJEtOoA==",
-      "license": "MIT",
-      "dependencies": {
-        "motion-utils": "^12.36.0"
-      }
-    },
-    "node_modules/motion-utils": {
-      "version": "12.36.0",
-      "resolved": "https://registry.npmjs.org/motion-utils/-/motion-utils-12.36.0.tgz",
-      "integrity": "sha512-eHWisygbiwVvf6PZ1vhaHCLamvkSbPIeAYxWUuL3a2PD/TROgE7FvfHWTIH4vMl798QLfMw15nRqIaRDXTlYRg==",
-      "license": "MIT"
-    },
-    "node_modules/ms": {
-      "version": "2.1.3",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
-      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
-      "license": "MIT"
-    },
-    "node_modules/nanoid": {
-      "version": "3.3.11",
-      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz",
-      "integrity": "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "MIT",
-      "bin": {
-        "nanoid": "bin/nanoid.cjs"
-      },
-      "engines": {
-        "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
-      }
-    },
-    "node_modules/napi-build-utils": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/napi-build-utils/-/napi-build-utils-2.0.0.tgz",
-      "integrity": "sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==",
-      "license": "MIT"
-    },
-    "node_modules/negotiator": {
-      "version": "0.6.3",
-      "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz",
-      "integrity": "sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/node-abi": {
-      "version": "3.89.0",
-      "resolved": "https://registry.npmjs.org/node-abi/-/node-abi-3.89.0.tgz",
-      "integrity": "sha512-6u9UwL0HlAl21+agMN3YAMXcKByMqwGx+pq+P76vii5f7hTPtKDp08/H9py6DY+cfDw7kQNTGEj/rly3IgbNQA==",
-      "license": "MIT",
-      "dependencies": {
-        "semver": "^7.3.5"
-      },
-      "engines": {
-        "node": ">=10"
-      }
-    },
-    "node_modules/node-abi/node_modules/semver": {
-      "version": "7.7.4",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.4.tgz",
-      "integrity": "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==",
-      "license": "ISC",
-      "bin": {
-        "semver": "bin/semver.js"
-      },
-      "engines": {
-        "node": ">=10"
-      }
-    },
-    "node_modules/node-addon-api": {
-      "version": "8.7.0",
-      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.7.0.tgz",
-      "integrity": "sha512-9MdFxmkKaOYVTV+XVRG8ArDwwQ77XIgIPyKASB1k3JPq3M8fGQQQE3YpMOrKm6g//Ktx8ivZr8xo1Qmtqub+GA==",
-      "license": "MIT",
-      "engines": {
-        "node": "^18 || ^20 || >= 21"
-      }
-    },
-    "node_modules/node-domexception": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz",
-      "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
-      "deprecated": "Use your platform's native DOMException instead",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/jimmywarting"
-        },
-        {
-          "type": "github",
-          "url": "https://paypal.me/jimmywarting"
-        }
-      ],
-      "license": "MIT",
-      "engines": {
-        "node": ">=10.5.0"
-      }
-    },
-    "node_modules/node-fetch": {
-      "version": "3.3.2",
-      "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-3.3.2.tgz",
-      "integrity": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==",
-      "license": "MIT",
-      "dependencies": {
-        "data-uri-to-buffer": "^4.0.0",
-        "fetch-blob": "^3.1.4",
-        "formdata-polyfill": "^4.0.10"
-      },
-      "engines": {
-        "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/node-fetch"
-      }
-    },
-    "node_modules/node-gyp-build": {
-      "version": "4.8.4",
-      "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
-      "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
-      "license": "MIT",
-      "bin": {
-        "node-gyp-build": "bin.js",
-        "node-gyp-build-optional": "optional.js",
-        "node-gyp-build-test": "build-test.js"
-      }
-    },
-    "node_modules/node-releases": {
-      "version": "2.0.36",
-      "resolved": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.36.tgz",
-      "integrity": "sha512-TdC8FSgHz8Mwtw9g5L4gR/Sh9XhSP/0DEkQxfEFXOpiul5IiHgHan2VhYYb6agDSfp4KuvltmGApc8HMgUrIkA==",
-      "license": "MIT"
-    },
-    "node_modules/object-assign": {
-      "version": "4.1.1",
-      "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
-      "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/object-inspect": {
-      "version": "1.13.4",
-      "resolved": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz",
-      "integrity": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/on-finished": {
-      "version": "2.4.1",
-      "resolved": "https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz",
-      "integrity": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
-      "license": "MIT",
-      "dependencies": {
-        "ee-first": "1.1.1"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/once": {
-      "version": "1.4.0",
-      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
-      "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
-      "license": "ISC",
-      "dependencies": {
-        "wrappy": "1"
-      }
-    },
-    "node_modules/p-retry": {
-      "version": "4.6.2",
-      "resolved": "https://registry.npmjs.org/p-retry/-/p-retry-4.6.2.tgz",
-      "integrity": "sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/retry": "0.12.0",
-        "retry": "^0.13.1"
-      },
-      "engines": {
-        "node": ">=8"
-      }
-    },
-    "node_modules/parseurl": {
-      "version": "1.3.3",
-      "resolved": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz",
-      "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/path-to-regexp": {
-      "version": "0.1.12",
-      "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.12.tgz",
-      "integrity": "sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==",
-      "license": "MIT"
-    },
-    "node_modules/pg": {
-      "version": "8.20.0",
-      "resolved": "https://registry.npmjs.org/pg/-/pg-8.20.0.tgz",
-      "integrity": "sha512-ldhMxz2r8fl/6QkXnBD3CR9/xg694oT6DZQ2s6c/RI28OjtSOpxnPrUCGOBJ46RCUxcWdx3p6kw/xnDHjKvaRA==",
-      "license": "MIT",
-      "dependencies": {
-        "pg-connection-string": "^2.12.0",
-        "pg-pool": "^3.13.0",
-        "pg-protocol": "^1.13.0",
-        "pg-types": "2.2.0",
-        "pgpass": "1.0.5"
-      },
-      "engines": {
-        "node": ">= 16.0.0"
-      },
-      "optionalDependencies": {
-        "pg-cloudflare": "^1.3.0"
-      },
-      "peerDependencies": {
-        "pg-native": ">=3.0.1"
-      },
-      "peerDependenciesMeta": {
-        "pg-native": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/pg-cloudflare": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/pg-cloudflare/-/pg-cloudflare-1.3.0.tgz",
-      "integrity": "sha512-6lswVVSztmHiRtD6I8hw4qP/nDm1EJbKMRhf3HCYaqud7frGysPv7FYJ5noZQdhQtN2xJnimfMtvQq21pdbzyQ==",
-      "license": "MIT",
-      "optional": true
-    },
-    "node_modules/pg-connection-string": {
-      "version": "2.12.0",
-      "resolved": "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.12.0.tgz",
-      "integrity": "sha512-U7qg+bpswf3Cs5xLzRqbXbQl85ng0mfSV/J0nnA31MCLgvEaAo7CIhmeyrmJpOr7o+zm0rXK+hNnT5l9RHkCkQ==",
-      "license": "MIT"
-    },
-    "node_modules/pg-int8": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz",
-      "integrity": "sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==",
-      "license": "ISC",
-      "engines": {
-        "node": ">=4.0.0"
-      }
-    },
-    "node_modules/pg-pool": {
-      "version": "3.13.0",
-      "resolved": "https://registry.npmjs.org/pg-pool/-/pg-pool-3.13.0.tgz",
-      "integrity": "sha512-gB+R+Xud1gLFuRD/QgOIgGOBE2KCQPaPwkzBBGC9oG69pHTkhQeIuejVIk3/cnDyX39av2AxomQiyPT13WKHQA==",
-      "license": "MIT",
-      "peerDependencies": {
-        "pg": ">=8.0"
-      }
-    },
-    "node_modules/pg-protocol": {
-      "version": "1.13.0",
-      "resolved": "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.13.0.tgz",
-      "integrity": "sha512-zzdvXfS6v89r6v7OcFCHfHlyG/wvry1ALxZo4LqgUoy7W9xhBDMaqOuMiF3qEV45VqsN6rdlcehHrfDtlCPc8w==",
-      "license": "MIT"
-    },
-    "node_modules/pg-types": {
-      "version": "2.2.0",
-      "resolved": "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz",
-      "integrity": "sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==",
-      "license": "MIT",
-      "dependencies": {
-        "pg-int8": "1.0.1",
-        "postgres-array": "~2.0.0",
-        "postgres-bytea": "~1.0.0",
-        "postgres-date": "~1.0.4",
-        "postgres-interval": "^1.1.0"
-      },
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/pgpass": {
-      "version": "1.0.5",
-      "resolved": "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz",
-      "integrity": "sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==",
-      "license": "MIT",
-      "dependencies": {
-        "split2": "^4.1.0"
-      }
-    },
-    "node_modules/picocolors": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
-      "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
-      "license": "ISC"
-    },
-    "node_modules/picomatch": {
-      "version": "4.0.4",
-      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz",
-      "integrity": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=12"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/jonschlinkert"
-      }
-    },
-    "node_modules/postcss": {
-      "version": "8.5.8",
-      "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.8.tgz",
-      "integrity": "sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==",
-      "funding": [
-        {
-          "type": "opencollective",
-          "url": "https://opencollective.com/postcss/"
-        },
-        {
-          "type": "tidelift",
-          "url": "https://tidelift.com/funding/github/npm/postcss"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "nanoid": "^3.3.11",
-        "picocolors": "^1.1.1",
-        "source-map-js": "^1.2.1"
-      },
-      "engines": {
-        "node": "^10 || ^12 || >=14"
-      }
-    },
-    "node_modules/postcss-value-parser": {
-      "version": "4.2.0",
-      "resolved": "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz",
-      "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==",
-      "dev": true,
-      "license": "MIT"
-    },
-    "node_modules/postgres-array": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz",
-      "integrity": "sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/postgres-bytea": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.1.tgz",
-      "integrity": "sha512-5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/postgres-date": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz",
-      "integrity": "sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/postgres-interval": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz",
-      "integrity": "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==",
-      "license": "MIT",
-      "dependencies": {
-        "xtend": "^4.0.0"
-      },
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/prebuild-install": {
-      "version": "7.1.3",
-      "resolved": "https://registry.npmjs.org/prebuild-install/-/prebuild-install-7.1.3.tgz",
-      "integrity": "sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==",
-      "deprecated": "No longer maintained. Please contact the author of the relevant native addon; alternatives are available.",
-      "license": "MIT",
-      "dependencies": {
-        "detect-libc": "^2.0.0",
-        "expand-template": "^2.0.3",
-        "github-from-package": "0.0.0",
-        "minimist": "^1.2.3",
-        "mkdirp-classic": "^0.5.3",
-        "napi-build-utils": "^2.0.0",
-        "node-abi": "^3.3.0",
-        "pump": "^3.0.0",
-        "rc": "^1.2.7",
-        "simple-get": "^4.0.0",
-        "tar-fs": "^2.0.0",
-        "tunnel-agent": "^0.6.0"
-      },
-      "bin": {
-        "prebuild-install": "bin.js"
-      },
-      "engines": {
-        "node": ">=10"
-      }
-    },
-    "node_modules/protobufjs": {
-      "version": "7.5.4",
-      "resolved": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz",
-      "integrity": "sha512-CvexbZtbov6jW2eXAvLukXjXUW1TzFaivC46BpWc/3BpcCysb5Vffu+B3XHMm8lVEuy2Mm4XGex8hBSg1yapPg==",
-      "hasInstallScript": true,
-      "license": "BSD-3-Clause",
-      "dependencies": {
-        "@protobufjs/aspromise": "^1.1.2",
-        "@protobufjs/base64": "^1.1.2",
-        "@protobufjs/codegen": "^2.0.4",
-        "@protobufjs/eventemitter": "^1.1.0",
-        "@protobufjs/fetch": "^1.1.0",
-        "@protobufjs/float": "^1.0.2",
-        "@protobufjs/inquire": "^1.1.0",
-        "@protobufjs/path": "^1.1.2",
-        "@protobufjs/pool": "^1.1.0",
-        "@protobufjs/utf8": "^1.1.0",
-        "@types/node": ">=13.7.0",
-        "long": "^5.0.0"
-      },
-      "engines": {
-        "node": ">=12.0.0"
-      }
-    },
-    "node_modules/proxy-addr": {
-      "version": "2.0.7",
-      "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
-      "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
-      "license": "MIT",
-      "dependencies": {
-        "forwarded": "0.2.0",
-        "ipaddr.js": "1.9.1"
-      },
-      "engines": {
-        "node": ">= 0.10"
-      }
-    },
-    "node_modules/pump": {
-      "version": "3.0.4",
-      "resolved": "https://registry.npmjs.org/pump/-/pump-3.0.4.tgz",
-      "integrity": "sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==",
-      "license": "MIT",
-      "dependencies": {
-        "end-of-stream": "^1.1.0",
-        "once": "^1.3.1"
-      }
-    },
-    "node_modules/qs": {
-      "version": "6.14.2",
-      "resolved": "https://registry.npmjs.org/qs/-/qs-6.14.2.tgz",
-      "integrity": "sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==",
-      "license": "BSD-3-Clause",
-      "dependencies": {
-        "side-channel": "^1.1.0"
-      },
-      "engines": {
-        "node": ">=0.6"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/range-parser": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz",
-      "integrity": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/raw-body": {
-      "version": "2.5.3",
-      "resolved": "https://registry.npmjs.org/raw-body/-/raw-body-2.5.3.tgz",
-      "integrity": "sha512-s4VSOf6yN0rvbRZGxs8Om5CWj6seneMwK3oDb4lWDH0UPhWcxwOWw5+qk24bxq87szX1ydrwylIOp2uG1ojUpA==",
-      "license": "MIT",
-      "dependencies": {
-        "bytes": "~3.1.2",
-        "http-errors": "~2.0.1",
-        "iconv-lite": "~0.4.24",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/rc": {
-      "version": "1.2.8",
-      "resolved": "https://registry.npmjs.org/rc/-/rc-1.2.8.tgz",
-      "integrity": "sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==",
-      "license": "(BSD-2-Clause OR MIT OR Apache-2.0)",
-      "dependencies": {
-        "deep-extend": "^0.6.0",
-        "ini": "~1.3.0",
-        "minimist": "^1.2.0",
-        "strip-json-comments": "~2.0.1"
-      },
-      "bin": {
-        "rc": "cli.js"
-      }
-    },
-    "node_modules/react": {
-      "version": "19.2.4",
-      "resolved": "https://registry.npmjs.org/react/-/react-19.2.4.tgz",
-      "integrity": "sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/react-dom": {
-      "version": "19.2.4",
-      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-19.2.4.tgz",
-      "integrity": "sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==",
-      "license": "MIT",
-      "dependencies": {
-        "scheduler": "^0.27.0"
-      },
-      "peerDependencies": {
-        "react": "^19.2.4"
-      }
-    },
-    "node_modules/react-is": {
-      "version": "19.2.4",
-      "resolved": "https://registry.npmjs.org/react-is/-/react-is-19.2.4.tgz",
-      "integrity": "sha512-W+EWGn2v0ApPKgKKCy/7s7WHXkboGcsrXE+2joLyVxkbyVQfO3MUEaUQDHoSmb8TFFrSKYa9mw64WZHNHSDzYA==",
-      "license": "MIT",
-      "peer": true
-    },
-    "node_modules/react-redux": {
-      "version": "9.2.0",
-      "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz",
-      "integrity": "sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/use-sync-external-store": "^0.0.6",
-        "use-sync-external-store": "^1.4.0"
-      },
-      "peerDependencies": {
-        "@types/react": "^18.2.25 || ^19",
-        "react": "^18.0 || ^19",
-        "redux": "^5.0.0"
-      },
-      "peerDependenciesMeta": {
-        "@types/react": {
-          "optional": true
-        },
-        "redux": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/react-refresh": {
-      "version": "0.18.0",
-      "resolved": "https://registry.npmjs.org/react-refresh/-/react-refresh-0.18.0.tgz",
-      "integrity": "sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/readable-stream": {
-      "version": "3.6.2",
-      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.2.tgz",
-      "integrity": "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==",
-      "license": "MIT",
-      "dependencies": {
-        "inherits": "^2.0.3",
-        "string_decoder": "^1.1.1",
-        "util-deprecate": "^1.0.1"
-      },
-      "engines": {
-        "node": ">= 6"
-      }
-    },
-    "node_modules/recharts": {
-      "version": "3.8.0",
-      "resolved": "https://registry.npmjs.org/recharts/-/recharts-3.8.0.tgz",
-      "integrity": "sha512-Z/m38DX3L73ExO4Tpc9/iZWHmHnlzWG4njQbxsF5aSjwqmHNDDIm0rdEBArkwsBvR8U6EirlEHiQNYWCVh9sGQ==",
-      "license": "MIT",
-      "workspaces": [
-        "www"
-      ],
-      "dependencies": {
-        "@reduxjs/toolkit": "^1.9.0 || 2.x.x",
-        "clsx": "^2.1.1",
-        "decimal.js-light": "^2.5.1",
-        "es-toolkit": "^1.39.3",
-        "eventemitter3": "^5.0.1",
-        "immer": "^10.1.1",
-        "react-redux": "8.x.x || 9.x.x",
-        "reselect": "5.1.1",
-        "tiny-invariant": "^1.3.3",
-        "use-sync-external-store": "^1.2.2",
-        "victory-vendor": "^37.0.2"
-      },
-      "engines": {
-        "node": ">=18"
-      },
-      "peerDependencies": {
-        "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-        "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-        "react-is": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
-      }
-    },
-    "node_modules/redux": {
-      "version": "5.0.1",
-      "resolved": "https://registry.npmjs.org/redux/-/redux-5.0.1.tgz",
-      "integrity": "sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==",
-      "license": "MIT"
-    },
-    "node_modules/redux-thunk": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz",
-      "integrity": "sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==",
-      "license": "MIT",
-      "peerDependencies": {
-        "redux": "^5.0.0"
-      }
-    },
-    "node_modules/reselect": {
-      "version": "5.1.1",
-      "resolved": "https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz",
-      "integrity": "sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==",
-      "license": "MIT"
-    },
-    "node_modules/resolve-pkg-maps": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz",
-      "integrity": "sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==",
-      "devOptional": true,
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/privatenumber/resolve-pkg-maps?sponsor=1"
-      }
-    },
-    "node_modules/retry": {
-      "version": "0.13.1",
-      "resolved": "https://registry.npmjs.org/retry/-/retry-0.13.1.tgz",
-      "integrity": "sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 4"
-      }
-    },
-    "node_modules/rollup": {
-      "version": "4.60.0",
-      "resolved": "https://registry.npmjs.org/rollup/-/rollup-4.60.0.tgz",
-      "integrity": "sha512-yqjxruMGBQJ2gG4HtjZtAfXArHomazDHoFwFFmZZl0r7Pdo7qCIXKqKHZc8yeoMgzJJ+pO6pEEHa+V7uzWlrAQ==",
-      "license": "MIT",
-      "dependencies": {
-        "@types/estree": "1.0.8"
-      },
-      "bin": {
-        "rollup": "dist/bin/rollup"
-      },
-      "engines": {
-        "node": ">=18.0.0",
-        "npm": ">=8.0.0"
-      },
-      "optionalDependencies": {
-        "@rollup/rollup-android-arm-eabi": "4.60.0",
-        "@rollup/rollup-android-arm64": "4.60.0",
-        "@rollup/rollup-darwin-arm64": "4.60.0",
-        "@rollup/rollup-darwin-x64": "4.60.0",
-        "@rollup/rollup-freebsd-arm64": "4.60.0",
-        "@rollup/rollup-freebsd-x64": "4.60.0",
-        "@rollup/rollup-linux-arm-gnueabihf": "4.60.0",
-        "@rollup/rollup-linux-arm-musleabihf": "4.60.0",
-        "@rollup/rollup-linux-arm64-gnu": "4.60.0",
-        "@rollup/rollup-linux-arm64-musl": "4.60.0",
-        "@rollup/rollup-linux-loong64-gnu": "4.60.0",
-        "@rollup/rollup-linux-loong64-musl": "4.60.0",
-        "@rollup/rollup-linux-ppc64-gnu": "4.60.0",
-        "@rollup/rollup-linux-ppc64-musl": "4.60.0",
-        "@rollup/rollup-linux-riscv64-gnu": "4.60.0",
-        "@rollup/rollup-linux-riscv64-musl": "4.60.0",
-        "@rollup/rollup-linux-s390x-gnu": "4.60.0",
-        "@rollup/rollup-linux-x64-gnu": "4.60.0",
-        "@rollup/rollup-linux-x64-musl": "4.60.0",
-        "@rollup/rollup-openbsd-x64": "4.60.0",
-        "@rollup/rollup-openharmony-arm64": "4.60.0",
-        "@rollup/rollup-win32-arm64-msvc": "4.60.0",
-        "@rollup/rollup-win32-ia32-msvc": "4.60.0",
-        "@rollup/rollup-win32-x64-gnu": "4.60.0",
-        "@rollup/rollup-win32-x64-msvc": "4.60.0",
-        "fsevents": "~2.3.2"
-      }
-    },
-    "node_modules/safe-buffer": {
-      "version": "5.2.1",
-      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
-      "integrity": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT"
-    },
-    "node_modules/safer-buffer": {
-      "version": "2.1.2",
-      "resolved": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
-      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
-      "license": "MIT"
-    },
-    "node_modules/scheduler": {
-      "version": "0.27.0",
-      "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz",
-      "integrity": "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==",
-      "license": "MIT"
-    },
-    "node_modules/semver": {
-      "version": "6.3.1",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz",
-      "integrity": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
-      "license": "ISC",
-      "bin": {
-        "semver": "bin/semver.js"
-      }
-    },
-    "node_modules/send": {
-      "version": "0.19.2",
-      "resolved": "https://registry.npmjs.org/send/-/send-0.19.2.tgz",
-      "integrity": "sha512-VMbMxbDeehAxpOtWJXlcUS5E8iXh6QmN+BkRX1GARS3wRaXEEgzCcB10gTQazO42tpNIya8xIyNx8fll1OFPrg==",
-      "license": "MIT",
-      "dependencies": {
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "destroy": "1.2.0",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "etag": "~1.8.1",
-        "fresh": "~0.5.2",
-        "http-errors": "~2.0.1",
-        "mime": "1.6.0",
-        "ms": "2.1.3",
-        "on-finished": "~2.4.1",
-        "range-parser": "~1.2.1",
-        "statuses": "~2.0.2"
-      },
-      "engines": {
-        "node": ">= 0.8.0"
-      }
-    },
-    "node_modules/send/node_modules/debug": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
-      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "2.0.0"
-      }
-    },
-    "node_modules/send/node_modules/debug/node_modules/ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
-      "license": "MIT"
-    },
-    "node_modules/serve-static": {
-      "version": "1.16.3",
-      "resolved": "https://registry.npmjs.org/serve-static/-/serve-static-1.16.3.tgz",
-      "integrity": "sha512-x0RTqQel6g5SY7Lg6ZreMmsOzncHFU7nhnRWkKgWuMTu5NN0DR5oruckMqRvacAN9d5w6ARnRBXl9xhDCgfMeA==",
-      "license": "MIT",
-      "dependencies": {
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "parseurl": "~1.3.3",
-        "send": "~0.19.1"
-      },
-      "engines": {
-        "node": ">= 0.8.0"
-      }
-    },
-    "node_modules/setprototypeof": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
-      "integrity": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==",
-      "license": "ISC"
-    },
-    "node_modules/side-channel": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz",
-      "integrity": "sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "object-inspect": "^1.13.3",
-        "side-channel-list": "^1.0.0",
-        "side-channel-map": "^1.0.1",
-        "side-channel-weakmap": "^1.0.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-list": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.0.tgz",
-      "integrity": "sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "object-inspect": "^1.13.3"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-map": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz",
-      "integrity": "sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bound": "^1.0.2",
-        "es-errors": "^1.3.0",
-        "get-intrinsic": "^1.2.5",
-        "object-inspect": "^1.13.3"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-weakmap": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz",
-      "integrity": "sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bound": "^1.0.2",
-        "es-errors": "^1.3.0",
-        "get-intrinsic": "^1.2.5",
-        "object-inspect": "^1.13.3",
-        "side-channel-map": "^1.0.1"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/simple-concat": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/simple-concat/-/simple-concat-1.0.1.tgz",
-      "integrity": "sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT"
-    },
-    "node_modules/simple-get": {
-      "version": "4.0.1",
-      "resolved": "https://registry.npmjs.org/simple-get/-/simple-get-4.0.1.tgz",
-      "integrity": "sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "decompress-response": "^6.0.0",
-        "once": "^1.3.1",
-        "simple-concat": "^1.0.0"
-      }
-    },
-    "node_modules/source-map-js": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
-      "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
-      "license": "BSD-3-Clause",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/split2": {
-      "version": "4.2.0",
-      "resolved": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
-      "integrity": "sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==",
-      "license": "ISC",
-      "engines": {
-        "node": ">= 10.x"
-      }
-    },
-    "node_modules/statuses": {
-      "version": "2.0.2",
-      "resolved": "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz",
-      "integrity": "sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/string_decoder": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
-      "integrity": "sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==",
-      "license": "MIT",
-      "dependencies": {
-        "safe-buffer": "~5.2.0"
-      }
-    },
-    "node_modules/strip-json-comments": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz",
-      "integrity": "sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/tailwind-merge": {
-      "version": "3.5.0",
-      "resolved": "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.5.0.tgz",
-      "integrity": "sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==",
-      "license": "MIT",
-      "funding": {
-        "type": "github",
-        "url": "https://github.com/sponsors/dcastil"
-      }
-    },
-    "node_modules/tailwindcss": {
-      "version": "4.2.2",
-      "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.2.tgz",
-      "integrity": "sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==",
-      "license": "MIT"
-    },
-    "node_modules/tapable": {
-      "version": "2.3.2",
-      "resolved": "https://registry.npmjs.org/tapable/-/tapable-2.3.2.tgz",
-      "integrity": "sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=6"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/webpack"
-      }
-    },
-    "node_modules/tar-fs": {
-      "version": "2.1.4",
-      "resolved": "https://registry.npmjs.org/tar-fs/-/tar-fs-2.1.4.tgz",
-      "integrity": "sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ==",
-      "license": "MIT",
-      "dependencies": {
-        "chownr": "^1.1.1",
-        "mkdirp-classic": "^0.5.2",
-        "pump": "^3.0.0",
-        "tar-stream": "^2.1.4"
-      }
-    },
-    "node_modules/tar-stream": {
-      "version": "2.2.0",
-      "resolved": "https://registry.npmjs.org/tar-stream/-/tar-stream-2.2.0.tgz",
-      "integrity": "sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==",
-      "license": "MIT",
-      "dependencies": {
-        "bl": "^4.0.3",
-        "end-of-stream": "^1.4.1",
-        "fs-constants": "^1.0.0",
-        "inherits": "^2.0.3",
-        "readable-stream": "^3.1.1"
-      },
-      "engines": {
-        "node": ">=6"
-      }
-    },
-    "node_modules/tiny-invariant": {
-      "version": "1.3.3",
-      "resolved": "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz",
-      "integrity": "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==",
-      "license": "MIT"
-    },
-    "node_modules/tinyglobby": {
-      "version": "0.2.15",
-      "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.15.tgz",
-      "integrity": "sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==",
-      "license": "MIT",
-      "dependencies": {
-        "fdir": "^6.5.0",
-        "picomatch": "^4.0.3"
-      },
-      "engines": {
-        "node": ">=12.0.0"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/SuperchupuDev"
-      }
-    },
-    "node_modules/toidentifier": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
-      "integrity": "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.6"
-      }
-    },
-    "node_modules/tslib": {
-      "version": "2.8.1",
-      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
-      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
-      "license": "0BSD"
-    },
-    "node_modules/tsx": {
-      "version": "4.21.0",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.21.0.tgz",
-      "integrity": "sha512-5C1sg4USs1lfG0GFb2RLXsdpXqBSEhAaA/0kPL01wxzpMqLILNxIxIOKiILz+cdg/pLnOUxFYOR5yhHU666wbw==",
-      "devOptional": true,
-      "license": "MIT",
-      "dependencies": {
-        "esbuild": "~0.27.0",
-        "get-tsconfig": "^4.7.5"
-      },
-      "bin": {
-        "tsx": "dist/cli.mjs"
-      },
-      "engines": {
-        "node": ">=18.0.0"
-      },
-      "optionalDependencies": {
-        "fsevents": "~2.3.3"
-      }
-    },
-    "node_modules/tunnel-agent": {
-      "version": "0.6.0",
-      "resolved": "https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.6.0.tgz",
-      "integrity": "sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==",
-      "license": "Apache-2.0",
-      "dependencies": {
-        "safe-buffer": "^5.0.1"
-      },
-      "engines": {
-        "node": "*"
-      }
-    },
-    "node_modules/type-is": {
-      "version": "1.6.18",
-      "resolved": "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz",
-      "integrity": "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==",
-      "license": "MIT",
-      "dependencies": {
-        "media-typer": "0.3.0",
-        "mime-types": "~2.1.24"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/typescript": {
-      "version": "5.8.3",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz",
-      "integrity": "sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==",
-      "dev": true,
-      "license": "Apache-2.0",
-      "bin": {
-        "tsc": "bin/tsc",
-        "tsserver": "bin/tsserver"
-      },
-      "engines": {
-        "node": ">=14.17"
-      }
-    },
-    "node_modules/undici-types": {
-      "version": "6.21.0",
-      "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz",
-      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==",
-      "license": "MIT"
-    },
-    "node_modules/unpipe": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
-      "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/update-browserslist-db": {
-      "version": "1.2.3",
-      "resolved": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz",
-      "integrity": "sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==",
-      "funding": [
-        {
-          "type": "opencollective",
-          "url": "https://opencollective.com/browserslist"
-        },
-        {
-          "type": "tidelift",
-          "url": "https://tidelift.com/funding/github/npm/browserslist"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/ai"
-        }
-      ],
-      "license": "MIT",
-      "dependencies": {
-        "escalade": "^3.2.0",
-        "picocolors": "^1.1.1"
-      },
-      "bin": {
-        "update-browserslist-db": "cli.js"
-      },
-      "peerDependencies": {
-        "browserslist": ">= 4.21.0"
-      }
-    },
-    "node_modules/use-sync-external-store": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz",
-      "integrity": "sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==",
-      "license": "MIT",
-      "peerDependencies": {
-        "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
-      }
-    },
-    "node_modules/util-deprecate": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
-      "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
-      "license": "MIT"
-    },
-    "node_modules/utils-merge": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz",
-      "integrity": "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4.0"
-      }
-    },
-    "node_modules/vary": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz",
-      "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/victory-vendor": {
-      "version": "37.3.6",
-      "resolved": "https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz",
-      "integrity": "sha512-SbPDPdDBYp+5MJHhBCAyI7wKM3d5ivekigc2Dk2s7pgbZ9wIgIBYGVw4zGHBml/qTFbexrofXW6Gu4noGxrOwQ==",
-      "license": "MIT AND ISC",
-      "dependencies": {
-        "@types/d3-array": "^3.0.3",
-        "@types/d3-ease": "^3.0.0",
-        "@types/d3-interpolate": "^3.0.1",
-        "@types/d3-scale": "^4.0.2",
-        "@types/d3-shape": "^3.1.0",
-        "@types/d3-time": "^3.0.0",
-        "@types/d3-timer": "^3.0.0",
-        "d3-array": "^3.1.6",
-        "d3-ease": "^3.0.1",
-        "d3-interpolate": "^3.0.1",
-        "d3-scale": "^4.0.2",
-        "d3-shape": "^3.1.0",
-        "d3-time": "^3.0.0",
-        "d3-timer": "^3.0.1"
-      }
-    },
-    "node_modules/vite": {
-      "version": "6.4.1",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-6.4.1.tgz",
-      "integrity": "sha512-+Oxm7q9hDoLMyJOYfUYBuHQo+dkAloi33apOPP56pzj+vsdJDzr+j1NISE5pyaAuKL4A3UD34qd0lx5+kfKp2g==",
-      "license": "MIT",
-      "dependencies": {
-        "esbuild": "^0.25.0",
-        "fdir": "^6.4.4",
-        "picomatch": "^4.0.2",
-        "postcss": "^8.5.3",
-        "rollup": "^4.34.9",
-        "tinyglobby": "^0.2.13"
-      },
-      "bin": {
-        "vite": "bin/vite.js"
-      },
-      "engines": {
-        "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
-      },
-      "funding": {
-        "url": "https://github.com/vitejs/vite?sponsor=1"
-      },
-      "optionalDependencies": {
-        "fsevents": "~2.3.3"
-      },
-      "peerDependencies": {
-        "@types/node": "^18.0.0 || ^20.0.0 || >=22.0.0",
-        "jiti": ">=1.21.0",
-        "less": "*",
-        "lightningcss": "^1.21.0",
-        "sass": "*",
-        "sass-embedded": "*",
-        "stylus": "*",
-        "sugarss": "*",
-        "terser": "^5.16.0",
-        "tsx": "^4.8.1",
-        "yaml": "^2.4.2"
-      },
-      "peerDependenciesMeta": {
-        "@types/node": {
-          "optional": true
-        },
-        "jiti": {
-          "optional": true
-        },
-        "less": {
-          "optional": true
-        },
-        "lightningcss": {
-          "optional": true
-        },
-        "sass": {
-          "optional": true
-        },
-        "sass-embedded": {
-          "optional": true
-        },
-        "stylus": {
-          "optional": true
-        },
-        "sugarss": {
-          "optional": true
-        },
-        "terser": {
-          "optional": true
-        },
-        "tsx": {
-          "optional": true
-        },
-        "yaml": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/aix-ppc64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.25.12.tgz",
-      "integrity": "sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "aix"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/android-arm": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.25.12.tgz",
-      "integrity": "sha512-VJ+sKvNA/GE7Ccacc9Cha7bpS8nyzVv0jdVgwNDaR4gDMC/2TTRc33Ip8qrNYUcpkOHUT5OZ0bUcNNVZQ9RLlg==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/android-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.25.12.tgz",
-      "integrity": "sha512-6AAmLG7zwD1Z159jCKPvAxZd4y/VTO0VkprYy+3N2FtJ8+BQWFXU+OxARIwA46c5tdD9SsKGZ/1ocqBS/gAKHg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/android-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.25.12.tgz",
-      "integrity": "sha512-5jbb+2hhDHx5phYR2By8GTWEzn6I9UqR11Kwf22iKbNpYrsmRB18aX/9ivc5cabcUiAT/wM+YIZ6SG9QO6a8kg==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "android"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/darwin-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz",
-      "integrity": "sha512-N3zl+lxHCifgIlcMUP5016ESkeQjLj/959RxxNYIthIg+CQHInujFuXeWbWMgnTo4cp5XVHqFPmpyu9J65C1Yg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/darwin-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.25.12.tgz",
-      "integrity": "sha512-HQ9ka4Kx21qHXwtlTUVbKJOAnmG1ipXhdWTmNXiPzPfWKpXqASVcWdnf2bnL73wgjNrFXAa3yYvBSd9pzfEIpA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "darwin"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/freebsd-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.12.tgz",
-      "integrity": "sha512-gA0Bx759+7Jve03K1S0vkOu5Lg/85dou3EseOGUes8flVOGxbhDDh/iZaoek11Y8mtyKPGF3vP8XhnkDEAmzeg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/freebsd-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.25.12.tgz",
-      "integrity": "sha512-TGbO26Yw2xsHzxtbVFGEXBFH0FRAP7gtcPE7P5yP7wGy7cXK2oO7RyOhL5NLiqTlBh47XhmIUXuGciXEqYFfBQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "freebsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-arm": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.25.12.tgz",
-      "integrity": "sha512-lPDGyC1JPDou8kGcywY0YILzWlhhnRjdof3UlcoqYmS9El818LLfJJc3PXXgZHrHCAKs/Z2SeZtDJr5MrkxtOw==",
-      "cpu": [
-        "arm"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.25.12.tgz",
-      "integrity": "sha512-8bwX7a8FghIgrupcxb4aUmYDLp8pX06rGh5HqDT7bB+8Rdells6mHvrFHHW2JAOPZUbnjUpKTLg6ECyzvas2AQ==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-ia32": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.25.12.tgz",
-      "integrity": "sha512-0y9KrdVnbMM2/vG8KfU0byhUN+EFCny9+8g202gYqSSVMonbsCfLjUO+rCci7pM0WBEtz+oK/PIwHkzxkyharA==",
-      "cpu": [
-        "ia32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-loong64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.25.12.tgz",
-      "integrity": "sha512-h///Lr5a9rib/v1GGqXVGzjL4TMvVTv+s1DPoxQdz7l/AYv6LDSxdIwzxkrPW438oUXiDtwM10o9PmwS/6Z0Ng==",
-      "cpu": [
-        "loong64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-mips64el": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.25.12.tgz",
-      "integrity": "sha512-iyRrM1Pzy9GFMDLsXn1iHUm18nhKnNMWscjmp4+hpafcZjrr2WbT//d20xaGljXDBYHqRcl8HnxbX6uaA/eGVw==",
-      "cpu": [
-        "mips64el"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-ppc64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.25.12.tgz",
-      "integrity": "sha512-9meM/lRXxMi5PSUqEXRCtVjEZBGwB7P/D4yT8UG/mwIdze2aV4Vo6U5gD3+RsoHXKkHCfSxZKzmDssVlRj1QQA==",
-      "cpu": [
-        "ppc64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-riscv64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.25.12.tgz",
-      "integrity": "sha512-Zr7KR4hgKUpWAwb1f3o5ygT04MzqVrGEGXGLnj15YQDJErYu/BGg+wmFlIDOdJp0PmB0lLvxFIOXZgFRrdjR0w==",
-      "cpu": [
-        "riscv64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-s390x": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.25.12.tgz",
-      "integrity": "sha512-MsKncOcgTNvdtiISc/jZs/Zf8d0cl/t3gYWX8J9ubBnVOwlk65UIEEvgBORTiljloIWnBzLs4qhzPkJcitIzIg==",
-      "cpu": [
-        "s390x"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/linux-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.25.12.tgz",
-      "integrity": "sha512-uqZMTLr/zR/ed4jIGnwSLkaHmPjOjJvnm6TVVitAa08SLS9Z0VM8wIRx7gWbJB5/J54YuIMInDquWyYvQLZkgw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "linux"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/netbsd-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.12.tgz",
-      "integrity": "sha512-xXwcTq4GhRM7J9A8Gv5boanHhRa/Q9KLVmcyXHCTaM4wKfIpWkdXiMog/KsnxzJ0A1+nD+zoecuzqPmCRyBGjg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "netbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/netbsd-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.25.12.tgz",
-      "integrity": "sha512-Ld5pTlzPy3YwGec4OuHh1aCVCRvOXdH8DgRjfDy/oumVovmuSzWfnSJg+VtakB9Cm0gxNO9BzWkj6mtO1FMXkQ==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "netbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/openbsd-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.12.tgz",
-      "integrity": "sha512-fF96T6KsBo/pkQI950FARU9apGNTSlZGsv1jZBAlcLL1MLjLNIWPBkj5NlSz8aAzYKg+eNqknrUJ24QBybeR5A==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/openbsd-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.25.12.tgz",
-      "integrity": "sha512-MZyXUkZHjQxUvzK7rN8DJ3SRmrVrke8ZyRusHlP+kuwqTcfWLyqMOE3sScPPyeIXN/mDJIfGXvcMqCgYKekoQw==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openbsd"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/openharmony-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/openharmony-arm64/-/openharmony-arm64-0.25.12.tgz",
-      "integrity": "sha512-rm0YWsqUSRrjncSXGA7Zv78Nbnw4XL6/dzr20cyrQf7ZmRcsovpcRBdhD43Nuk3y7XIoW2OxMVvwuRvk9XdASg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "openharmony"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/sunos-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.25.12.tgz",
-      "integrity": "sha512-3wGSCDyuTHQUzt0nV7bocDy72r2lI33QL3gkDNGkod22EsYl04sMf0qLb8luNKTOmgF/eDEDP5BFNwoBKH441w==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "sunos"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/win32-arm64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.25.12.tgz",
-      "integrity": "sha512-rMmLrur64A7+DKlnSuwqUdRKyd3UE7oPJZmnljqEptesKM8wx9J8gx5u0+9Pq0fQQW8vqeKebwNXdfOyP+8Bsg==",
-      "cpu": [
-        "arm64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/win32-ia32": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.25.12.tgz",
-      "integrity": "sha512-HkqnmmBoCbCwxUKKNPBixiWDGCpQGVsrQfJoVGYLPT41XWF8lHuE5N6WhVia2n4o5QK5M4tYr21827fNhi4byQ==",
-      "cpu": [
-        "ia32"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/@esbuild/win32-x64": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.25.12.tgz",
-      "integrity": "sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA==",
-      "cpu": [
-        "x64"
-      ],
-      "license": "MIT",
-      "optional": true,
-      "os": [
-        "win32"
-      ],
-      "engines": {
-        "node": ">=18"
-      }
-    },
-    "node_modules/vite/node_modules/esbuild": {
-      "version": "0.25.12",
-      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz",
-      "integrity": "sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==",
-      "hasInstallScript": true,
-      "license": "MIT",
-      "bin": {
-        "esbuild": "bin/esbuild"
-      },
-      "engines": {
-        "node": ">=18"
-      },
-      "optionalDependencies": {
-        "@esbuild/aix-ppc64": "0.25.12",
-        "@esbuild/android-arm": "0.25.12",
-        "@esbuild/android-arm64": "0.25.12",
-        "@esbuild/android-x64": "0.25.12",
-        "@esbuild/darwin-arm64": "0.25.12",
-        "@esbuild/darwin-x64": "0.25.12",
-        "@esbuild/freebsd-arm64": "0.25.12",
-        "@esbuild/freebsd-x64": "0.25.12",
-        "@esbuild/linux-arm": "0.25.12",
-        "@esbuild/linux-arm64": "0.25.12",
-        "@esbuild/linux-ia32": "0.25.12",
-        "@esbuild/linux-loong64": "0.25.12",
-        "@esbuild/linux-mips64el": "0.25.12",
-        "@esbuild/linux-ppc64": "0.25.12",
-        "@esbuild/linux-riscv64": "0.25.12",
-        "@esbuild/linux-s390x": "0.25.12",
-        "@esbuild/linux-x64": "0.25.12",
-        "@esbuild/netbsd-arm64": "0.25.12",
-        "@esbuild/netbsd-x64": "0.25.12",
-        "@esbuild/openbsd-arm64": "0.25.12",
-        "@esbuild/openbsd-x64": "0.25.12",
-        "@esbuild/openharmony-arm64": "0.25.12",
-        "@esbuild/sunos-x64": "0.25.12",
-        "@esbuild/win32-arm64": "0.25.12",
-        "@esbuild/win32-ia32": "0.25.12",
-        "@esbuild/win32-x64": "0.25.12"
-      }
-    },
-    "node_modules/web-streams-polyfill": {
-      "version": "3.3.3",
-      "resolved": "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.3.3.tgz",
-      "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 8"
-      }
-    },
-    "node_modules/wrappy": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
-      "license": "ISC"
-    },
-    "node_modules/ws": {
-      "version": "8.20.0",
-      "resolved": "https://registry.npmjs.org/ws/-/ws-8.20.0.tgz",
-      "integrity": "sha512-sAt8BhgNbzCtgGbt2OxmpuryO63ZoDk/sqaB/znQm94T4fCEsy/yV+7CdC1kJhOU9lboAEU7R3kquuycDoibVA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=10.0.0"
-      },
-      "peerDependencies": {
-        "bufferutil": "^4.0.1",
-        "utf-8-validate": ">=5.0.2"
-      },
-      "peerDependenciesMeta": {
-        "bufferutil": {
-          "optional": true
-        },
-        "utf-8-validate": {
-          "optional": true
-        }
-      }
-    },
-    "node_modules/xtend": {
-      "version": "4.0.2",
-      "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
-      "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.4"
-      }
-    },
-    "node_modules/yallist": {
-      "version": "3.1.1",
-      "resolved": "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz",
-      "integrity": "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==",
-      "license": "ISC"
+import express from 'express';
+import { createServer as createViteServer } from 'vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import pg from 'pg';
+import bcrypt from 'bcrypt';
+import crypto from 'crypto';
+
+dotenv.config();
+
+// Fix for potential NaN port issue if PGPORT is set to something invalid
+if (process.env.PGPORT && isNaN(parseInt(process.env.PGPORT))) {
+  delete process.env.PGPORT;
+}
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const { Pool } = pg;
+
+// Database configuration
+let currentDatabaseUrl = process.env.DATABASE_URL;
+let pool = createPool(currentDatabaseUrl);
+
+function createPool(url: string | undefined) {
+  if (!url || typeof url !== 'string' || url.trim() === '' || url === 'undefined') {
+    return new Pool({
+      host: 'missing-database-url',
+      port: 5432
+    });
+  }
+
+  try {
+    // Basic validation: if it doesn't look like a URI, try to fix it or handle it
+    let connectionConfig: any = {
+      ssl: {
+        rejectUnauthorized: false
+      }
+    };
+
+    if (url.includes('://')) {
+      connectionConfig.connectionString = url;
+    } else {
+      // If it's just a hostname or something else, it's likely invalid as a connection string
+      // but we'll let pg try to parse it as a connection string anyway, 
+      // or we could try to construct a URI.
+      // Most cloud providers provide a full URI.
+      connectionConfig.connectionString = url.startsWith('postgres') ? url : `postgresql://${url}`;
     }
+
+    const poolInstance = new Pool(connectionConfig);
+    
+    // Add error listener to the pool to prevent crashes from unhandled 'error' events
+    poolInstance.on('error', (err) => {
+      console.error('Unexpected error on idle client', err);
+    });
+    
+    return poolInstance;
+  } catch (err) {
+    console.error('Error creating pool config:', err);
+    const fallbackPool = new Pool({
+      host: 'invalid-database-url',
+      port: 5432
+    });
+    fallbackPool.on('error', (err) => {
+      console.error('Unexpected error on idle client (fallback)', err);
+    });
+    return fallbackPool;
   }
 }
+
+if (!currentDatabaseUrl) {
+  console.error('CRITICAL: DATABASE_URL environment variable is missing!');
+  console.error('The application will not be able to connect to PostgreSQL.');
+}
+
+// Initialize database schema for PostgreSQL
+async function initDb(url: string | undefined, p: any) {
+  if (!url || url.trim() === '' || url === 'undefined') {
+    console.warn('DATABASE_URL is missing or invalid. Skipping DB initialization.');
+    return;
+  }
+
+  let client;
+  try {
+    client = await p.connect();
+    client.on('error', (err: any) => {
+      console.error('Unexpected error on checked out client in initDb', err);
+    });
+    console.log('Connected to PostgreSQL. Initializing schema...');
+    
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS warehouses (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        location TEXT,
+        is_default BOOLEAN DEFAULT FALSE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS chart_of_accounts (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        code TEXT UNIQUE NOT NULL,
+        parent_id TEXT REFERENCES chart_of_accounts(id),
+        type TEXT NOT NULL, -- 'asset', 'liability', 'equity', 'revenue', 'expense'
+        description TEXT,
+        balance DECIMAL DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      ALTER TABLE chart_of_accounts ADD COLUMN IF NOT EXISTS description TEXT;
+
+      CREATE TABLE IF NOT EXISTS products (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        sku TEXT UNIQUE,
+        category TEXT,
+        unit TEXT,
+        quantity DECIMAL DEFAULT 0,
+        cost_price DECIMAL DEFAULT 0,
+        sale_price DECIMAL DEFAULT 0,
+        min_stock DECIMAL DEFAULT 0,
+        warehouse_id TEXT REFERENCES warehouses(id),
+        serial_no TEXT,
+        expiry_date DATE,
+        is_taxable BOOLEAN DEFAULT TRUE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      ALTER TABLE products ADD COLUMN IF NOT EXISTS is_taxable BOOLEAN DEFAULT TRUE;
+
+      CREATE TABLE IF NOT EXISTS quotes (
+        id TEXT PRIMARY KEY,
+        quote_number TEXT UNIQUE NOT NULL,
+        party_id TEXT REFERENCES suppliers_customers(id),
+        date DATE DEFAULT CURRENT_DATE,
+        total_amount DECIMAL DEFAULT 0,
+        status TEXT DEFAULT 'pending', -- 'pending', 'converted', 'expired'
+        notes TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS quote_items (
+        id TEXT PRIMARY KEY,
+        quote_id TEXT REFERENCES quotes(id) ON DELETE CASCADE,
+        product_id TEXT REFERENCES products(id),
+        quantity DECIMAL NOT NULL,
+        unit_price DECIMAL NOT NULL,
+        total DECIMAL NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS stock_movements (
+        id TEXT PRIMARY KEY,
+        product_id TEXT REFERENCES products(id),
+        from_warehouse_id TEXT REFERENCES warehouses(id),
+        to_warehouse_id TEXT REFERENCES warehouses(id),
+        quantity DECIMAL NOT NULL,
+        type TEXT NOT NULL, -- 'transfer', 'adjustment', 'initial'
+        reason TEXT,
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS expense_categories (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS bank_accounts (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        type TEXT DEFAULT 'cash', -- 'cash' or 'bank'
+        account_number TEXT,
+        bank_name TEXT,
+        branch_name TEXT,
+        currency_id TEXT,
+        account_id TEXT REFERENCES chart_of_accounts(id),
+        balance DECIMAL DEFAULT 0,
+        initial_balance DECIMAL DEFAULT 0,
+        is_active BOOLEAN DEFAULT TRUE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      ALTER TABLE bank_accounts ADD COLUMN IF NOT EXISTS account_id TEXT REFERENCES chart_of_accounts(id);
+
+      CREATE TABLE IF NOT EXISTS product_units (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS product_categories (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS customer_groups (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS supplier_groups (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS payment_methods (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS tax_types (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        rate DECIMAL DEFAULT 0,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS currencies (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        code TEXT NOT NULL,
+        symbol TEXT,
+        exchange_rate DECIMAL DEFAULT 1
+      );
+
+      CREATE TABLE IF NOT EXISTS departments (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        full_name TEXT,
+        role TEXT DEFAULT 'user', -- 'admin', 'user'
+        is_active BOOLEAN DEFAULT TRUE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS system_settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS suppliers_customers (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL, -- 'supplier' or 'customer'
+        name TEXT NOT NULL,
+        phone TEXT,
+        email TEXT,
+        account_id TEXT REFERENCES chart_of_accounts(id),
+        balance DECIMAL DEFAULT 0,
+        opening_balance DECIMAL DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      ALTER TABLE suppliers_customers ADD COLUMN IF NOT EXISTS account_id TEXT REFERENCES chart_of_accounts(id);
+
+      CREATE TABLE IF NOT EXISTS transactions (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL, -- 'sale', 'purchase', 'sale_return', 'purchase_return'
+        invoice_type TEXT DEFAULT 'cash', -- 'cash', 'credit', 'visa'
+        party_id TEXT REFERENCES suppliers_customers(id),
+        date DATE DEFAULT CURRENT_DATE,
+        total_amount DECIMAL DEFAULT 0,
+        paid_amount DECIMAL DEFAULT 0,
+        due_amount DECIMAL DEFAULT 0,
+        tax_amount DECIMAL DEFAULT 0,
+        payment_method TEXT, -- 'cash', 'check', 'credit'
+        check_number TEXT,
+        check_date DATE,
+        status TEXT DEFAULT 'completed',
+        notes TEXT,
+        warehouse_id TEXT REFERENCES warehouses(id),
+        account_id TEXT REFERENCES bank_accounts(id),
+        time TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS journal_entries (
+        id TEXT PRIMARY KEY,
+        date DATE DEFAULT CURRENT_DATE,
+        description TEXT,
+        reference_id TEXT, -- transaction_id or other ref
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS journal_entry_lines (
+        id TEXT PRIMARY KEY,
+        journal_entry_id TEXT REFERENCES journal_entries(id) ON DELETE CASCADE,
+        account_id TEXT REFERENCES chart_of_accounts(id),
+        debit DECIMAL DEFAULT 0,
+        credit DECIMAL DEFAULT 0
+      );
+
+      CREATE TABLE IF NOT EXISTS transaction_items (
+        id TEXT PRIMARY KEY,
+        transaction_id TEXT REFERENCES transactions(id) ON DELETE CASCADE,
+        product_id TEXT REFERENCES products(id),
+        quantity DECIMAL NOT NULL,
+        unit TEXT,
+        unit_price DECIMAL NOT NULL,
+        total DECIMAL NOT NULL,
+        tax_percent DECIMAL DEFAULT 0,
+        tax_amount DECIMAL DEFAULT 0,
+        net_amount DECIMAL DEFAULT 0,
+        discount_amount DECIMAL DEFAULT 0,
+        discount_percent DECIMAL DEFAULT 0
+      );
+
+      ALTER TABLE transaction_items ADD COLUMN IF NOT EXISTS unit TEXT;
+
+      CREATE TABLE IF NOT EXISTS financial_records (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL, -- 'income', 'expense'
+        method TEXT NOT NULL, -- 'cash', 'check', 'bank_transfer'
+        amount DECIMAL NOT NULL,
+        date DATE DEFAULT CURRENT_DATE,
+        description TEXT,
+        category_id TEXT REFERENCES expense_categories(id),
+        account_id TEXT REFERENCES bank_accounts(id),
+        check_number TEXT,
+        check_date DATE,
+        transaction_id TEXT REFERENCES transactions(id)
+      );
+
+      CREATE TABLE IF NOT EXISTS product_groups (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS sales_reps (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        phone TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS shipping_cos (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        phone TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS cost_centers (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        code TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS financial_docs (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        type TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS projects (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS branches (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        location TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS brands (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS models (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        brand_id TEXT REFERENCES brands(id)
+      );
+
+      CREATE TABLE IF NOT EXISTS transport_cars (
+        id TEXT PRIMARY KEY,
+        plate_number TEXT NOT NULL,
+        driver_name TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS transport_drivers (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        phone TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS transfers (
+        id TEXT PRIMARY KEY,
+        date DATE DEFAULT CURRENT_DATE,
+        from_warehouse_id TEXT REFERENCES warehouses(id),
+        to_warehouse_id TEXT REFERENCES warehouses(id),
+        notes TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS transfer_items (
+        id TEXT PRIMARY KEY,
+        transfer_id TEXT REFERENCES transfers(id) ON DELETE CASCADE,
+        product_id TEXT REFERENCES products(id),
+        quantity DECIMAL NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS adjustments (
+        id TEXT PRIMARY KEY,
+        date DATE DEFAULT CURRENT_DATE,
+        warehouse_id TEXT REFERENCES warehouses(id),
+        type TEXT NOT NULL, -- 'in' or 'out'
+        reason TEXT,
+        notes TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS adjustment_items (
+        id TEXT PRIMARY KEY,
+        adjustment_id TEXT REFERENCES adjustments(id) ON DELETE CASCADE,
+        product_id TEXT REFERENCES products(id),
+        quantity DECIMAL NOT NULL
+      );
+
+      -- Add columns if they don't exist for existing tables
+      DO $$ 
+      BEGIN 
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='warehouse_id') THEN
+          ALTER TABLE products ADD COLUMN warehouse_id TEXT REFERENCES warehouses(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='serial_no') THEN
+          ALTER TABLE products ADD COLUMN serial_no TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='expiry_date') THEN
+          ALTER TABLE products ADD COLUMN expiry_date DATE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='barcode') THEN
+          ALTER TABLE products ADD COLUMN barcode TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='electronic_invoice_code') THEN
+          ALTER TABLE products ADD COLUMN electronic_invoice_code TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='code2') THEN
+          ALTER TABLE products ADD COLUMN code2 TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='wholesale_price') THEN
+          ALTER TABLE products ADD COLUMN wholesale_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='half_wholesale_price') THEN
+          ALTER TABLE products ADD COLUMN half_wholesale_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='last_purchase_price') THEN
+          ALTER TABLE products ADD COLUMN last_purchase_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='min_sale_price') THEN
+          ALTER TABLE products ADD COLUMN min_sale_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='avg_purchase_price') THEN
+          ALTER TABLE products ADD COLUMN avg_purchase_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='market_price') THEN
+          ALTER TABLE products ADD COLUMN market_price DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='manual_cost') THEN
+          ALTER TABLE products ADD COLUMN manual_cost DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='profit_percent_retail') THEN
+          ALTER TABLE products ADD COLUMN profit_percent_retail DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='profit_percent_wholesale') THEN
+          ALTER TABLE products ADD COLUMN profit_percent_wholesale DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='profit_percent_half_wholesale') THEN
+          ALTER TABLE products ADD COLUMN profit_percent_half_wholesale DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='profit_percent_min_sale') THEN
+          ALTER TABLE products ADD COLUMN profit_percent_min_sale DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='discount_retail') THEN
+          ALTER TABLE products ADD COLUMN discount_retail DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='discount_wholesale') THEN
+          ALTER TABLE products ADD COLUMN discount_wholesale DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='discount_half_wholesale') THEN
+          ALTER TABLE products ADD COLUMN discount_half_wholesale DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='max_stock') THEN
+          ALTER TABLE products ADD COLUMN max_stock DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='tax_percent') THEN
+          ALTER TABLE products ADD COLUMN tax_percent DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='is_active') THEN
+          ALTER TABLE products ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='name_en') THEN
+          ALTER TABLE products ADD COLUMN name_en TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='coding_type') THEN
+          ALTER TABLE products ADD COLUMN coding_type TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='is_assembly') THEN
+          ALTER TABLE products ADD COLUMN is_assembly BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='is_service') THEN
+          ALTER TABLE products ADD COLUMN is_service BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='has_expiry') THEN
+          ALTER TABLE products ADD COLUMN has_expiry BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='has_serial') THEN
+          ALTER TABLE products ADD COLUMN has_serial BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='stop_sale') THEN
+          ALTER TABLE products ADD COLUMN stop_sale BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='stop_purchase') THEN
+          ALTER TABLE products ADD COLUMN stop_purchase BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='concrete_type') THEN
+          ALTER TABLE products ADD COLUMN concrete_type TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='additional_statement') THEN
+          ALTER TABLE products ADD COLUMN additional_statement TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='group_id') THEN
+          ALTER TABLE products ADD COLUMN group_id TEXT REFERENCES product_groups(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='brand_id') THEN
+          ALTER TABLE products ADD COLUMN brand_id TEXT REFERENCES brands(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='model_id') THEN
+          ALTER TABLE products ADD COLUMN model_id TEXT REFERENCES models(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='origin') THEN
+          ALTER TABLE products ADD COLUMN origin TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='warranty') THEN
+          ALTER TABLE products ADD COLUMN warranty TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='no_points') THEN
+          ALTER TABLE products ADD COLUMN no_points BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='no_discount') THEN
+          ALTER TABLE products ADD COLUMN no_discount BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='for_rent') THEN
+          ALTER TABLE products ADD COLUMN for_rent BOOLEAN DEFAULT FALSE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='part_numbers') THEN
+          ALTER TABLE products ADD COLUMN part_numbers TEXT[];
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='categories') THEN
+          ALTER TABLE products ADD COLUMN categories TEXT[];
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='groups') THEN
+          ALTER TABLE products ADD COLUMN groups TEXT[];
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='is_taxable') THEN
+          ALTER TABLE products ADD COLUMN is_taxable BOOLEAN DEFAULT TRUE;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='suppliers_customers' AND column_name='opening_balance') THEN
+          ALTER TABLE suppliers_customers ADD COLUMN opening_balance DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='tax_amount') THEN
+          ALTER TABLE transactions ADD COLUMN tax_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='document_number') THEN
+          ALTER TABLE transactions ADD COLUMN document_number TEXT;
+          ALTER TABLE transactions ADD CONSTRAINT transactions_type_doc_number_unique UNIQUE (type, document_number);
+        ELSE
+          -- If it already exists, we might need to change the constraint from global unique to composite unique
+          -- Check if it has a global unique constraint
+          IF EXISTS (
+            SELECT 1 FROM information_schema.table_constraints 
+            WHERE table_name='transactions' AND constraint_type='UNIQUE' 
+            AND constraint_name='transactions_document_number_key'
+          ) THEN
+            ALTER TABLE transactions DROP CONSTRAINT transactions_document_number_key;
+            ALTER TABLE transactions ADD CONSTRAINT transactions_type_doc_number_unique UNIQUE (type, document_number);
+          END IF;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='discount_amount') THEN
+          ALTER TABLE transactions ADD COLUMN discount_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='discount_percent') THEN
+          ALTER TABLE transactions ADD COLUMN discount_percent DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='paid_amount') THEN
+          ALTER TABLE transactions ADD COLUMN paid_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='due_amount') THEN
+          ALTER TABLE transactions ADD COLUMN due_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='branch_id') THEN
+          ALTER TABLE transactions ADD COLUMN branch_id TEXT REFERENCES branches(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='project_id') THEN
+          ALTER TABLE transactions ADD COLUMN project_id TEXT REFERENCES projects(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='cost_center_id') THEN
+          ALTER TABLE transactions ADD COLUMN cost_center_id TEXT REFERENCES cost_centers(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='sales_rep_id') THEN
+          ALTER TABLE transactions ADD COLUMN sales_rep_id TEXT REFERENCES sales_reps(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='shipping_co_id') THEN
+          ALTER TABLE transactions ADD COLUMN shipping_co_id TEXT REFERENCES shipping_cos(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='transport_car_id') THEN
+          ALTER TABLE transactions ADD COLUMN transport_car_id TEXT REFERENCES transport_cars(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='transport_driver_id') THEN
+          ALTER TABLE transactions ADD COLUMN transport_driver_id TEXT REFERENCES transport_drivers(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='pricing_type') THEN
+          ALTER TABLE transactions ADD COLUMN pricing_type TEXT DEFAULT 'retail';
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='warehouse_id') THEN
+          ALTER TABLE transactions ADD COLUMN warehouse_id TEXT REFERENCES warehouses(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='account_id') THEN
+          ALTER TABLE transactions ADD COLUMN account_id TEXT REFERENCES bank_accounts(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='time') THEN
+          ALTER TABLE transactions ADD COLUMN time TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='invoice_type') THEN
+          ALTER TABLE transactions ADD COLUMN invoice_type TEXT DEFAULT 'cash'; -- 'cash', 'credit', 'visa'
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='paid_amount') THEN
+          ALTER TABLE transactions ADD COLUMN paid_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='due_amount') THEN
+          ALTER TABLE transactions ADD COLUMN due_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transactions' AND column_name='created_at') THEN
+          ALTER TABLE transactions ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transaction_items' AND column_name='tax_percent') THEN
+          ALTER TABLE transaction_items ADD COLUMN tax_percent DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transaction_items' AND column_name='tax_amount') THEN
+          ALTER TABLE transaction_items ADD COLUMN tax_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transaction_items' AND column_name='net_amount') THEN
+          ALTER TABLE transaction_items ADD COLUMN net_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transaction_items' AND column_name='discount_amount') THEN
+          ALTER TABLE transaction_items ADD COLUMN discount_amount DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='transaction_items' AND column_name='discount_percent') THEN
+          ALTER TABLE transaction_items ADD COLUMN discount_percent DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='financial_records' AND column_name='category_id') THEN
+          ALTER TABLE financial_records ADD COLUMN category_id TEXT REFERENCES expense_categories(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='financial_records' AND column_name='account_id') THEN
+          ALTER TABLE financial_records ADD COLUMN account_id TEXT REFERENCES bank_accounts(id);
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='bank_accounts' AND column_name='type') THEN
+          ALTER TABLE bank_accounts ADD COLUMN type TEXT DEFAULT 'cash';
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='bank_accounts' AND column_name='currency_id') THEN
+          ALTER TABLE bank_accounts ADD COLUMN currency_id TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='bank_accounts' AND column_name='branch_name') THEN
+          ALTER TABLE bank_accounts ADD COLUMN branch_name TEXT;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='bank_accounts' AND column_name='initial_balance') THEN
+          ALTER TABLE bank_accounts ADD COLUMN initial_balance DECIMAL DEFAULT 0;
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='bank_accounts' AND column_name='is_active') THEN
+          ALTER TABLE bank_accounts ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+        END IF;
+      END $$;
+    `);
+
+    // Seed with mock data if empty
+    const userCountRes = await client.query('SELECT COUNT(*) FROM users');
+    if (parseInt(userCountRes.rows[0].count) === 0) {
+      console.log('Seeding default admin user...');
+      await client.query(`
+        INSERT INTO users (id, username, password, full_name, role)
+        VALUES ('u1', 'admin', 'admin123', 'المدير العام', 'admin');
+      `);
+    }
+
+    const settingsCountRes = await client.query('SELECT COUNT(*) FROM system_settings');
+    if (parseInt(settingsCountRes.rows[0].count) === 0) {
+      console.log('Seeding default system settings...');
+      await client.query(`
+        INSERT INTO system_settings (key, value)
+        VALUES 
+        ('is_activated', 'false'), 
+        ('activation_key', 'ACTIVATE-2026'),
+        ('app_name', 'المحاسب الذكي'),
+        ('font_family', 'Cairo'),
+        ('bg_color', '#E4E3E0'),
+        ('text_color', '#141414'),
+        ('heading_color', '#141414'),
+        ('detail_color', '#141414'),
+        ('card_bg', '#FFFFFF'),
+        ('default_tax_percent', '14'),
+        ('sales_account_id', 'acc9'),
+        ('sales_returns_account_id', 'acc9'),
+        ('purchases_account_id', 'acc10'),
+        ('purchase_returns_account_id', 'acc10'),
+        ('input_vat_account_id', 'acc13'),
+        ('output_vat_account_id', 'acc12'),
+        ('discount_allowed_account_id', 'acc14'),
+        ('discount_earned_account_id', 'acc15'),
+        ('default_cash_account_id', 'ba2'),
+        ('default_bank_account_id', 'ba1');
+      `);
+    }
+
+    // Fix Invoice #3 amount if it was incorrectly entered as 53000
+    await client.query(`
+      DO $$
+      BEGIN
+        IF EXISTS (SELECT 1 FROM transactions WHERE document_number = '3' AND type = 'sale' AND total_amount = 53000) THEN
+          -- Update transaction
+          UPDATE transactions SET total_amount = 5300, due_amount = 5300 - COALESCE(paid_amount, 0) WHERE document_number = '3' AND type = 'sale';
+          -- Update items (calculate unit price based on quantity)
+          UPDATE transaction_items SET total = 5300, unit_price = 5300 / NULLIF(quantity, 0) WHERE transaction_id = (SELECT id FROM transactions WHERE document_number = '3' AND type = 'sale');
+          -- Update financial record
+          UPDATE financial_records SET amount = 5300 WHERE transaction_id = (SELECT id FROM transactions WHERE document_number = '3' AND type = 'sale');
+          -- Update customer balance (reduce by 47700)
+          UPDATE suppliers_customers SET balance = balance - 47700 WHERE id = (SELECT party_id FROM transactions WHERE document_number = '3' AND type = 'sale');
+        END IF;
+
+        -- One-time fix for Invoice #3 if it was already incorrectly updated to unit_price 5300 with quantity > 1
+        IF EXISTS (SELECT 1 FROM transaction_items ti JOIN transactions t ON ti.transaction_id = t.id WHERE t.document_number = '3' AND t.type = 'sale' AND ti.unit_price = 5300 AND ti.quantity > 1) THEN
+          UPDATE transaction_items SET unit_price = 5300 / NULLIF(quantity, 0) WHERE transaction_id = (SELECT id FROM transactions WHERE document_number = '3' AND type = 'sale');
+        END IF;
+      END $$;
+    `);
+
+    const warehouseCountRes = await client.query('SELECT COUNT(*) FROM warehouses');
+    if (parseInt(warehouseCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO warehouses (id, name, location, is_default)
+        VALUES ('w1', 'المخزن الرئيسي', 'المقر الرئيسي', TRUE);
+      `);
+    }
+
+    const expenseCatCountRes = await client.query('SELECT COUNT(*) FROM expense_categories');
+    if (parseInt(expenseCatCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO expense_categories (id, name, description)
+        VALUES 
+        ('ec1', 'إيجارات', 'مصاريف إيجار المحلات والمخازن'),
+        ('ec2', 'رواتب', 'رواتب الموظفين والعمال'),
+        ('ec3', 'كهرباء ومياه', 'فواتير المرافق العامة'),
+        ('ec4', 'مشتريات', 'شراء بضاعة ومواد خام');
+      `);
+    }
+
+    const bankAccCountRes = await client.query('SELECT COUNT(*) FROM bank_accounts');
+    if (parseInt(bankAccCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO bank_accounts (id, name, type, bank_name, balance, account_id)
+        VALUES 
+        ('ba1', 'حساب بنك مصر', 'bank', 'بنك مصر', 10000, 'acc4'),
+        ('ba2', 'الصندوق الرئيسي', 'cash', 'نقدي', 5000, 'acc3');
+      `);
+    }
+
+    const unitCountRes = await client.query('SELECT COUNT(*) FROM product_units');
+    if (parseInt(unitCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO product_units (id, name)
+        VALUES 
+        ('u1', 'قطعة'),
+        ('u2', 'كيلو'),
+        ('u3', 'متر'),
+        ('u4', 'علبة'),
+        ('u5', 'كرتونة'),
+        ('u6', 'لتر'),
+        ('u7', 'طقم');
+      `);
+    }
+
+    const categoryCountRes = await client.query('SELECT COUNT(*) FROM product_categories');
+    if (parseInt(categoryCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO product_categories (id, name)
+        VALUES 
+        ('pc1', 'إلكترونيات'),
+        ('pc2', 'معدات مكتبية'),
+        ('pc3', 'أثاث'),
+        ('pc4', 'قرطاسية'),
+        ('pc5', 'مواد خام'),
+        ('pc6', 'برمجيات');
+      `);
+    }
+
+    const customerGroupCountRes = await client.query('SELECT COUNT(*) FROM customer_groups');
+    if (parseInt(customerGroupCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO customer_groups (id, name)
+        VALUES 
+        ('cg1', 'عملاء تجزئة'),
+        ('cg2', 'عملاء جملة'),
+        ('cg3', 'عملاء VIP'),
+        ('cg4', 'موزعين');
+      `);
+    }
+
+    const supplierGroupCountRes = await client.query('SELECT COUNT(*) FROM supplier_groups');
+    if (parseInt(supplierGroupCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO supplier_groups (id, name)
+        VALUES 
+        ('sg1', 'موردين محليين'),
+        ('sg2', 'موردين دوليين'),
+        ('sg3', 'مصانع'),
+        ('sg4', 'وكلاء حصريين');
+      `);
+    }
+
+    const paymentMethodCountRes = await client.query('SELECT COUNT(*) FROM payment_methods');
+    if (parseInt(paymentMethodCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO payment_methods (id, name)
+        VALUES 
+        ('pm1', 'نقدي'),
+        ('pm2', 'حوالة بنكية'),
+        ('pm3', 'شيك'),
+        ('pm4', 'بطاقة ائتمان');
+      `);
+    }
+
+    const taxTypeCountRes = await client.query('SELECT COUNT(*) FROM tax_types');
+    if (parseInt(taxTypeCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO tax_types (id, name, rate)
+        VALUES 
+        ('tx1', 'ضريبة القيمة المضافة', 14),
+        ('tx2', 'ضريبة الخصم والإضافة', 1),
+        ('tx3', 'معفى من الضرائب', 0);
+      `);
+    }
+
+    const currencyCountRes = await client.query('SELECT COUNT(*) FROM currencies');
+    if (parseInt(currencyCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO currencies (id, name, code, symbol)
+        VALUES 
+        ('c1', 'جنيه مصري', 'EGP', 'ج.م'),
+        ('c2', 'دولار أمريكي', 'USD', '$'),
+        ('c3', 'ريال سعودي', 'SAR', 'ر.س');
+      `);
+    }
+
+    const deptCountRes = await client.query('SELECT COUNT(*) FROM departments');
+    if (parseInt(deptCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO departments (id, name)
+        VALUES 
+        ('d1', 'الإدارة المالية'),
+        ('d2', 'المبيعات'),
+        ('d3', 'المشتريات'),
+        ('d4', 'المخازن'),
+        ('d5', 'الموارد البشرية');
+      `);
+    }
+
+    const accountCountRes = await client.query('SELECT COUNT(*) FROM chart_of_accounts');
+    if (parseInt(accountCountRes.rows[0].count) === 0) {
+      await client.query(`
+        INSERT INTO chart_of_accounts (id, name, code, type)
+        VALUES 
+        ('acc1', 'الأصول المتداولة', '1100', 'asset'),
+        ('acc2', 'المخزون', '1101', 'asset'),
+        ('acc3', 'الصندوق', '1102', 'asset'),
+        ('acc4', 'البنك', '1103', 'asset'),
+        ('acc5', 'العملاء', '1104', 'asset'),
+        ('acc6', 'الخصوم المتداولة', '2100', 'liability'),
+        ('acc7', 'الموردين', '2101', 'liability'),
+        ('acc8', 'رأس المال', '3100', 'equity'),
+        ('acc9', 'المبيعات', '4100', 'revenue'),
+        ('acc10', 'المشتريات', '5100', 'expense'),
+        ('acc11', 'مصاريف عمومية', '5200', 'expense');
+      `);
+    } else {
+      // Ensure specific essential accounts exist even if table is not empty
+      const essentialAccounts = [
+        ['acc1', 'الأصول المتداولة', '1100', 'asset'],
+        ['acc2', 'المخزون', '1101', 'asset'],
+        ['acc3', 'الصندوق', '1102', 'asset'],
+        ['acc4', 'البنك', '1103', 'asset'],
+        ['acc5', 'العملاء', '1104', 'asset'],
+        ['acc6', 'الخصوم المتداولة', '2100', 'liability'],
+        ['acc7', 'الموردين', '2101', 'liability'],
+        ['acc8', 'رأس المال', '3100', 'equity'],
+        ['acc9', 'المبيعات', '4100', 'revenue'],
+        ['acc10', 'المشتريات', '5100', 'expense'],
+        ['acc11', 'مصاريف عمومية', '5200', 'expense'],
+        ['acc12', 'ضريبة القيمة المضافة المخرجة', '2201', 'liability'],
+        ['acc13', 'ضريبة القيمة المضافة المدخلة', '1201', 'asset'],
+        ['acc14', 'الخصم المسموح به', '5301', 'expense'],
+        ['acc15', 'الخصم المكتسب', '4201', 'revenue']
+      ];
+      for (const [id, name, code, type] of essentialAccounts) {
+        await client.query(
+          'INSERT INTO chart_of_accounts (id, name, code, type) SELECT $1, $2, $3, $4 WHERE NOT EXISTS (SELECT 1 FROM chart_of_accounts WHERE id = $1 OR code = $3)',
+          [id, name, code, type]
+        );
+      }
+    }
+
+    const productCountRes = await client.query('SELECT COUNT(*) FROM products');
+    if (parseInt(productCountRes.rows[0].count) === 0) {
+      console.log('Seeding Accounting System with mock data...');
+      
+      await client.query(`
+        INSERT INTO products (id, name, sku, category, unit, quantity, cost_price, sale_price, min_stock)
+        VALUES 
+        ('p1', 'لابتوب ديل XPS', 'DELL-001', 'إلكترونيات', 'قطعة', 15, 3500, 4200, 5),
+        ('p2', 'شاشة سامسونج 27', 'SAM-27', 'إلكترونيات', 'قطعة', 25, 800, 1100, 10),
+        ('p3', 'طابعة إتش بي', 'HP-LJR', 'معدات مكتبية', 'قطعة', 8, 1200, 1550, 3);
+
+        INSERT INTO suppliers_customers (id, type, name, phone, email, balance)
+        VALUES 
+        ('sc1', 'supplier', 'شركة التقنية الحديثة', '0123456789', 'info@tech.com', 0),
+        ('sc2', 'customer', 'أحمد محمد', '0987654321', 'ahmed@mail.com', 500);
+
+        INSERT INTO transactions (id, type, party_id, date, total_amount, payment_method, status)
+        VALUES 
+        ('t1', 'purchase', 'sc1', '2026-03-20', 52500, 'cash', 'completed'),
+        ('t2', 'sale', 'sc2', '2026-03-22', 4200, 'cash', 'completed');
+
+        INSERT INTO transaction_items (id, transaction_id, product_id, quantity, unit, unit_price, total)
+        VALUES 
+        ('ti1', 't1', 'p1', 15, 'قطعة', 3500, 52500),
+        ('ti2', 't2', 'p1', 1, 'قطعة', 4200, 4200);
+
+        INSERT INTO financial_records (id, type, method, amount, date, description)
+        VALUES 
+        ('f1', 'expense', 'cash', 52500, '2026-03-20', 'شراء مخزون لابتوبات'),
+        ('f2', 'income', 'cash', 4200, '2026-03-22', 'بيع لابتوب لعميل');
+      `);
+    }
+
+    // Ensure columns exist before updating
+    await client.query(`
+      ALTER TABLE transactions ADD COLUMN IF NOT EXISTS invoice_type TEXT DEFAULT 'cash';
+      ALTER TABLE transactions ADD COLUMN IF NOT EXISTS paid_amount DECIMAL DEFAULT 0;
+      ALTER TABLE transactions ADD COLUMN IF NOT EXISTS due_amount DECIMAL DEFAULT 0;
+    `);
+
+    // Fix existing transactions: set invoice_type to 'cash' where payment_method is 'cash' and it's currently null or empty
+    await client.query(`
+      UPDATE transactions 
+      SET invoice_type = 'cash' 
+      WHERE (invoice_type IS NULL OR invoice_type = '') 
+      AND payment_method = 'cash'
+    `);
+
+    // For cash invoices, ensure paid_amount is set to total_amount if it's 0
+    await client.query(`
+      UPDATE transactions 
+      SET paid_amount = total_amount, due_amount = 0
+      WHERE invoice_type = 'cash' 
+      AND (paid_amount IS NULL OR paid_amount = 0)
+      AND type IN ('sale', 'purchase', 'sale_return', 'purchase_return')
+    `);
+
+    // Recalculate party balances based on the new paid_amount values
+    const parties = await client.query('SELECT id, opening_balance FROM suppliers_customers');
+    for (const party of parties.rows) {
+      const txs = await client.query('SELECT * FROM transactions WHERE party_id = $1', [party.id]);
+      let newBalance = Number(party.opening_balance || 0);
+      for (const tx of txs.rows) {
+        const amount = Number(tx.total_amount);
+        const paid = Number(tx.paid_amount || 0);
+        const effective = (tx.type === 'sale' || tx.type === 'purchase' || tx.type === 'sale_return' || tx.type === 'purchase_return') ? (amount - paid) : amount;
+        
+        if (tx.type === 'sale') newBalance += effective;
+        else if (tx.type === 'purchase') newBalance -= effective;
+        else if (tx.type === 'sale_return') newBalance -= effective;
+        else if (tx.type === 'purchase_return') newBalance += effective;
+        else if (tx.type === 'sale_payment') newBalance -= amount;
+        else if (tx.type === 'purchase_payment') newBalance += amount;
+        else if (tx.type === 'settlement') newBalance -= amount;
+      }
+      await client.query('UPDATE suppliers_customers SET balance = $1 WHERE id = $2', [newBalance, party.id]);
+    }
+    
+    console.log('Database initialization complete.');
+  } catch (err) {
+    console.error('Error initializing database:', err);
+  } finally {
+    if (client) client.release();
+  }
+}
+
+initDb(currentDatabaseUrl, pool);
+
+async function startServer() {
+  const app = express();
+  const PORT = 3000;
+
+  app.use(cors());
+  app.use(express.json());
+
+  // API Routes
+  app.post('/api/auth/login', async (req, res) => {
+    const { username, password } = req.body;
+    
+    // Check master setup connection administrator credentials
+    if (username === 'amrbk') {
+      const hash = crypto.createHash('sha256').update(password || '').digest('hex');
+      if (hash === 'f10c0dff72a3effd8eb2f6020151313c11ade6bd532ccf329b3fbaffa1cc6e79') {
+        return res.json({
+          id: 'setup-admin',
+          username: 'amrbk',
+          full_name: 'مدير تهيئة النظام',
+          role: 'setup_admin',
+          is_active: true
+        });
+      } else {
+        return res.status(401).json({ error: 'كلمة مرور تهيئة النظام غير صحيحة' });
+      }
+    }
+
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM users WHERE username = $1 AND password = $2 AND is_active = TRUE', [username, password]);
+      if (result.rows.length > 0) {
+        const user = result.rows[0];
+        delete user.password;
+        res.json(user);
+      } else {
+        res.status(401).json({ error: 'اسم المستخدم أو كلمة المرور غير صحيحة' });
+      }
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في تسجيل الدخول' });
+    }
+  });
+
+  // Check previous sale for a customer and product
+  app.get('/api/check-previous-sale', async (req, res) => {
+    const { party_id, product_id } = req.query;
+    try {
+      const result = await pool.query(`
+        SELECT 
+          t.document_number,
+          t.date,
+          ti.quantity,
+          ti.unit,
+          ti.unit_price,
+          ti.discount_percent,
+          ti.discount_amount,
+          ti.tax_percent,
+          ti.tax_amount,
+          ti.net_amount,
+          p.name as product_name,
+          t.total_amount as invoice_total
+        FROM transactions t
+        JOIN transaction_items ti ON t.id = ti.transaction_id
+        JOIN products p ON ti.product_id = p.id
+        WHERE t.type = 'sale' 
+          AND t.party_id = $1 
+          AND ti.product_id = $2
+        ORDER BY t.date DESC, t.created_at DESC
+        LIMIT 10
+      `, [party_id, product_id]);
+
+      if (result.rows.length > 0) {
+        res.json(result.rows);
+      } else {
+        res.status(404).json({ message: 'No previous sale found' });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Database error' });
+    }
+  });
+
+  app.get('/api/users', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT id, username, full_name, role, is_active FROM users ORDER BY created_at DESC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب المستخدمين' });
+    }
+  });
+
+  app.post('/api/users', async (req, res) => {
+    const { username, password, full_name, role, is_active } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const id = 'u' + Date.now();
+      await pool.query(
+        'INSERT INTO users (id, username, password, full_name, role, is_active) VALUES ($1, $2, $3, $4, $5, $6)',
+        [id, username, hashedPassword, full_name, role || 'user', is_active ?? true]
+      );
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المستخدم' });
+    }
+  });
+
+  app.put('/api/users/:id', async (req, res) => {
+    const { id } = req.params;
+    const { username, password, full_name, role, is_active } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      if (password) {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        await pool.query(
+          'UPDATE users SET username = $1, password = $2, full_name = $3, role = $4, is_active = $5 WHERE id = $6',
+          [username, hashedPassword, full_name, role, is_active, id]
+        );
+      } else {
+        await pool.query(
+          'UPDATE users SET username = $1, full_name = $2, role = $3, is_active = $4 WHERE id = $5',
+          [username, full_name, role, is_active, id]
+        );
+      }
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في تعديل المستخدم' });
+    }
+  });
+
+  app.get('/api/settings', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM system_settings');
+      const settings = result.rows.reduce((acc: any, row: any) => {
+        acc[row.key] = row.value;
+        return acc;
+      }, {});
+      res.json(settings);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الإعدادات' });
+    }
+  });
+
+  app.post('/api/settings', async (req, res) => {
+    const settings = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      for (const [key, value] of Object.entries(settings)) {
+        await pool.query(
+          'INSERT INTO system_settings (key, value) VALUES ($1, $2) ON CONFLICT (key) DO UPDATE SET value = $2',
+          [key, String(value)]
+        );
+      }
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error saving settings:', err);
+      res.status(500).json({ error: 'خطأ في حفظ الإعدادات' });
+    }
+  });
+
+  app.get('/api/settings/activation', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM system_settings WHERE key = \'is_activated\'');
+      res.json({ is_activated: result.rows[0]?.value === 'true' });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب حالة التفعيل' });
+    }
+  });
+
+  app.post('/api/settings/activate', async (req, res) => {
+    const { key } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT value FROM system_settings WHERE key = \'activation_key\'');
+      if (result.rows[0]?.value === key) {
+        await pool.query('UPDATE system_settings SET value = \'true\' WHERE key = \'is_activated\'');
+        res.json({ success: true });
+      } else {
+        res.status(400).json({ error: 'مفتاح التفعيل غير صحيح' });
+      }
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في عملية التفعيل' });
+    }
+  });
+
+  app.get('/api/db-test', async (req, res) => {
+    if (!currentDatabaseUrl) {
+      return res.status(500).json({ 
+        status: 'error', 
+        message: 'DATABASE_URL is not set. Please add it to Settings -> Secrets or the app Settings tab.' 
+      });
+    }
+    try {
+      const result = await pool.query('SELECT NOW()');
+      res.json({ status: 'connected', type: 'postgresql', time: result.rows[0].now });
+    } catch (err) {
+      console.error('Database connection error:', err);
+      res.status(500).json({ status: 'error', message: err instanceof Error ? err.message : String(err) });
+    }
+  });
+
+  app.post('/api/settings/db-connection', async (req, res) => {
+    const { connectionString } = req.body;
+    if (!connectionString) {
+      return res.status(400).json({ error: 'Connection string is required' });
+    }
+
+    try {
+      console.log('Updating database connection string...');
+      const newPool = createPool(connectionString);
+      // Test the new connection
+      await newPool.query('SELECT NOW()');
+      
+      // If successful, swap the pool and update the URL
+      const oldPool = pool;
+      pool = newPool;
+      currentDatabaseUrl = connectionString;
+      
+      // Try to initialize schema on new DB
+      await initDb(currentDatabaseUrl, pool);
+      
+      // Close old pool after a short delay to allow pending queries to finish
+      setTimeout(() => oldPool.end().catch(console.error), 5000);
+
+      res.json({ status: 'success', message: 'تم تحديث اتصال قاعدة البيانات بنجاح' });
+    } catch (err) {
+      console.error('Failed to connect with new string:', err);
+      res.status(500).json({ status: 'error', message: 'فشل الاتصال بالرابط الجديد: ' + (err instanceof Error ? err.message : String(err)) });
+    }
+  });
+
+  app.get('/api/product-units', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM product_units ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الوحدات' });
+    }
+  });
+
+  app.post('/api/product-units', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'pu' + Date.now();
+      await pool.query('INSERT INTO product_units (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة الوحدة' });
+    }
+  });
+
+  app.get('/api/product-categories', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM product_categories ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب التصنيفات' });
+    }
+  });
+
+  app.post('/api/product-categories', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'pc' + Date.now();
+      await pool.query('INSERT INTO product_categories (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة التصنيف' });
+    }
+  });
+
+  app.get('/api/customer-groups', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM customer_groups ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب مجموعات العملاء' });
+    }
+  });
+
+  app.post('/api/customer-groups', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'cg' + Date.now();
+      await pool.query('INSERT INTO customer_groups (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة مجموعة العملاء' });
+    }
+  });
+
+  app.get('/api/supplier-groups', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM supplier_groups ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب مجموعات الموردين' });
+    }
+  });
+
+  app.post('/api/supplier-groups', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'sg' + Date.now();
+      await pool.query('INSERT INTO supplier_groups (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة مجموعة الموردين' });
+    }
+  });
+
+  app.get('/api/payment-methods', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM payment_methods ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب طرق الدفع' });
+    }
+  });
+
+  app.post('/api/payment-methods', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'pm' + Date.now();
+      await pool.query('INSERT INTO payment_methods (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة طريقة الدفع' });
+    }
+  });
+
+  app.get('/api/tax-types', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM tax_types ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب أنواع الضرائب' });
+    }
+  });
+
+  app.post('/api/tax-types', async (req, res) => {
+    const { name, rate, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'tx' + Date.now();
+      await pool.query('INSERT INTO tax_types (id, name, rate, description) VALUES ($1, $2, $3, $4)', [id, name, rate, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة نوع الضريبة' });
+    }
+  });
+
+  app.get('/api/currencies', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM currencies ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب العملات' });
+    }
+  });
+
+  app.post('/api/currencies', async (req, res) => {
+    const { name, code, symbol, exchange_rate } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'c' + Date.now();
+      await pool.query('INSERT INTO currencies (id, name, code, symbol, exchange_rate) VALUES ($1, $2, $3, $4, $5)', [id, name, code, symbol, exchange_rate || 1]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة العملة' });
+    }
+  });
+
+  app.get('/api/departments', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM departments ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الأقسام' });
+    }
+  });
+
+  app.post('/api/departments', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'd' + Date.now();
+      await pool.query('INSERT INTO departments (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة القسم' });
+    }
+  });
+
+  app.get('/api/coa', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM chart_of_accounts ORDER BY code ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب شجرة الحسابات' });
+    }
+  });
+
+  app.post(['/api/coa', '/api/chart-of-accounts'], async (req, res) => {
+    const { name, code, type, parent_id, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'acc' + Date.now();
+      const finalParentId = parent_id === '' ? null : parent_id;
+      await pool.query(
+        'INSERT INTO chart_of_accounts (id, name, code, type, parent_id, description) VALUES ($1, $2, $3, $4, $5, $6)', 
+        [id, name, code, type, finalParentId, description]
+      );
+      res.json({ success: true, id });
+    } catch (err) {
+      console.error('Error adding coa:', err);
+      res.status(500).json({ error: 'خطأ في إضافة الحساب' });
+    }
+  });
+
+  app.get('/api/settings/db-status', async (req, res) => {
+    if (!currentDatabaseUrl) {
+      return res.json({ connected: false, status: 'error', connectionString: '' });
+    }
+    try {
+      await pool.query('SELECT NOW()');
+      res.json({ connected: true, status: 'connected', connectionString: currentDatabaseUrl });
+    } catch (err) {
+      res.json({ connected: false, status: 'error', connectionString: currentDatabaseUrl, error: err instanceof Error ? err.message : String(err) });
+    }
+  });
+
+  app.get('/api/sales-reps', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM sales_reps ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب المناديب' });
+    }
+  });
+
+  app.post('/api/sales-reps', async (req, res) => {
+    const { name, phone } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'sr' + Date.now();
+      await pool.query('INSERT INTO sales_reps (id, name, phone) VALUES ($1, $2, $3)', [id, name, phone]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المندوب' });
+    }
+  });
+
+  app.get('/api/shipping-cos', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM shipping_cos ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب شركات الشحن' });
+    }
+  });
+
+  app.post('/api/shipping-cos', async (req, res) => {
+    const { name, phone } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'sc' + Date.now();
+      await pool.query('INSERT INTO shipping_cos (id, name, phone) VALUES ($1, $2, $3)', [id, name, phone]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة شركة الشحن' });
+    }
+  });
+
+  app.get('/api/cost-centers', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM cost_centers ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب مراكز التكلفة' });
+    }
+  });
+
+  app.post('/api/cost-centers', async (req, res) => {
+    const { name, code } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'cc' + Date.now();
+      await pool.query('INSERT INTO cost_centers (id, name, code) VALUES ($1, $2, $3)', [id, name, code]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة مركز التكلفة' });
+    }
+  });
+
+  app.get('/api/financial-docs', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM financial_docs ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب المستندات المالية' });
+    }
+  });
+
+  app.post('/api/financial-docs', async (req, res) => {
+    const { name, type } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'fd' + Date.now();
+      await pool.query('INSERT INTO financial_docs (id, name, type) VALUES ($1, $2, $3)', [id, name, type]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المستند المالي' });
+    }
+  });
+
+  app.get('/api/transfers', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT t.*, w1.name as from_warehouse_name, w2.name as to_warehouse_name
+        FROM transfers t
+        LEFT JOIN warehouses w1 ON t.from_warehouse_id = w1.id
+        LEFT JOIN warehouses w2 ON t.to_warehouse_id = w2.id
+        ORDER BY t.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب التحويلات' });
+    }
+  });
+
+  app.post('/api/transfers', async (req, res) => {
+    const { from_warehouse_id, to_warehouse_id, items, date, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/transfers', err);
+    });
+    try {
+      await client.query('BEGIN');
+      const transferId = 'tr' + Date.now();
+      await client.query(
+        'INSERT INTO transfers (id, from_warehouse_id, to_warehouse_id, date, notes) VALUES ($1, $2, $3, $4, $5)',
+        [transferId, from_warehouse_id, to_warehouse_id, date || new Date(), notes]
+      );
+      for (const item of items) {
+        const itemId = 'tri' + Math.random().toString(36).substr(2, 9);
+        await client.query(
+          'INSERT INTO transfer_items (id, transfer_id, product_id, quantity) VALUES ($1, $2, $3, $4)',
+          [itemId, transferId, item.product_id, item.quantity]
+        );
+        // Log stock movement
+        const smId = 'sm' + Date.now() + Math.random().toString(36).substr(2, 5);
+        await client.query(
+          'INSERT INTO stock_movements (id, product_id, from_warehouse_id, to_warehouse_id, quantity, type, reason) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+          [smId, item.product_id, from_warehouse_id, to_warehouse_id, item.quantity, 'transfer', 'تحويل مخزني']
+        );
+      }
+      await client.query('COMMIT');
+      res.json({ success: true, id: transferId });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      res.status(500).json({ error: 'خطأ في إضافة التحويل' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/adjustments', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT a.*, w.name as warehouse_name
+        FROM adjustments a
+        LEFT JOIN warehouses w ON a.warehouse_id = w.id
+        ORDER BY a.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب التسويات' });
+    }
+  });
+
+  app.post('/api/adjustments', async (req, res) => {
+    const { warehouse_id, type, reason, items, date, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/adjustments', err);
+    });
+    try {
+      await client.query('BEGIN');
+      const adjustmentId = 'adj' + Date.now();
+      await client.query(
+        'INSERT INTO adjustments (id, warehouse_id, type, reason, date, notes) VALUES ($1, $2, $3, $4, $5, $6)',
+        [adjustmentId, warehouse_id, type, reason, date || new Date(), notes]
+      );
+      for (const item of items) {
+        const itemId = 'adji' + Math.random().toString(36).substr(2, 9);
+        await client.query(
+          'INSERT INTO adjustment_items (id, adjustment_id, product_id, quantity) VALUES ($1, $2, $3, $4)',
+          [itemId, adjustmentId, item.product_id, item.quantity]
+        );
+        // Log stock movement and update product quantity
+        const smId = 'sm' + Date.now() + Math.random().toString(36).substr(2, 5);
+        const qtyChange = type === 'in' ? item.quantity : -item.quantity;
+        await client.query(
+          'INSERT INTO stock_movements (id, product_id, from_warehouse_id, to_warehouse_id, quantity, type, reason) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+          [smId, item.product_id, type === 'out' ? warehouse_id : null, type === 'in' ? warehouse_id : null, item.quantity, 'adjustment', reason]
+        );
+        await client.query('UPDATE products SET quantity = quantity + $1 WHERE id = $2', [qtyChange, item.product_id]);
+      }
+      await client.query('COMMIT');
+      res.json({ success: true, id: adjustmentId });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      res.status(500).json({ error: 'خطأ في إضافة التسوية' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/projects', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM projects ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب المشاريع' });
+    }
+  });
+
+  app.post('/api/projects', async (req, res) => {
+    const { name, description, code } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'prj' + Date.now();
+      await pool.query('INSERT INTO projects (id, name, description, code) VALUES ($1, $2, $3, $4)', [id, name, description, code]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المشروع' });
+    }
+  });
+
+  app.get('/api/branches', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM branches ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الفروع' });
+    }
+  });
+
+  app.post('/api/branches', async (req, res) => {
+    const { name, location, code } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'br' + Date.now();
+      await pool.query('INSERT INTO branches (id, name, location, code) VALUES ($1, $2, $3, $4)', [id, name, location, code]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة الفرع' });
+    }
+  });
+
+  app.get('/api/brands', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM brands ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الماركات' });
+    }
+  });
+
+  app.post('/api/brands', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'brd' + Date.now();
+      await pool.query('INSERT INTO brands (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة الماركة' });
+    }
+  });
+
+  app.get('/api/models', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT m.*, b.name as brand_name 
+        FROM models m 
+        LEFT JOIN brands b ON m.brand_id = b.id 
+        ORDER BY m.name ASC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الموديلات' });
+    }
+  });
+
+  app.post('/api/models', async (req, res) => {
+    const { name, brand_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'mod' + Date.now();
+      await pool.query('INSERT INTO models (id, name, brand_id) VALUES ($1, $2, $3)', [id, name, brand_id]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة الموديل' });
+    }
+  });
+
+  app.get('/api/product-groups', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM product_groups ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب مجموعات المنتجات' });
+    }
+  });
+
+  app.post('/api/product-groups', async (req, res) => {
+    const { name, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'pg' + Date.now();
+      await pool.query('INSERT INTO product_groups (id, name, description) VALUES ($1, $2, $3)', [id, name, description]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة مجموعة المنتجات' });
+    }
+  });
+
+  app.get('/api/transport-cars', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM transport_cars ORDER BY plate_number ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب السيارات' });
+    }
+  });
+
+  app.post('/api/transport-cars', async (req, res) => {
+    const { plate_number, driver_name } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'tc' + Date.now();
+      await pool.query('INSERT INTO transport_cars (id, plate_number, driver_name) VALUES ($1, $2, $3)', [id, plate_number, driver_name]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة السيارة' });
+    }
+  });
+
+  app.get('/api/transport-drivers', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM transport_drivers ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب السائقين' });
+    }
+  });
+
+  app.post('/api/transport-drivers', async (req, res) => {
+    const { name, phone } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'td' + Date.now();
+      await pool.query('INSERT INTO transport_drivers (id, name, phone) VALUES ($1, $2, $3)', [id, name, phone]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة السائق' });
+    }
+  });
+
+  app.get('/api/suppliers-customers', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM suppliers_customers ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الموردين والعملاء' });
+    }
+  });
+
+  app.post('/api/suppliers-customers', async (req, res) => {
+    const { type, name, phone, email, balance, opening_balance, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'sc' + Date.now();
+      await pool.query(
+        'INSERT INTO suppliers_customers (id, type, name, phone, email, balance, opening_balance, account_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+        [id, type, name, phone, email, balance || 0, opening_balance || 0, account_id || null]
+      );
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المورد/العميل' });
+    }
+  });
+
+  // Definitions API
+  const definitionTables = [
+    'product_units', 'product_categories', 'customer_groups', 'supplier_groups',
+    'payment_methods', 'tax_types', 'currencies', 'departments'
+  ];
+  
+  definitionTables.forEach(table => {
+    app.get(`/api/${table.replace('_', '-')}`, async (req, res) => {
+      if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+      try {
+        const result = await pool.query(`SELECT * FROM ${table} ORDER BY name ASC`);
+        res.json(result.rows);
+      } catch (err) {
+        res.status(500).json({ error: `خطأ في جلب ${table}` });
+      }
+    });
+
+    app.post(`/api/${table.replace('_', '-')}`, async (req, res) => {
+      const { name, description } = req.body;
+      if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+      try {
+        const id = table.charAt(0) + Date.now();
+        await pool.query(`INSERT INTO ${table} (id, name, description) VALUES ($1, $2, $3)`, [id, name, description]);
+        res.json({ success: true, id });
+      } catch (err) {
+        res.status(500).json({ error: `خطأ في إضافة ${table}` });
+      }
+    });
+
+    app.delete(`/api/${table.replace('_', '-')}/:id`, async (req, res) => {
+      const { id } = req.params;
+      if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+      try {
+        await pool.query(`DELETE FROM ${table} WHERE id = $1`, [id]);
+        res.json({ success: true });
+      } catch (err) {
+        res.status(500).json({ error: `خطأ في حذف ${table}` });
+      }
+    });
+  });
+
+  app.post('/api/products', async (req, res) => {
+    const { 
+      name, sku, category, unit, quantity, cost_price, sale_price, min_stock, warehouse_id, barcode, electronic_invoice_code, code2,
+      wholesale_price, half_wholesale_price, last_purchase_price, min_sale_price, avg_purchase_price, market_price, manual_cost,
+      profit_percent_retail, profit_percent_wholesale, profit_percent_half_wholesale, profit_percent_min_sale,
+      discount_retail, discount_wholesale, discount_half_wholesale, max_stock, tax_percent, is_active, name_en, coding_type,
+      is_assembly, is_service, has_expiry, has_serial, stop_sale, stop_purchase, concrete_type, additional_statement,
+      group_id, brand_id, model_id, origin, warranty, no_points, no_discount, for_rent, part_numbers, categories, groups, is_taxable
+    } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'p' + Date.now();
+      await pool.query(
+        `INSERT INTO products (
+          id, name, sku, category, unit, quantity, cost_price, sale_price, min_stock, warehouse_id, barcode, electronic_invoice_code, code2,
+          wholesale_price, half_wholesale_price, last_purchase_price, min_sale_price, avg_purchase_price, market_price, manual_cost,
+          profit_percent_retail, profit_percent_wholesale, profit_percent_half_wholesale, profit_percent_min_sale,
+          discount_retail, discount_wholesale, discount_half_wholesale, max_stock, tax_percent, is_active, name_en, coding_type,
+          is_assembly, is_service, has_expiry, has_serial, stop_sale, stop_purchase, concrete_type, additional_statement,
+          group_id, brand_id, model_id, origin, warranty, no_points, no_discount, for_rent, part_numbers, categories, groups, is_taxable
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46, $47, $48, $49, $50, $51, $52)`,
+        [
+          id, name, sku, category, unit, quantity || 0, cost_price || 0, sale_price || 0, min_stock || 0, warehouse_id, barcode, electronic_invoice_code, code2,
+          wholesale_price || 0, half_wholesale_price || 0, last_purchase_price || 0, min_sale_price || 0, avg_purchase_price || 0, market_price || 0, manual_cost || 0,
+          profit_percent_retail || 0, profit_percent_wholesale || 0, profit_percent_half_wholesale || 0, profit_percent_min_sale || 0,
+          discount_retail || 0, discount_wholesale || 0, discount_half_wholesale || 0, max_stock || 0, tax_percent || 0, is_active ?? true, name_en, coding_type,
+          is_assembly ?? false, is_service ?? false, has_expiry ?? false, has_serial ?? false, stop_sale ?? false, stop_purchase ?? false, concrete_type, additional_statement,
+          group_id, brand_id, model_id, origin, warranty, no_points ?? false, no_discount ?? false, for_rent ?? false, part_numbers || [], categories || [], groups || [], is_taxable ?? true
+        ]
+      );
+      res.json({ success: true, id });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'خطأ في إضافة المنتج' });
+    }
+  });
+
+  app.put('/api/products/:id', async (req, res) => {
+    const { id } = req.params;
+    const { 
+      name, sku, category, unit, quantity, cost_price, sale_price, min_stock, barcode, electronic_invoice_code, code2,
+      wholesale_price, half_wholesale_price, last_purchase_price, min_sale_price, avg_purchase_price, market_price, manual_cost,
+      profit_percent_retail, profit_percent_wholesale, profit_percent_half_wholesale, profit_percent_min_sale,
+      discount_retail, discount_wholesale, discount_half_wholesale, max_stock, tax_percent, is_active, name_en, coding_type,
+      is_assembly, is_service, has_expiry, has_serial, stop_sale, stop_purchase, concrete_type, additional_statement,
+      group_id, brand_id, model_id, origin, warranty, no_points, no_discount, for_rent, part_numbers, categories, groups, is_taxable
+    } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        `UPDATE products SET 
+          name = $1, sku = $2, category = $3, unit = $4, quantity = $5, cost_price = $6, sale_price = $7, min_stock = $8, barcode = $9, electronic_invoice_code = $10, code2 = $11,
+          wholesale_price = $12, half_wholesale_price = $13, last_purchase_price = $14, min_sale_price = $15, avg_purchase_price = $16, market_price = $17, manual_cost = $18,
+          profit_percent_retail = $19, profit_percent_wholesale = $20, profit_percent_half_wholesale = $21, profit_percent_min_sale = $22,
+          discount_retail = $23, discount_wholesale = $24, discount_half_wholesale = $25, max_stock = $26, tax_percent = $27, is_active = $28, name_en = $29, coding_type = $30,
+          is_assembly = $31, is_service = $32, has_expiry = $33, has_serial = $34, stop_sale = $35, stop_purchase = $36, concrete_type = $37, additional_statement = $38,
+          group_id = $39, brand_id = $40, model_id = $41, origin = $42, warranty = $43, no_points = $44, no_discount = $45, for_rent = $46, part_numbers = $47, categories = $48, groups = $49, is_taxable = $50
+        WHERE id = $51`,
+        [
+          name, sku, category, unit, quantity, cost_price, sale_price, min_stock, barcode, electronic_invoice_code, code2,
+          wholesale_price, half_wholesale_price, last_purchase_price, min_sale_price, avg_purchase_price, market_price, manual_cost,
+          profit_percent_retail, profit_percent_wholesale, profit_percent_half_wholesale, profit_percent_min_sale,
+          discount_retail, discount_wholesale, discount_half_wholesale, max_stock, tax_percent, is_active, name_en, coding_type,
+          is_assembly, is_service, has_expiry, has_serial, stop_sale, stop_purchase, concrete_type, additional_statement,
+          group_id, brand_id, model_id, origin, warranty, no_points, no_discount, for_rent, part_numbers, categories, groups, is_taxable,
+          id
+        ]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'خطأ في تحديث المنتج' });
+    }
+  });
+
+  app.delete('/api/products/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM products WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف المنتج' });
+    }
+  });
+
+  app.delete('/api/transactions/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in DELETE /api/transactions/:id', err);
+    });
+    try {
+      await client.query('BEGIN');
+
+      // 1. Fetch transaction and items to reverse effects
+      const txRes = await client.query('SELECT * FROM transactions WHERE id = $1', [id]);
+      if (txRes.rows.length === 0) {
+        await client.query('ROLLBACK');
+        return res.status(404).json({ error: 'Transaction not found' });
+      }
+      const tx = txRes.rows[0];
+      const itemsRes = await client.query('SELECT * FROM transaction_items WHERE transaction_id = $1', [id]);
+      const items = itemsRes.rows;
+
+      // 2. Reverse stock changes
+      for (const item of items) {
+        const stockChange = (tx.type === 'purchase' || tx.type === 'sale_return') ? -item.quantity : item.quantity;
+        await client.query('UPDATE products SET quantity = quantity + $1 WHERE id = $2', [stockChange, item.product_id]);
+      }
+
+      // 3. Reverse financial record and balances
+      const finRes = await client.query('SELECT * FROM financial_records WHERE transaction_id = $1', [id]);
+      if (finRes.rows.length > 0) {
+        const fin = finRes.rows[0];
+        if (fin.account_id) {
+          const balanceChange = (fin.type === 'income') ? -fin.amount : fin.amount;
+          await client.query('UPDATE bank_accounts SET balance = balance + $1 WHERE id = $2', [balanceChange, fin.account_id]);
+        }
+        await client.query('DELETE FROM financial_records WHERE transaction_id = $1', [id]);
+      }
+
+      if (tx.party_id) {
+        let partyBalanceChange = 0;
+        const effectiveAmount = (tx.type === 'sale' || tx.type === 'purchase' || tx.type === 'sale_return' || tx.type === 'purchase_return') ? (tx.total_amount - (tx.paid_amount || 0)) : tx.total_amount;
+        
+        if (tx.type === 'sale') partyBalanceChange = effectiveAmount;
+        else if (tx.type === 'purchase') partyBalanceChange = -effectiveAmount;
+        else if (tx.type === 'sale_return') partyBalanceChange = -effectiveAmount;
+        else if (tx.type === 'purchase_return') partyBalanceChange = effectiveAmount;
+        else if (tx.type === 'sale_payment') partyBalanceChange = -tx.total_amount;
+        else if (tx.type === 'purchase_payment') partyBalanceChange = tx.total_amount;
+        else if (tx.type === 'settlement') partyBalanceChange = -tx.total_amount;
+        
+        if (partyBalanceChange !== 0) {
+          await client.query('UPDATE suppliers_customers SET balance = balance - $1 WHERE id = $2', [partyBalanceChange, tx.party_id]);
+        }
+      }
+
+      // 4. Delete journal entries and items
+      await client.query('DELETE FROM journal_entries WHERE reference_id = $1', [id]);
+      await client.query('DELETE FROM transaction_items WHERE transaction_id = $1', [id]);
+
+      // 5. Delete the transaction itself
+      await client.query('DELETE FROM transactions WHERE id = $1', [id]);
+
+      await client.query('COMMIT');
+      res.json({ success: true });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('Error deleting transaction:', err);
+      res.status(500).json({ error: 'خطأ في حذف العملية' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.delete('/api/finance/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM financial_records WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف السجل المالي' });
+    }
+  });
+
+  app.delete('/api/financial-docs/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM financial_docs WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف المستند المالي' });
+    }
+  });
+
+  app.delete('/api/coa/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM chart_of_accounts WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف الحساب' });
+    }
+  });
+
+  app.delete('/api/warehouses/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM warehouses WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف المستودع' });
+    }
+  });
+
+  app.delete('/api/transfers/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM transfers WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف التحويل' });
+    }
+  });
+
+  app.delete('/api/adjustments/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM adjustments WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف التسوية' });
+    }
+  });
+
+  app.delete('/api/bank-accounts/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM bank_accounts WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف الحساب البنكي' });
+    }
+  });
+
+  app.delete('/api/suppliers-customers/:id', async (req, res) => {
+    const { id } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM suppliers_customers WHERE id = $1', [id]);
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في حذف العميل/المورد' });
+    }
+  });
+
+  app.put('/api/transactions/:id', async (req, res) => {
+    const { id } = req.params;
+    const { 
+      type, party_id, date, total_amount, payment_method, check_number, 
+      check_date, status, notes, items, warehouse_id, account_id, document_number,
+      discount_percent, paid_amount, due_amount, branch_id, 
+      project_id, cost_center_id, sales_rep_id, shipping_co_id, transport_car_id, 
+      transport_driver_id, pricing_type, time, invoice_type 
+    } = req.body;
+    const tax_amount = Number(req.body.total_tax || req.body.tax_amount || 0);
+    const totalAmount = (items || []).reduce((sum: number, item: any) => sum + (Number(item.quantity || 0) * Number(item.unit_price || 0)), 0);
+    const discount_amount = Number(req.body.total_discount || 0) + Number(req.body.discount_amount || 0) + (totalAmount * Number(req.body.discount_percent || 0) / 100);
+    
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    
+    const sanitize = (val: any) => (val === '' ? null : val);
+    
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in PUT /api/transactions/:id', err);
+    });
+    try {
+      await client.query('BEGIN');
+
+      // 1. Fetch old transaction and items to reverse effects
+      const oldTxRes = await client.query('SELECT * FROM transactions WHERE id = $1', [id]);
+      if (oldTxRes.rows.length === 0) throw new Error('Transaction not found');
+      const oldTx = oldTxRes.rows[0];
+      const oldItemsRes = await client.query('SELECT * FROM transaction_items WHERE transaction_id = $1', [id]);
+      const oldItems = oldItemsRes.rows;
+
+      // 2. Reverse stock changes
+      for (const item of oldItems) {
+        const stockChange = (oldTx.type === 'purchase' || oldTx.type === 'sale_return') ? -item.quantity : item.quantity;
+        await client.query('UPDATE products SET quantity = quantity + $1 WHERE id = $2', [stockChange, item.product_id]);
+      }
+
+      // 3. Reverse financial record and balances
+      const oldFinRes = await client.query('SELECT * FROM financial_records WHERE transaction_id = $1', [id]);
+      if (oldFinRes.rows.length > 0) {
+        const oldFin = oldFinRes.rows[0];
+        if (oldFin.account_id) {
+          const balanceChange = (oldFin.type === 'income') ? -oldFin.amount : oldFin.amount;
+          await client.query('UPDATE bank_accounts SET balance = balance + $1 WHERE id = $2', [balanceChange, oldFin.account_id]);
+        }
+        if (oldTx.party_id) {
+          let oldPartyBalanceChange = 0;
+          const oldEffectiveAmount = (oldTx.type === 'sale' || oldTx.type === 'purchase' || oldTx.type === 'sale_return' || oldTx.type === 'purchase_return') ? (oldTx.total_amount - (oldTx.paid_amount || 0)) : oldTx.total_amount;
+          
+          if (oldTx.type === 'sale') oldPartyBalanceChange = oldEffectiveAmount;
+          else if (oldTx.type === 'purchase') oldPartyBalanceChange = -oldEffectiveAmount;
+          else if (oldTx.type === 'sale_return') oldPartyBalanceChange = -oldEffectiveAmount;
+          else if (oldTx.type === 'purchase_return') oldPartyBalanceChange = oldEffectiveAmount;
+          else if (oldTx.type === 'sale_payment') oldPartyBalanceChange = -oldTx.total_amount;
+          else if (oldTx.type === 'purchase_payment') oldPartyBalanceChange = oldTx.total_amount;
+          else if (oldTx.type === 'settlement') oldPartyBalanceChange = -oldTx.total_amount;
+          
+          if (oldPartyBalanceChange !== 0) {
+            await client.query('UPDATE suppliers_customers SET balance = balance - $1 WHERE id = $2', [oldPartyBalanceChange, oldTx.party_id]);
+          }
+        }
+        await client.query('DELETE FROM financial_records WHERE transaction_id = $1', [id]);
+      }
+
+      // 4. Delete old journal entries and items
+      await client.query('DELETE FROM journal_entries WHERE reference_id = $1', [id]);
+      await client.query('DELETE FROM transaction_items WHERE transaction_id = $1', [id]);
+
+      // 5. Calculate new totals
+      let calcTotalAmount = 0;
+      if (items && Array.isArray(items)) {
+        for (const item of items) {
+          calcTotalAmount += (item.quantity || 0) * (item.unit_price || 0);
+        }
+      }
+      const finalTotal = calcTotalAmount + (tax_amount || 0) - (discount_amount || 0);
+      const actualTotal = (type === 'sale_payment' || type === 'purchase_payment' || type === 'settlement' || type === 'check') ? (req.body.amount || 0) : finalTotal;
+
+      // If cash invoice, ensure paid_amount is set to total if not provided
+      let finalPaidAmount = paid_amount || 0;
+      if (invoice_type === 'cash' && ['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) {
+        if (finalPaidAmount === 0) finalPaidAmount = actualTotal;
+      }
+      const finalDueAmount = (['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) ? (actualTotal - finalPaidAmount) : 0;
+
+      // 6. Update transaction
+      await client.query(
+        `UPDATE transactions SET 
+          type = $1, party_id = $2, date = $3, total_amount = $4, tax_amount = $5, 
+          payment_method = $6, check_number = $7, check_date = $8, status = $9, 
+          notes = $10, warehouse_id = $11, account_id = $12, document_number = $13,
+          discount_amount = $14, discount_percent = $15, paid_amount = $16, 
+          due_amount = $17, branch_id = $18, project_id = $19, cost_center_id = $20, 
+          sales_rep_id = $21, shipping_co_id = $22, transport_car_id = $23, 
+          transport_driver_id = $24, pricing_type = $25, time = $26, invoice_type = $27
+        WHERE id = $28`,
+        [
+          type, sanitize(party_id), date, actualTotal, tax_amount || 0, payment_method, 
+          check_number, check_date, status, notes, sanitize(warehouse_id), 
+          sanitize(account_id), document_number, discount_amount || 0, discount_percent || 0, 
+          finalPaidAmount, finalDueAmount, sanitize(branch_id), sanitize(project_id), 
+          sanitize(cost_center_id), sanitize(sales_rep_id), sanitize(shipping_co_id), 
+          sanitize(transport_car_id), sanitize(transport_driver_id), pricing_type, time, invoice_type || 'cash', id
+        ]
+      );
+
+      // 7. Insert new items and apply new stock changes
+      if (items && Array.isArray(items) && ['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) {
+        for (const item of items) {
+          const itemId = 'ti' + Math.random().toString(36).substr(2, 9);
+          await client.query(
+            `INSERT INTO transaction_items (
+              id, transaction_id, product_id, quantity, unit, unit_price, total,
+              tax_percent, tax_amount, net_amount, discount_amount, discount_percent
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+            [
+              itemId, id, item.product_id, item.quantity, item.unit || 'قطعة', item.unit_price, 
+              item.quantity * item.unit_price, item.tax_percent || 0, item.tax_amount || 0, 
+              item.net_amount || 0, item.discount_amount || 0, item.discount_percent || 0
+            ]
+          );
+
+          const stockChange = (type === 'purchase' || type === 'sale_return') ? item.quantity : -item.quantity;
+          if (type === 'purchase' && warehouse_id) {
+            await client.query('UPDATE products SET quantity = quantity + $1, warehouse_id = $2 WHERE id = $3', [stockChange, warehouse_id, item.product_id]);
+          } else {
+            await client.query('UPDATE products SET quantity = quantity + $1 WHERE id = $2', [stockChange, item.product_id]);
+          }
+        }
+      }
+
+      // 8. Create new Journal Entry
+      const settingsRes = await client.query('SELECT key, value FROM system_settings');
+      const settings: Record<string, string> = {};
+      settingsRes.rows.forEach(row => settings[row.key] = row.value);
+
+      const salesAcc = settings.sales_account_id || 'acc9';
+      const purchasesAcc = settings.purchases_account_id || 'acc10';
+      const inputVatAcc = settings.input_vat_account_id || 'acc13';
+      const outputVatAcc = settings.output_vat_account_id || 'acc12';
+      const discountAllowedAcc = settings.discount_allowed_account_id || 'acc14';
+      const discountEarnedAcc = settings.discount_earned_account_id || 'acc15';
+
+      let partyAcc = null;
+      if (party_id) {
+        const partyRes = await client.query('SELECT account_id FROM suppliers_customers WHERE id = $1', [party_id]);
+        if (partyRes.rows.length > 0) partyAcc = partyRes.rows[0].account_id;
+      }
+      if (!partyAcc) {
+        partyAcc = (type === 'sale' || type === 'sale_return' || type === 'sale_payment') ? 'acc5' : 'acc7';
+      }
+
+      let bankAcc = null;
+      if (account_id) {
+        const bankRes = await client.query('SELECT account_id FROM bank_accounts WHERE id = $1', [account_id]);
+        if (bankRes.rows.length > 0) bankAcc = bankRes.rows[0].account_id;
+      }
+      if (!bankAcc) {
+        bankAcc = (type === 'sale' || type === 'sale_return' || type === 'sale_payment') ? 'acc3' : 'acc4';
+      }
+
+      const journalId = 'j' + Date.now();
+      await client.query(
+        'INSERT INTO journal_entries (id, date, description, reference_id) VALUES ($1, $2, $3, $4)',
+        [journalId, date || new Date(), `تعديل عملية ${type} رقم ${document_number || id}`, id]
+      );
+
+      if (type === 'purchase') {
+        const debitAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, purchasesAcc, calcTotalAmount, 0]);
+        if (tax_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1v'+journalId, journalId, inputVatAcc, tax_amount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, debitAcc, 0, actualTotal]);
+        if (discount_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2d'+journalId, journalId, discountEarnedAcc, 0, discount_amount]);
+        }
+      } else if (type === 'sale') {
+        const debitAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, debitAcc, actualTotal, 0]);
+        if (discount_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1d'+journalId, journalId, discountAllowedAcc, discount_amount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, salesAcc, 0, calcTotalAmount]);
+        if (tax_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2v'+journalId, journalId, outputVatAcc, 0, tax_amount]);
+        }
+      } else if (type === 'sale_return') {
+        const creditAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, salesAcc, calcTotalAmount, 0]);
+        if (tax_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1v'+journalId, journalId, outputVatAcc, tax_amount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, creditAcc, 0, actualTotal]);
+        if (discount_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2d'+journalId, journalId, discountAllowedAcc, 0, discount_amount]);
+        }
+      } else if (type === 'purchase_return') {
+        const debitAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, debitAcc, actualTotal, 0]);
+        if (discount_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1d'+journalId, journalId, discountEarnedAcc, discount_amount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, purchasesAcc, 0, calcTotalAmount]);
+        if (tax_amount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2v'+journalId, journalId, inputVatAcc, 0, tax_amount]);
+        }
+      } else if (type === 'sale_payment') {
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, bankAcc, actualTotal, 0]);
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, partyAcc, 0, actualTotal]);
+      } else if (type === 'purchase_payment') {
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, partyAcc, actualTotal, 0]);
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, bankAcc, 0, actualTotal]);
+      }
+
+      // 9. Create new financial record
+      const financialId = 'f' + Date.now();
+      const financialType = (type === 'sale' || type === 'purchase_return' || type === 'sale_payment') ? 'income' : 'expense';
+      const financialAmount = (type === 'sale' || type === 'purchase' || type === 'sale_return' || type === 'purchase_return') ? (paid_amount || 0) : actualTotal;
+      
+      if (financialAmount > 0) {
+        await client.query(
+          'INSERT INTO financial_records (id, type, method, amount, date, description, transaction_id, account_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+          [financialId, financialType, payment_method, financialAmount, date || new Date(), `تعديل عملية ${type} رقم ${document_number || id}`, id, sanitize(account_id)]
+        );
+
+        // 10. Update balances
+        if (account_id && account_id !== '') {
+          const balanceChange = (financialType === 'income') ? financialAmount : -financialAmount;
+          await client.query('UPDATE bank_accounts SET balance = balance + $1 WHERE id = $2', [balanceChange, account_id]);
+        }
+      }
+      
+      if (party_id && party_id !== '') {
+        let partyBalanceChange = 0;
+        const effectiveAmount = (type === 'sale' || type === 'purchase' || type === 'sale_return' || type === 'purchase_return') ? (actualTotal - (paid_amount || 0)) : actualTotal;
+        
+        if (type === 'sale') partyBalanceChange = effectiveAmount;
+        else if (type === 'purchase') partyBalanceChange = -effectiveAmount;
+        else if (type === 'sale_return') partyBalanceChange = -effectiveAmount;
+        else if (type === 'purchase_return') partyBalanceChange = effectiveAmount;
+        else if (type === 'sale_payment') partyBalanceChange = -actualTotal;
+        else if (type === 'purchase_payment') partyBalanceChange = actualTotal;
+        else if (type === 'settlement') partyBalanceChange = -actualTotal;
+        
+        if (partyBalanceChange !== 0) {
+          await client.query('UPDATE suppliers_customers SET balance = balance + $1 WHERE id = $2', [partyBalanceChange, party_id]);
+        }
+      }
+
+      await client.query('COMMIT');
+      res.json({ success: true });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('Error updating transaction:', err);
+      res.status(500).json({ error: 'خطأ في تحديث العملية: ' + (err instanceof Error ? err.message : String(err)) });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.put('/api/financial-docs/:id', async (req, res) => {
+    const { id } = req.params;
+    const { type, number, date, party_id, account_id, amount, currency_id, due_date, status, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE financial_docs SET type = $1, number = $2, date = $3, party_id = $4, account_id = $5, amount = $6, currency_id = $7, due_date = $8, status = $9, notes = $10 WHERE id = $11',
+        [type, number, date, party_id, account_id, amount, currency_id, due_date, status, notes, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating financial doc:', err);
+      res.status(500).json({ error: 'خطأ في تحديث المستند المالي' });
+    }
+  });
+
+  app.put('/api/coa/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, code, type, parent_id, description } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const finalParentId = parent_id === '' ? null : parent_id;
+      await pool.query(
+        'UPDATE chart_of_accounts SET name = $1, code = $2, type = $3, parent_id = $4, description = $5 WHERE id = $6',
+        [name, code, type, finalParentId, description, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating coa:', err);
+      res.status(500).json({ error: 'خطأ في تحديث الحساب' });
+    }
+  });
+
+  app.put('/api/warehouses/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, location, is_default } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      if (is_default) {
+        await pool.query('UPDATE warehouses SET is_default = FALSE');
+      }
+      await pool.query(
+        'UPDATE warehouses SET name = $1, location = $2, is_default = $3 WHERE id = $4',
+        [name, location, is_default, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating warehouse:', err);
+      res.status(500).json({ error: 'خطأ في تحديث المستودع' });
+    }
+  });
+
+  app.put('/api/transfers/:id', async (req, res) => {
+    const { id } = req.params;
+    const { date, from_warehouse_id, to_warehouse_id, product_id, quantity, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE transfers SET date = $1, from_warehouse_id = $2, to_warehouse_id = $3, product_id = $4, quantity = $5, notes = $6 WHERE id = $7',
+        [date, from_warehouse_id, to_warehouse_id, product_id, quantity, notes, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating transfer:', err);
+      res.status(500).json({ error: 'خطأ في تحديث التحويل' });
+    }
+  });
+
+  app.put('/api/adjustments/:id', async (req, res) => {
+    const { id } = req.params;
+    const { date, warehouse_id, product_id, type, quantity, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE adjustments SET date = $1, warehouse_id = $2, product_id = $3, type = $4, quantity = $5, notes = $6 WHERE id = $7',
+        [date, warehouse_id, product_id, type, quantity, notes, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating adjustment:', err);
+      res.status(500).json({ error: 'خطأ في تحديث التسوية' });
+    }
+  });
+
+  app.put('/api/bank-accounts/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, type, balance, initial_balance, currency_id, account_number, bank_name, branch_name, is_active, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE bank_accounts SET name = $1, type = $2, balance = $3, initial_balance = $4, currency_id = $5, account_number = $6, bank_name = $7, branch_name = $8, is_active = $9, account_id = $10 WHERE id = $11',
+        [name, type, balance, initial_balance, currency_id, account_number, bank_name, branch_name, is_active, account_id || null, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating bank account:', err);
+      res.status(500).json({ error: 'خطأ في تحديث الحساب البنكي' });
+    }
+  });
+
+  app.put('/api/suppliers-customers/:id', async (req, res) => {
+    const { id } = req.params;
+    const { type, name, phone, email, balance, opening_balance, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE suppliers_customers SET type = $1, name = $2, phone = $3, email = $4, balance = $5, opening_balance = $6, account_id = $7 WHERE id = $8',
+        [type, name, phone, email, balance, opening_balance || 0, account_id || null, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating supplier/customer:', err);
+      res.status(500).json({ error: 'خطأ في تحديث العميل/المورد' });
+    }
+  });
+
+  app.put('/api/finance/:id', async (req, res) => {
+    const { id } = req.params;
+    const { type, method, amount, date, description, category_id, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query(
+        'UPDATE financial_records SET type = $1, method = $2, amount = $3, date = $4, description = $5, category_id = $6, account_id = $7 WHERE id = $8',
+        [type, method, amount, date, description, category_id, account_id, id]
+      );
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error updating finance:', err);
+      res.status(500).json({ error: 'خطأ في تحديث السجل المالي' });
+    }
+  });
+
+  app.get('/api/transactions/next-number/:type', async (req, res) => {
+    const { type } = req.params;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(
+        "SELECT MAX(CAST(document_number AS INTEGER)) as max_num FROM transactions WHERE type = $1 AND document_number ~ '^[0-9]+$'",
+        [type]
+      );
+      const nextNum = (parseInt(result.rows[0].max_num) || 0) + 1;
+      res.json({ next_number: nextNum.toString() });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب رقم المستند التالي' });
+    }
+  });
+
+  app.post('/api/transactions', async (req, res) => {
+    const { 
+      type, party_id, date, items, payment_method, notes, warehouse_id, account_id, time,
+      total_tax, document_number, total_discount, discount_percent, paid_amount, 
+      due_amount, branch_id, project_id, cost_center_id, sales_rep_id, shipping_co_id, 
+      transport_car_id, transport_driver_id, pricing_type, invoice_type 
+    } = req.body;
+    const tax_amount = Number(total_tax || req.body.tax_amount || 0);
+    const baseAmount = (items || []).reduce((sum: number, item: any) => sum + (Number(item.quantity || 0) * Number(item.unit_price || 0)), 0);
+    const discount_amount = Number(total_discount || 0) + Number(req.body.discount_amount || 0) + (baseAmount * Number(req.body.discount_percent || 0) / 100);
+    
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    
+    const sanitize = (val: any) => (val === '' ? null : val);
+    
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/transactions', err);
+    });
+    try {
+      await client.query('BEGIN');
+      
+      const transactionId = 't' + Date.now();
+      let totalAmount = 0;
+      
+      // Calculate total and validate items
+      for (const item of items) {
+        totalAmount += item.quantity * item.unit_price;
+      }
+      
+      const finalTotal = totalAmount + (tax_amount || 0) - (discount_amount || 0);
+      const actualTotal = (type === 'sale_payment' || type === 'purchase_payment' || type === 'settlement' || type === 'check') ? (req.body.amount || 0) : finalTotal;
+      
+      // If cash invoice, ensure paid_amount is set to total if not provided
+      let finalPaidAmount = paid_amount || 0;
+      if (invoice_type === 'cash' && ['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) {
+        if (finalPaidAmount === 0) finalPaidAmount = actualTotal;
+      }
+      const finalDueAmount = (['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) ? (actualTotal - finalPaidAmount) : 0;
+
+      // Insert transaction
+      await client.query(
+        `INSERT INTO transactions (
+          id, type, party_id, date, total_amount, tax_amount, payment_method, status, notes, 
+          document_number, discount_amount, discount_percent, paid_amount, due_amount, 
+          branch_id, project_id, cost_center_id, sales_rep_id, shipping_co_id, 
+          transport_car_id, transport_driver_id, pricing_type, warehouse_id, account_id, time, invoice_type
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26)`,
+        [
+          transactionId, type, sanitize(party_id), date || new Date(), actualTotal, tax_amount || 0, 
+          payment_method, 'completed', notes, document_number, discount_amount || 0, 
+          discount_percent || 0, finalPaidAmount, finalDueAmount, sanitize(branch_id), 
+          sanitize(project_id), sanitize(cost_center_id), sanitize(sales_rep_id), 
+          sanitize(shipping_co_id), sanitize(transport_car_id), 
+          sanitize(transport_driver_id), pricing_type || 'retail', sanitize(warehouse_id), sanitize(account_id), time, invoice_type || 'cash'
+        ]
+      );
+      
+      // Insert items and update stock (only for invoice types)
+      if (['sale', 'purchase', 'sale_return', 'purchase_return'].includes(type)) {
+        for (const item of items) {
+          const itemId = 'ti' + Math.random().toString(36).substr(2, 9);
+          await client.query(
+            `INSERT INTO transaction_items (
+              id, transaction_id, product_id, quantity, unit, unit_price, total, 
+              tax_percent, tax_amount, net_amount, discount_amount, discount_percent
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+            [
+              itemId, transactionId, item.product_id, item.quantity, item.unit || 'قطعة', item.unit_price, 
+              item.quantity * item.unit_price, item.tax_percent || 0, item.tax_amount || 0, 
+              item.net_amount || 0, item.discount_amount || 0, item.discount_percent || 0
+            ]
+          );
+          
+          // Update stock: increase for purchase/sale_return, decrease for sale/purchase_return
+          const stockChange = (type === 'purchase' || type === 'sale_return') ? item.quantity : -item.quantity;
+          
+          if (type === 'purchase' && warehouse_id) {
+            await client.query(
+              'UPDATE products SET quantity = quantity + $1, warehouse_id = $2 WHERE id = $3',
+              [stockChange, warehouse_id, item.product_id]
+            );
+          } else {
+            await client.query(
+              'UPDATE products SET quantity = quantity + $1 WHERE id = $2',
+              [stockChange, item.product_id]
+            );
+          }
+        }
+      }
+      
+      // Fetch system settings for default accounts
+      const settingsRes = await client.query('SELECT key, value FROM system_settings');
+      const settings: Record<string, string> = {};
+      settingsRes.rows.forEach(row => settings[row.key] = row.value);
+
+      const salesAcc = settings.sales_account_id || 'acc9';
+      const purchasesAcc = settings.purchases_account_id || 'acc10';
+      const inputVatAcc = settings.input_vat_account_id || 'acc13';
+      const outputVatAcc = settings.output_vat_account_id || 'acc12';
+      const discountAllowedAcc = settings.discount_allowed_account_id || 'acc14';
+      const discountEarnedAcc = settings.discount_earned_account_id || 'acc15';
+
+      // Fetch party account
+      let partyAcc = null;
+      if (party_id) {
+        const partyRes = await client.query('SELECT account_id FROM suppliers_customers WHERE id = $1', [party_id]);
+        if (partyRes.rows.length > 0) partyAcc = partyRes.rows[0].account_id;
+      }
+      if (!partyAcc) {
+        partyAcc = (type === 'sale' || type === 'sale_return' || type === 'sale_payment') ? 'acc5' : 'acc7';
+      }
+
+      // Fetch bank/cash account
+      let bankAcc = null;
+      if (account_id) {
+        const bankRes = await client.query('SELECT account_id FROM bank_accounts WHERE id = $1', [account_id]);
+        if (bankRes.rows.length > 0) bankAcc = bankRes.rows[0].account_id;
+      }
+      if (!bankAcc) {
+        bankAcc = payment_method === 'cash' ? 'acc3' : 'acc4';
+      }
+
+      // Journal Entry logic
+      const journalId = 'j' + Date.now();
+      await client.query(
+        'INSERT INTO journal_entries (id, date, description, reference_id) VALUES ($1, $2, $3, $4)',
+        [journalId, date || new Date(), `${type === 'sale' ? 'فاتورة مبيعات' : type === 'purchase' ? 'فاتورة مشتريات' : type === 'sale_return' ? 'مرتجع مبيعات' : type === 'purchase_return' ? 'مرتجع مشتريات' : 'عملية'} رقم ${document_number || transactionId}`, transactionId]
+      );
+
+      const taxAmount = Number(tax_amount || 0);
+      const discountAmount = Number(discount_amount || 0);
+
+      if (type === 'purchase') {
+        // Dr Purchases, Dr Input VAT, Cr Supplier/Bank, Cr Discount Earned
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, purchasesAcc, totalAmount, 0]);
+        if (taxAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1v'+journalId, journalId, inputVatAcc, taxAmount, 0]);
+        }
+        const creditAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, creditAcc, 0, actualTotal]);
+        if (discountAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2d'+journalId, journalId, discountEarnedAcc, 0, discountAmount]);
+        }
+      } else if (type === 'sale') {
+        // Dr Customer/Bank, Dr Discount Allowed, Cr Sales, Cr Output VAT
+        const debitAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, debitAcc, actualTotal, 0]);
+        if (discountAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1d'+journalId, journalId, discountAllowedAcc, discountAmount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, salesAcc, 0, totalAmount]);
+        if (taxAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2v'+journalId, journalId, outputVatAcc, 0, taxAmount]);
+        }
+      } else if (type === 'sale_return') {
+        const creditAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, salesAcc, totalAmount, 0]);
+        if (taxAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1v'+journalId, journalId, outputVatAcc, taxAmount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, creditAcc, 0, actualTotal]);
+        if (discountAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2d'+journalId, journalId, discountAllowedAcc, 0, discountAmount]);
+        }
+      } else if (type === 'purchase_return') {
+        const debitAcc = (invoice_type === 'cash') ? bankAcc : partyAcc;
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, debitAcc, actualTotal, 0]);
+        if (discountAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1d'+journalId, journalId, discountEarnedAcc, discountAmount, 0]);
+        }
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, purchasesAcc, 0, totalAmount]);
+        if (taxAmount > 0) {
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2v'+journalId, journalId, inputVatAcc, 0, taxAmount]);
+        }
+      } else if (type === 'sale_payment') {
+        // Dr Cash/Bank, Cr Customers
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, bankAcc, actualTotal, 0]);
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, partyAcc, 0, actualTotal]);
+      } else if (type === 'purchase_payment') {
+        // Dr Suppliers, Cr Cash/Bank
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, partyAcc, actualTotal, 0]);
+        await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, bankAcc, 0, actualTotal]);
+      }
+
+      // Create financial record
+      const financialId = 'f' + Date.now();
+      const financialType = (type === 'sale' || type === 'purchase_return' || type === 'sale_payment') ? 'income' : 'expense';
+      const financialAmount = (type === 'sale' || type === 'purchase' || type === 'sale_return' || type === 'purchase_return') ? (finalPaidAmount || 0) : actualTotal;
+      
+      if (financialAmount > 0) {
+        await client.query(
+          'INSERT INTO financial_records (id, type, method, amount, date, description, transaction_id, account_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+          [financialId, financialType, payment_method, financialAmount, date || new Date(), `عملية ${type} رقم ${document_number || transactionId}`, transactionId, sanitize(account_id)]
+        );
+
+        // Update bank account balance if account_id is provided
+        if (account_id && account_id !== '') {
+          const balanceChange = (financialType === 'income') ? financialAmount : -financialAmount;
+          await client.query(
+            'UPDATE bank_accounts SET balance = balance + $1 WHERE id = $2',
+            [balanceChange, account_id]
+          );
+        }
+      }
+      
+      // Update party balance
+      if (party_id && party_id !== '') {
+        let partyBalanceChange = 0;
+        const effectiveAmount = (type === 'sale' || type === 'purchase' || type === 'sale_return' || type === 'purchase_return') ? (actualTotal - (finalPaidAmount || 0)) : actualTotal;
+        
+        if (type === 'sale') partyBalanceChange = effectiveAmount;
+        else if (type === 'purchase') partyBalanceChange = -effectiveAmount;
+        else if (type === 'sale_return') partyBalanceChange = -effectiveAmount;
+        else if (type === 'purchase_return') partyBalanceChange = effectiveAmount;
+        else if (type === 'sale_payment') partyBalanceChange = -actualTotal;
+        else if (type === 'purchase_payment') partyBalanceChange = actualTotal;
+        else if (type === 'settlement') partyBalanceChange = -actualTotal;
+        
+        if (partyBalanceChange !== 0) {
+          await client.query(
+            'UPDATE suppliers_customers SET balance = balance + $1 WHERE id = $2',
+            [partyBalanceChange, party_id]
+          );
+        }
+      }
+      
+      await client.query('COMMIT');
+      res.json({ success: true, id: transactionId });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('Transaction error:', err);
+      res.status(500).json({ error: 'خطأ في إتمام العملية' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/chart-of-accounts', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM chart_of_accounts ORDER BY code ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب شجرة الحسابات' });
+    }
+  });
+
+  app.get('/api/quotes', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT q.*, sc.name as party_name 
+        FROM quotes q 
+        LEFT JOIN suppliers_customers sc ON q.party_id = sc.id 
+        ORDER BY q.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب عروض الأسعار' });
+    }
+  });
+
+  app.post('/api/quotes', async (req, res) => {
+    const { party_id, date, items, notes } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/quotes', err);
+    });
+    try {
+      await client.query('BEGIN');
+      const quoteId = 'q' + Date.now();
+      const quoteNumber = 'QT-' + Date.now().toString().slice(-6);
+      let totalAmount = 0;
+      for (const item of items) {
+        totalAmount += item.quantity * item.unit_price;
+      }
+      await client.query(
+        'INSERT INTO quotes (id, quote_number, party_id, date, total_amount, status, notes) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+        [quoteId, quoteNumber, party_id, date || new Date(), totalAmount, 'pending', notes]
+      );
+      for (const item of items) {
+        const itemId = 'qi' + Math.random().toString(36).substr(2, 9);
+        await client.query(
+          'INSERT INTO quote_items (id, quote_id, product_id, quantity, unit_price, total) VALUES ($1, $2, $3, $4, $5, $6)',
+          [itemId, quoteId, item.product_id, item.quantity, item.unit_price, item.quantity * item.unit_price]
+        );
+      }
+      await client.query('COMMIT');
+      res.json({ success: true, id: quoteId });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      res.status(500).json({ error: 'خطأ في إضافة عرض السعر' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/warehouses', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM warehouses ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب المخازن' });
+    }
+  });
+
+  app.post('/api/warehouses', async (req, res) => {
+    const { name, location, is_default } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const id = 'w' + Date.now();
+      await pool.query('INSERT INTO warehouses (id, name, location, is_default) VALUES ($1, $2, $3, $4)', [id, name, location, is_default]);
+      res.json({ success: true, id });
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في إضافة المخزن' });
+    }
+  });
+
+  app.get('/api/expense-categories', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM expense_categories ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب تصنيفات المصاريف' });
+    }
+  });
+
+  app.post('/api/bank-accounts', async (req, res) => {
+    const { name, type, initial_balance, currency_id, account_number, bank_name, branch_name, is_active, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const sanitize = (val: any) => (val === '' ? null : val);
+    try {
+      const id = 'ba' + Date.now();
+      await pool.query(
+        'INSERT INTO bank_accounts (id, name, type, balance, initial_balance, currency_id, account_number, bank_name, branch_name, is_active, account_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)',
+        [id, name, type || 'cash', initial_balance || 0, initial_balance || 0, sanitize(currency_id), account_number, bank_name, branch_name, is_active !== false, account_id || null]
+      );
+      res.json({ success: true, id });
+    } catch (err) {
+      console.error('Error adding bank account:', err);
+      res.status(500).json({ error: 'خطأ في إضافة الحساب البنكي' });
+    }
+  });
+
+  app.get('/api/bank-accounts', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query('SELECT * FROM bank_accounts ORDER BY name ASC');
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب الحسابات البنكية' });
+    }
+  });
+
+  app.get('/api/stock-movements', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT sm.*, p.name as product_name, w1.name as from_warehouse_name, w2.name as to_warehouse_name
+        FROM stock_movements sm
+        JOIN products p ON sm.product_id = p.id
+        LEFT JOIN warehouses w1 ON sm.from_warehouse_id = w1.id
+        LEFT JOIN warehouses w2 ON sm.to_warehouse_id = w2.id
+        ORDER BY sm.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ error: 'خطأ في جلب حركات المخزون' });
+    }
+  });
+
+  app.post('/api/stock-movements', async (req, res) => {
+    const { product_id, from_warehouse_id, to_warehouse_id, quantity, type, reason } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/stock-movements', err);
+    });
+    try {
+      await client.query('BEGIN');
+      const id = 'sm' + Date.now();
+      await client.query(
+        'INSERT INTO stock_movements (id, product_id, from_warehouse_id, to_warehouse_id, quantity, type, reason) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+        [id, product_id, from_warehouse_id, to_warehouse_id, quantity, type, reason]
+      );
+
+      if (type === 'transfer') {
+        // No change in total quantity, just location (if we tracked quantity per warehouse in a separate table)
+        // For now, our schema has quantity in products table.
+        // If we want to support multiple warehouses properly, we'd need a product_warehouses table.
+        // Let's assume for now it's just a log, or we update the product's warehouse_id if it's a full transfer.
+        if (to_warehouse_id) {
+          await client.query('UPDATE products SET warehouse_id = $1 WHERE id = $2', [to_warehouse_id, product_id]);
+        }
+      } else if (type === 'adjustment') {
+        await client.query('UPDATE products SET quantity = quantity + $1 WHERE id = $2', [quantity, product_id]);
+      }
+
+      await client.query('COMMIT');
+      res.json({ success: true, id });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      res.status(500).json({ error: 'خطأ في تسجيل حركة المخزون' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/journal-entries', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT je.*, 
+          (SELECT json_agg(jel.*) FROM journal_entry_lines jel WHERE jel.journal_entry_id = je.id) as lines
+        FROM journal_entries je
+        ORDER BY je.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching journal entries:', err);
+      res.status(500).json({ error: 'خطأ في جلب قيود اليومية' });
+    }
+  });
+
+  app.post('/api/journal-entries', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    const client = await pool.connect();
+    try {
+      const { date, description, lines } = req.body;
+      await client.query('BEGIN');
+      const id = 'je' + Date.now();
+      await client.query(
+        'INSERT INTO journal_entries (id, date, description) VALUES ($1, $2, $3)',
+        [id, date || new Date(), description]
+      );
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        await client.query(
+          'INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)',
+          [`${id}-${i}`, id, line.account_id, line.debit || 0, line.credit || 0]
+        );
+      }
+
+      await client.query('COMMIT');
+      res.json({ id });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('Error creating journal entry:', err);
+      res.status(500).json({ error: 'خطأ في إنشاء قيد اليومية' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.delete('/api/journal-entries/:id', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      await pool.query('DELETE FROM journal_entries WHERE id = $1', [req.params.id]);
+      res.json({ success: true });
+    } catch (err) {
+      console.error('Error deleting journal entry:', err);
+      res.status(500).json({ error: 'خطأ في حذف قيد اليومية' });
+    }
+  });
+
+  app.get('/api/journal-entry-lines', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      const result = await pool.query(`
+        SELECT jel.*, je.date, je.description, je.reference_id, coa.name as account_name
+        FROM journal_entry_lines jel
+        JOIN journal_entries je ON jel.journal_entry_id = je.id
+        JOIN chart_of_accounts coa ON jel.account_id = coa.id
+        ORDER BY je.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching journal entry lines:', err);
+      res.status(500).json({ error: 'خطأ في جلب سطور قيود اليومية' });
+    }
+  });
+
+  app.get('/api/reports/profit-loss', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    try {
+      // Get monthly income and expenses for the last 6 months
+      const result = await pool.query(`
+        WITH months AS (
+          SELECT generate_series(
+            date_trunc('month', CURRENT_DATE) - interval '5 months',
+            date_trunc('month', CURRENT_DATE),
+            '1 month'::interval
+          ) AS month_start
+        )
+        SELECT 
+          to_char(m.month_start, 'Mon') as month,
+          COALESCE(SUM(CASE WHEN f.type = 'income' THEN f.amount ELSE 0 END), 0) as total_revenue,
+          COALESCE(SUM(CASE WHEN f.type = 'expense' THEN f.amount ELSE 0 END), 0) as total_expense,
+          COALESCE(SUM(CASE WHEN f.type = 'income' THEN f.amount ELSE -f.amount END), 0) as net_profit
+        FROM months m
+        LEFT JOIN financial_records f ON date_trunc('month', f.date) = m.month_start
+        GROUP BY m.month_start
+        ORDER BY m.month_start ASC
+      `);
+      
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching P&L report:', err);
+      res.status(500).json({ error: 'خطأ في جلب تقرير الأرباح والخسائر' });
+    }
+  });
+
+  app.get('/api/products', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'DATABASE_URL is missing.' });
+    try {
+      const result = await pool.query(`
+        SELECT p.*, w.name as warehouse_name 
+        FROM products p 
+        LEFT JOIN warehouses w ON p.warehouse_id = w.id 
+        ORDER BY p.name ASC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching products:', err);
+      res.status(500).json({ error: 'خطأ في جلب المنتجات' });
+    }
+  });
+
+  app.get('/api/transactions', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'DATABASE_URL is missing.' });
+    try {
+      const result = await pool.query(`
+        SELECT t.*, sc.name as party_name,
+          (SELECT json_agg(ti.*) FROM transaction_items ti WHERE ti.transaction_id = t.id) as items
+        FROM transactions t 
+        LEFT JOIN suppliers_customers sc ON t.party_id = sc.id 
+        ORDER BY t.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching transactions:', err);
+      res.status(500).json({ error: 'خطأ في جلب العمليات' });
+    }
+  });
+
+  app.get('/api/finance', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'DATABASE_URL is missing.' });
+    try {
+      const result = await pool.query(`
+        SELECT f.*, ec.name as category_name, ba.name as account_name
+        FROM financial_records f
+        LEFT JOIN expense_categories ec ON f.category_id = ec.id
+        LEFT JOIN bank_accounts ba ON f.account_id = ba.id
+        ORDER BY f.date DESC
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      console.error('Error fetching finance:', err);
+      res.status(500).json({ error: 'خطأ في جلب السجلات المالية' });
+    }
+  });
+
+  app.post('/api/finance', async (req, res) => {
+    const { type, method, amount, date, description, category_id, account_id } = req.body;
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'Database not connected' });
+    
+    const sanitize = (val: any) => (val === '' ? null : val);
+    const client = await pool.connect();
+    client.on('error', (err) => {
+      console.error('Unexpected error on checked out client in POST /api/financial-records', err);
+    });
+    try {
+      await client.query('BEGIN');
+      const id = 'f' + Date.now();
+      await client.query(
+        'INSERT INTO financial_records (id, type, method, amount, date, description, category_id, account_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+        [id, type, method, amount, date || new Date(), description, sanitize(category_id), sanitize(account_id)]
+      );
+
+      // Create Journal Entry for the financial record
+      const journalId = 'j' + Date.now();
+      await client.query(
+        'INSERT INTO journal_entries (id, date, description, reference_id) VALUES ($1, $2, $3, $4)',
+        [journalId, date || new Date(), `${type === 'income' ? 'سند قبض/دخل' : 'سند صرف/مصروف'}: ${description}`, id]
+      );
+
+      if (account_id) {
+        const balanceChange = (type === 'income') ? amount : -amount;
+        await client.query(
+          'UPDATE bank_accounts SET balance = balance + $1 WHERE id = $2',
+          [balanceChange, account_id]
+        );
+
+        // Journal lines for the bank/cash account
+        if (type === 'income') {
+          // Dr Bank/Cash, Cr Income/Category
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, account_id, amount, 0]);
+          // For income, we might not have a specific account, but we can use a default income account or the category if it has an account
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, 'acc11', 0, amount]); // acc11 is Sales/Income
+        } else {
+          // Dr Expense/Category, Cr Bank/Cash
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl1'+journalId, journalId, 'acc12', amount, 0]); // acc12 is Expenses
+          await client.query('INSERT INTO journal_entry_lines (id, journal_entry_id, account_id, debit, credit) VALUES ($1, $2, $3, $4, $5)', ['jl2'+journalId, journalId, account_id, 0, amount]);
+        }
+      }
+
+      await client.query('COMMIT');
+      res.json({ success: true, id });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      res.status(500).json({ error: 'خطأ في إضافة السجل المالي' });
+    } finally {
+      client.release();
+    }
+  });
+
+  app.get('/api/stats', async (req, res) => {
+    if (!currentDatabaseUrl) return res.status(500).json({ error: 'DATABASE_URL is missing.' });
+    try {
+      const sales = await pool.query("SELECT SUM(total_amount) as total FROM transactions WHERE type = 'sale'");
+      const purchases = await pool.query("SELECT SUM(total_amount) as total FROM transactions WHERE type = 'purchase'");
+      const inventory = await pool.query("SELECT SUM(quantity * cost_price) as total FROM products");
+      const cash = await pool.query("SELECT SUM(balance) as total FROM bank_accounts");
+      
+      res.json({
+        totalSales: parseFloat(sales.rows[0].total || 0),
+        totalPurchases: parseFloat(purchases.rows[0].total || 0),
+        inventoryValue: parseFloat(inventory.rows[0].total || 0),
+        cashBalance: parseFloat(cash.rows[0].total || 0)
+      });
+    } catch (err) {
+      console.error('Error fetching stats:', err);
+      res.status(500).json({ error: 'خطأ في جلب الإحصائيات' });
+    }
+  });
+
+  // Vite middleware for development
+  if (process.env.NODE_ENV !== 'production') {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  }
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+startServer();
