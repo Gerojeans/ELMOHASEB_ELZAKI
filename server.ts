@@ -1,5 +1,4 @@
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cors from 'cors';
@@ -7,6 +6,7 @@ import dotenv from 'dotenv';
 import pg from 'pg';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -15,8 +15,12 @@ if (process.env.PGPORT && isNaN(parseInt(process.env.PGPORT))) {
   delete process.env.PGPORT;
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const _filename = typeof import.meta !== 'undefined' && import.meta.url
+  ? fileURLToPath(import.meta.url)
+  : (typeof __filename !== 'undefined' ? __filename : '');
+const _dirname = typeof import.meta !== 'undefined' && import.meta.url
+  ? path.dirname(_filename)
+  : (typeof __dirname !== 'undefined' ? __dirname : '');
 
 const { Pool } = pg;
 
@@ -3251,23 +3255,35 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    app.use(vite.middlewares);
+  // Vite middleware for development or fallback to static serving
+  const isProd = process.env.NODE_ENV === 'production';
+  if (!isProd) {
+    try {
+      const { createServer: createViteServer } = await import('vite');
+      const vite = await createViteServer({
+        server: { middlewareMode: true },
+        appType: 'spa',
+      });
+      app.use(vite.middlewares);
+      console.log('Vite development middleware loaded successfully.');
+    } catch (e) {
+      console.warn('Vite package not available, falling back to static production serving:', e);
+      serveStatic(app);
+    }
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
+    serveStatic(app);
   }
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+function serveStatic(app: any) {
+  const distPath = path.join(process.cwd(), 'dist');
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
   });
 }
 

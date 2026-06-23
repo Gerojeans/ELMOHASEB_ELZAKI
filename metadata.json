@@ -1,5 +1,8 @@
 {
   "name": "المحاسب الذكي",
   "description": "نظام محاسبي وإدارة مخزون متكامل يتضمن إدارة المبيعات، المشتريات، الحركة المالية، والتقارير الختامية.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
